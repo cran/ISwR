@@ -9,6 +9,7 @@
   The numeric vector \code{react} contains differences between two
   nurses' determination of 334 tuberculin reaction sizes.
 }
+\source{
  \emph{Exercises in Applied statistics} (1977), Exercise~2.9, Dept.\ of
  Theoretical Statistics,  
  Aarhus University.
