@@ -1,7 +1,7 @@
 \name{juul}
 \alias{juul}
 \non_function{}
-\title{Juul's IGF data, extended version}
+\title{Juul's IGF data}
 \description{
   The \code{juul} data frame has 1339 rows and 6 columns.
   It contains a reference sample of the distribution of insulin-like

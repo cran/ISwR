@@ -3,13 +3,14 @@ ashina                  Ashina's crossover trial
 bp.obese                Obesity and blood pressure
 caesarean               Caesarean section and maternal shoe size
 coking                  Coking data
+cystfibr                Cystic fibrosis lung function data
 energy                  Energy expenditure
-fake.trypsin            Trypsin by age groups 
+fake.trypsin            Trypsin by age groups
 graft.vs.host           Graft versus host disease
 heart.rate              Heart rates after enalaprilat
 hellung                 Growth of Tetrahymena cells
 intake                  Energy intake
-juul                    Juul's IGF data, extended version
+juul                    Juul's IGF data
 juul2                   Juul's IGF data, extended version
 kfm                     Breast-feeding data
 lung                    Methods for determining lung volume
