@@ -16,7 +16,6 @@
 }
 \examples{
 data(caesarean)
-require(ctest)
 prop.trend.test(caesar.shoe["Yes",],margin.table(caesar.shoe,2))
 }
 \keyword{datasets}
