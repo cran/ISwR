@@ -1,6 +1,6 @@
 fake.trypsin<-local({
 xrnorm<-function(n,xbar,s){
-	t<-rnorm(n);t<-(t-mean(t))/sd(t);xbar+s*t}
+	t<-stats::rnorm(n);t<-(t-mean(t))/stats::sd(t);xbar+s*t}
 g.1<-xrnorm(32,128,50.9)
 g.2<-xrnorm(137,152,58.5)
 g.3<-xrnorm(38,194,49.3)
