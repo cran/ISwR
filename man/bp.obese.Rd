@@ -10,20 +10,21 @@
 \format{
 This data frame contains the following columns:
 \describe{
-\item{sex}{
-a numeric vector code. 0: male, 1: female.
+\item{\code{sex}}{
+a numeric vector code, 0: male, 1: female.
 }
-\item{obese}{
-  a numeric vector. Ratio of actual weight to ideal weight from New York
+\item{\code{obese}}{
+  a numeric vector, ratio of actual weight to ideal weight from New York
   Metropolitan Life Tables.
 }
-\item{bp}{
-  a numeric vector. Systolic blood pressure (mm Hg).
+\item{\code{bp}}{
+  a numeric vector,systolic blood pressure (mm Hg).
 }
 }
 }
 \source{
-  B.W. Brown \& M. Hollander (1977), Statistics. A Biomedical Introduction,
+  B.W. Brown and M. Hollander (1977), {\em Statistics: A Biomedical
+  Introduction,} 
   Wiley. 
 }
 \examples{

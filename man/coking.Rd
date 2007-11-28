@@ -10,11 +10,11 @@
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{width}{a factor with levels \code{4}, \code{8}, and
+    \item{\code{width}}{a factor with levels \code{4}, \code{8}, and
       \code{12}, giving the oven width in inches.}
-    \item{temp}{a factor with levels \code{1600} and \code{1900},
+    \item{\code{temp}}{a factor with levels \code{1600} and \code{1900},
       giving the temperature in Fahrenheit.}
-    \item{time}{a numeric vector, time to coking.}
+    \item{\code{time}}{a numeric vector, time to coking.}
   }
 }
 \source{

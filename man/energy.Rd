@@ -9,10 +9,10 @@
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{expend}{
-      a numeric vector. 24 hour energy expenditure (MJ).
+    \item{\code{expend}}{
+      a numeric vector, 24 hour energy expenditure (MJ).
     }
-    \item{stature}{
+    \item{\code{stature}}{
       a factor with levels
       \code{lean} and 
       \code{obese}.

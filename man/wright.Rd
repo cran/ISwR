@@ -10,16 +10,17 @@ meters on each of 17 subjects.
 \format{
 This data frame contains the following columns:
 \describe{
-\item{std.wright}{
-a numeric vector. Data from large flow meter (l/min).
+\item{\code{std.wright}}{
+a numeric vector, data from large flow meter (l/min).
 }
-\item{mini.wright}{
-a numeric vector. Data from mini flow meter (l/min).
+\item{\code{mini.wright}}{
+a numeric vector, data from mini flow meter (l/min).
 }
 }
 }
 \source{
-J.M. Bland and D.G. Altman (1986), \emph{Lancet}, pp. 307--310.
+J.M. Bland and D.G. Altman (1986), Statistical methods for assessing
+agreement between two methods of clinical measurement, \emph{Lancet}, 1:307--310.
 }
 \examples{
 plot(wright)

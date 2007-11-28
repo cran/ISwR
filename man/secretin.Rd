@@ -9,19 +9,19 @@ data from a glucose response experiment.
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{gluc}{a numeric vector. Blood glucose level.}
-    \item{person}{a factor with levels \code{A}--\code{E}.}
-    \item{time}{a factor with levels \code{20}, \code{30}, \code{60}, \code{90} 
+    \item{\code{gluc}}{a numeric vector, blood glucose level.}
+    \item{\code{person}}{a factor with levels \code{A}--\code{E}.}
+    \item{\code{time}}{a factor with levels \code{20}, \code{30}, \code{60}, \code{90} 
       (minutes since injection), and \code{pre} (before injection).}
-    \item{repl}{a factor with levels
-      {\code{a}: 1st sample} and
+    \item{\code{repl}}{a factor with levels
+      {\code{a}: 1st sample};
       {\code{b}: 2nd sample}.}
-    \item{time20plus}{a factor with levels
-      {\code{20+}: 20 minutes or longer since injection} and
+    \item{\code{time20plus}}{a factor with levels
+      {\code{20+}: 20 minutes or longer since injection};
       {\code{pre}: before injection.}}
-    \item{time.comb}{a factor with levels
-      {\code{20}:  20 minutes since injection},
-      {\code{30+}: 30 minutes or longer since injection}, and
+    \item{\code{time.comb}}{a factor with levels
+      {\code{20}:  20 minutes since injection};
+      {\code{30+}: 30 minutes or longer since injection};
       {\code{pre}: before injection.  }}
   }
 }
@@ -29,11 +29,11 @@ data from a glucose response experiment.
  Secretin is a hormone of the duodenal mucous membrane. An extract was
  administered to five patients with arterial hypertension. Primary
  registrations (double determination) of blood glucose were on graph
- paper, later quantified with the smallest of the two measurements
+ paper and later quantified with the smallest of the two measurements
  recorded first.}
  
 \source{
- \emph{Exercises in Applied statistics} (1977), Exercise~5.8, Dept.\ of
+ Anon. (1977), \emph{Exercises in Applied Statistics}, Exercise 5.8, Dept.\ of
  Theoretical Statistics,  
  Aarhus University.
 }

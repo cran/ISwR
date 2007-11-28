@@ -9,16 +9,16 @@ data from a drug test involving dilutions of tuberculin.
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{reaction}{a numeric vector. Reaction sizes (average of diameters) for tuberculin skin pricks.}
-    \item{animal}{a factor with levels \code{1}--\code{6}.}
-    \item{logdose}{a factor with levels \code{0.5}, \code{0}, and \code{-0.5}.}
+    \item{\code{reaction}}{a numeric vector, reaction sizes (average of diameters) for tuberculin skin pricks.}
+    \item{\code{animal}}{a factor with levels \code{1}--\code{6}.}
+    \item{\code{logdose}}{a factor with levels \code{0.5}, \code{0}, and \code{-0.5}.}
   }
 }
 \details{The actual dilutions were 1:100, 1:100$\sqrt{10}$, 1:1000. 
   Setting the middle one to 1 and using base-10 logarithms gives 
   the \code{logdose} values.}
 \source{
- \emph{Exercises in Applied statistics} (1977), part of Exercise~4.15,
+ Anon. (1977), \emph{Exercises in Applied Statistics}, part of Exercise 4.15,
  Dept.\ of 
  Theoretical Statistics,  
  Aarhus University.

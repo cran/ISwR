@@ -10,19 +10,19 @@ It is a subset of the \code{vitcap2} data set.
 \format{
 This data frame contains the following columns:
 \describe{
-\item{group}{
-a numeric vector. Group codes are 1: Exposed > 10~years, 3: Not exposed.
+\item{\code{group}}{
+a numeric vector; group codes are 1: exposed > 10 years, 3: not exposed.
 }
-\item{age}{
-a numeric vector. Age in years.
+\item{\code{age}}{
+a numeric vector, age in years.
 }
-\item{vital.capacity}{
-a numeric vector. Vital capacity (a measure of lung volume) in liters.
+\item{\code{vital.capacity}}{
+a numeric vector, vital capacity (a measure of lung volume) in liters.
 }
 }
 }
 \source{
-  P. Armitage and G. Berry (1987), \emph{Statistical Methods in Medical Research}, 2nd ed., Blackwell, p.~286.
+  P. Armitage and G. Berry (1987), \emph{Statistical Methods in Medical Research}, 2nd ed., Blackwell, p.286.
 }
 \examples{
 plot(vital.capacity~age, pch=group, data=vitcap)

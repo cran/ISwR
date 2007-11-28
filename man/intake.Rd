@@ -9,8 +9,8 @@ It contains paired values of energy intake for 11 women.
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{pre}{a numeric vector. Premenstrual intake (kJ).}
-    \item{post}{a numeric vector. Postmenstrual intake (kJ).}
+    \item{\code{pre}}{a numeric vector, premenstrual intake (kJ).}
+    \item{\code{post}}{a numeric vector, postmenstrual intake (kJ).}
   }
 }
 \source{

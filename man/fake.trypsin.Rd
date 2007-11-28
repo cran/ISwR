@@ -9,13 +9,13 @@
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{trypsin}{
-      a numeric vector. Serum-trypsin in ng/ml.
+    \item{\code{trypsin}}{
+      a numeric vector, serum-trypsin in ng/ml.
     }
-    \item{grp}{
-      a numeric vector. Age coding. See below.
+    \item{\code{grp}}{
+      a numeric vector, age coding. See below.
     }
-    \item{grpf}{
+    \item{\code{grpf}}{
       a factor with levels 
       \code{1}: age 10--19, 
       \code{2}: age 20--29,

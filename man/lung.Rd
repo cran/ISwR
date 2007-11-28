@@ -10,13 +10,13 @@ on three different  methods  of determining human
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{volume}{a numeric vector. Measured lung volume.}
-    \item{method}{a factor with levels \code{A}, \code{B}, and \code{C}. }
-    \item{subject}{a factor with levels \code{1}--\code{6}.}
+    \item{\code{volume}}{a numeric vector, measured lung volume.}
+    \item{\code{method}}{a factor with levels \code{A}, \code{B}, and \code{C}. }
+    \item{\code{subject}}{a factor with levels \code{1}--\code{6}.}
   }
 }
 \source{
- \emph{Exercises in Applied statistics} (1977), Exercise~4.15, Dept.\ of
+ \emph{Anon. (1977),  Exercises in Applied Statistics}, Exercise 4.15, Dept.\ of
  Theoretical Statistics,  
  Aarhus University.
 }

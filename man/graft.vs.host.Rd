@@ -4,38 +4,38 @@
 \description{
   The \code{gvhd} data frame has 37 rows and 7 columns.
   It contains data from patients receiving a nondepleted allogenic bone
-  marrow transplant, with the purpose of finding variables associated with
+  marrow transplant with the purpose of finding variables associated with
   the development of acute graft-versus-host disease.
 }
 \usage{graft.vs.host}
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{pnr}{
-      a numeric vector. Patient number.
+    \item{\code{pnr}}{
+      a numeric vector patient number.
     }
-    \item{rcpage}{
-      a numeric vector. Age of recipient (years).
+    \item{\code{rcpage}}{
+      a numeric vector, age of recipient (years).
     }
-    \item{donage}{
-      a numeric vector. Age of donor (years).
+    \item{\code{donage}}{
+      a numeric vector, age of donor (years).
     }
-    \item{type}{
+    \item{\code{type}}{
       a numeric vector, type of leukaemia coded 1: AML, 2: ALL, 3: CML
       for acute myeloid, acute lymphatic, and chronic myeloid leukaemia. 
     }
-    \item{preg}{
-      a numeric vector code, indicating whether donor has been pregnant. 0: no, 1: yes.
+    \item{\code{preg}}{
+      a numeric vector code indicating whether donor has been pregnant. 0: no, 1: yes.
     }
-    \item{index}{
+    \item{\code{index}}{
       a numeric vector  giving an index of mixed epidermal cell-lymphocyte
       reactions. 
     }
-    \item{gvhd}{
-      a numeric vector code, graft versus host disease. 0: no, 1: yes.
+    \item{\code{gvhd}}{
+      a numeric vector code, graft-versus-host disease, 0: no, 1: yes.
     }
-    \item{time}{a numeric vector. Follow-up time}
-    \item{dead}{a numeric vector code 0: no (censored), 1: yes}
+    \item{\code{time}}{a numeric vector, follow-up time}
+    \item{\code{dead}}{a numeric vector code, 0: no (censored), 1: yes}
   }
 }
 \source{

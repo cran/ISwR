@@ -10,15 +10,15 @@
 \format{
 This data frame contains the following columns:
 \describe{
-  \item{folate}{
-    a numeric vector. Folate concentration ($\mu$g/l).
+  \item{\code{folate}}{
+    a numeric vector, folate concentration ($\mu$g/l).
   }
-  \item{ventilation}{
+  \item{\code{ventilation}}{
     a factor with levels
     \code{N2O+O2,24h}: 50\% nitrous oxide and 50\% oxygen, continuously for
-    24~hours; 
+    24 hours; 
     \code{N2O+O2,op}:  50\% nitrous oxide and 50\% oxygen, only during operation;
-    \code{O2,24h}: no nitrous oxide, but 35--50\% oxygen for 24~hours.
+    \code{O2,24h}: no nitrous oxide but 35\%--50\% oxygen for 24 hours.
 }
 }
 }

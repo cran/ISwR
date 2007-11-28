@@ -4,37 +4,37 @@
 \description{
   The \code{kfm} data frame has 50 rows and 7 columns.
   It was collected by Kim Fleischer Michaelsen and contains data for 50
-  infants of age approximately 2~months. They were weighed immediately
+  infants of age approximately 2 months. They were weighed immediately
   before and
-  after each breast feeding and the measured intake of breast milk was
+  after each breast feeding. and the measured intake of breast milk was
   registered along with various other data.
 }
 \usage{kfm}
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{no}{
-      a numeric vector. Identification number.
+    \item{\code{no}}{
+      a numeric vector, identification number.
     }
-    \item{dl.milk}{
-      a numeric vector. Breast-milk intake (dl/24h).
+    \item{\code{dl.milk}}{
+      a numeric vector, breast-milk intake (dl/24h).
     }
-    \item{sex}{
+    \item{\code{sex}}{
       a factor with levels
       \code{boy} and
-      \code{girl} 
+      \code{girl}. 
     }
-    \item{weight}{
-      a numeric vector. Weight of child (kg).
+    \item{\code{weight}}{
+      a numeric vector, weight of child (kg).
     }
-    \item{ml.suppl}{
-      a numeric vector. Supplementary milk substitute (ml/24h).
+    \item{\code{ml.suppl}}{
+      a numeric vector, supplementary milk substitute (ml/24h).
     }
-    \item{mat.weight}{
-      a numeric vector. Weight of mother (kg).
+    \item{\code{mat.weight}}{
+      a numeric vector, weight of mother (kg).
     }
-    \item{mat.height}{
-      a numeric vector. Height of mother (cm).
+    \item{\code{mat.height}}{
+      a numeric vector, height of mother (cm).
     }
   }
 }

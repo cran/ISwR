@@ -11,14 +11,14 @@
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{hr}{
-      a numeric vector. Heart rate in beats per minute.
+    \item{\code{hr}}{
+      a numeric vector, heart rate in beats per minute.
     }
-    \item{subj}{
+    \item{\code{subj}}{
       a factor with levels
       \code{1} to \code{9}. 
     }
-    \item{time}{
+    \item{\code{time}}{
       a factor with levels
       \code{0} (before),
       \code{30}, 

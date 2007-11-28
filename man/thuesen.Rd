@@ -10,11 +10,11 @@ diabetic patients.
 \format{
 This data frame contains the following columns:
 \describe{
-\item{blood.glucose}{
-a numeric vector. Fasting blood glucose (mmol/l).
+\item{\code{blood.glucose}}{
+a numeric vector, fasting blood glucose (mmol/l).
 }
-\item{short.velocity}{ 
-a numeric vector. Mean circumferential shortening velocity (\%/s).
+\item{\code{short.velocity}}{ 
+a numeric vector, mean circumferential shortening velocity (\%/s).
 }
 }
 }

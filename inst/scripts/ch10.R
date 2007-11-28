@@ -1,138 +1,149 @@
-# Chapter 10: Linear models
-
-# 10.1 Polynomial regression
-
-data(cystfibr) 
-attach(cystfibr)
-summary(lm(pemax~height+I(height^2)))
-pred.frame <- data.frame(height=seq(110,180,2))
-lm.pemax.hq <- lm(pemax~height+I(height^2))
-predict(lm.pemax.hq,interval="pred",newdata=pred.frame)
-pp <- predict(lm.pemax.hq,newdata=pred.frame,interval="pred")
-pc <- predict(lm.pemax.hq,newdata=pred.frame,interval="conf")
-plot(height,pemax,ylim=c(0,200))
-matlines(pred.frame$height,pp,lty=c(1,2,2),col="black")
-matlines(pred.frame$height,pc,lty=c(1,3,3),col="black")
-
-# 10.2 Regression through the origin
-
-x <- runif(20)
-y <- 2*x+rnorm(20,0,0.3)
-summary(lm(y~x))
-summary(lm(y~x-1))
-anova(lm(y~x))
-anova(lm(y~x-1))
-
-# 10.3 Design matrices and dummy variables
-
-data(cystfibr)
-attach(cystfibr)
-model.matrix(pemax~height+weight)
-data(red.cell.folate)
-attach(red.cell.folate)
-model.matrix(folate~ventilation)
-
-# 10.4 Linearity over groups
-
-data(fake.trypsin)
-attach(fake.trypsin)
-summary(fake.trypsin)
-anova(lm(trypsin~grpf))
-anova(lm(trypsin~grp))
-model1 <- lm(trypsin~grp)
-model2 <- lm(trypsin~grpf)
-anova(model1,model2) 
-anova(lm(trypsin~grp+grpf))
-
-xbar.trypsin <- tapply(trypsin,grpf,mean)
-stripchart(trypsin~grp,"jitter",jitter=.1,vertical=T,pch=20)
-lines(1:6,xbar.trypsin,type="b",pch=4,cex=2,lty=2)
-abline(lm(trypsin~grp))
-
-n <- c(32,137, 38,44,16,4)
-tryp.mean <- c(128,152,194,207,215,218)
-tryp.sd <-c(50.9,58.5,49.3,66.3,60,14)
-gr<-1:6
-anova(lm(tryp.mean~gr+factor(gr),weights=n))
-sum(tryp.sd^2*(n-1))
-sum(n-1)
-sum(tryp.sd^2*(n-1))/sum(n-1)
-206698/3318.007 # F statistic for gr
-1-pf(206698/3318.007,1,265) # p-value
-4351/3318.007   # F statistic for factor(gr)
-1-pf(4351/3318.007,4,265) # p-value
-
-# 10.6 Two-way ANOVA with replication
-
-data(coking)
-attach(coking)
-anova(lm(time~width*temp))
-tapply(time,list(width,temp),mean)  
-
-# 10.7 Analysis of covariance
-
-data(hellung)
-hellung
-summary(hellung)
-hellung$glucose <- factor(hellung$glucose, labels=c("Yes","No"))
-summary(hellung)
-attach(hellung)
-
-plot(conc,diameter,pch=as.numeric(glucose))
-locator <- function(n)list(x=4e5,y=26)
-legend(locator(n=1),legend=c("glucose","no glucose"),pch=1:2)
-
-plot(conc,diameter,pch=as.numeric(glucose),log="x")
-plot(conc,diameter,pch=as.numeric(glucose),log="xy")
-
-tethym.gluc <- hellung[glucose=="Yes",]
-tethym.nogluc <- hellung[glucose=="No",]
-lm.nogluc <- lm(log10(diameter)~ log10(conc),data=tethym.nogluc)
-lm.gluc <- lm(log10(diameter)~ log10(conc),data=tethym.gluc)
-abline(lm.nogluc)
-abline(lm.gluc)
-
-summary(lm(log10(diameter)~ log10(conc), data=tethym.gluc))
-summary(lm(log10(diameter)~ log10(conc), data=tethym.nogluc))
-summary(lm(log10(diameter)~log10(conc)*glucose))
-summary(lm(log10(diameter)~log10(conc)+glucose))
-
-var.test(lm.gluc,lm.nogluc)
-
-anova(lm(log10(diameter)~ log10(conc)*glucose))
-anova(lm(log10(diameter)~glucose+log10(conc)))
-anova(lm(log10(diameter)~log10(conc)+ glucose))
-t.test(log10(diameter)~glucose)
-
-# 10.8 Diagnostics
-
-data(thuesen)
-attach(thuesen)
-options(na.action="na.exclude")
-lm.velo <- lm(short.velocity~blood.glucose)
-par(mfrow=c(2,2), mex=0.6)
-plot(lm.velo)
-par(mfrow=c(1,1), mex=1)
-
-par(mfrow=c(2,2), mex=0.6)
-plot(rstandard(lm.velo))
-plot(rstudent(lm.velo))
-plot(dffits(lm.velo),type="l")
-matplot(dfbetas(lm.velo),type="l", col="black")
-lines(sqrt(cooks.distance(lm.velo)), lwd=2)
-par(mfrow=c(1,1), mex=1)
-
-summary(lm(short.velocity~blood.glucose, subset=-13))
-cookd <- cooks.distance(lm(pemax~height+weight))
-cookd <- cookd/max(cookd)
-cook.colors <- gray(1-sqrt(cookd))
-plot(height,weight,bg=cook.colors,pch=21,cex=1.5)
-points(height,weight,pch=1,cex=1.5)
-
-data(secher)
-attach(secher)
-rst <- rstudent(lm(log10(bwt)~log10(ad)+log10(bpd)))
-range(rst)
-rst <- rst/3.71
-plot(ad,bpd,log="xy",bg=gray(1-abs(rst)),
-     pch=ifelse(rst>0,24,25), cex=1.5)
+age <- subset(juul, age >= 10 & age <= 16)$age
+range(age)
+agegr <- cut(age, seq(10,16,2), right=F, include.lowest=T)
+length(age)
+table(agegr)
+agegr2 <- cut(age, seq(10,16,2), right=F)
+table(agegr2)
+q <- quantile(age, c(0, .25, .50, .75, 1))
+q
+ageQ <- cut(age, q, include.lowest=T)
+table(ageQ)
+levels(ageQ) <- c("1st", "2nd", "3rd", "4th")
+levels(agegr) <- c("10-11", "12-13", "14-15") 
+pain <- c(0,3,2,2,1)
+fpain <- factor(pain,levels=0:3, 
+       labels=c("none","mild","medium","severe"))
+text.pain <-  c("none","severe", "medium", "medium", "mild") 
+factor(text.pain)
+ftpain <- factor(text.pain)
+ftpain2 <- factor(ftpain,
+                  levels=c("none", "mild", "medium", "severe"))
+ftpain3 <- ftpain2
+levels(ftpain3) <- list(
+        none="none",
+        intermediate=c("mild","medium"),
+        severe="severe")
+ftpain3
+ftpain4 <- ftpain2
+levels(ftpain4) <- c("none","intermediate","intermediate","severe")
+ftpain4
+stroke <- read.csv2(
+  system.file("rawdata","stroke.csv", package="ISwR"),
+  na.strings=".") 
+names(stroke) <- tolower(names(stroke))
+head(stroke)
+stroke <- transform(stroke,
+   died = as.Date(died, format="%d.%m.%Y"),
+   dstr = as.Date(dstr, format="%d.%m.%Y"))
+summary(stroke$died) 
+summary(stroke$dstr)
+summary(stroke$died - stroke$dstr)
+head(stroke$died - stroke$dstr)
+o <- options(width=60) # minor cheat for visual purposes
+stroke <- transform(stroke,
+  end = pmin(died,  as.Date("1996-1-1"), na.rm = T),
+  dead = !is.na(died) & died < as.Date("1996-1-1"))
+head(stroke)
+options(o); rm(o)
+stroke <- transform(stroke,
+  obstime = as.numeric(end - dstr, units="days")/365.25)  
+rawstroke <- read.csv2(
+  system.file("rawdata","stroke.csv", package="ISwR"),
+  na.strings=".") 
+ix <- c("DSTR", "DIED")
+rawstroke[ix] <- lapply(rawstroke[ix], 
+                        as.Date, format="%d.%m.%Y") 
+head(rawstroke) 
+ix <- 6:9
+rawstroke[ix] <- lapply(rawstroke[ix], 
+                        factor, levels=0:1, labels=c("No","Yes"))   
+strokesub <- ISwR::stroke[1:10,2:3]
+strokesub
+strokesub <- transform(strokesub, 
+  event = !is.na(died))
+strokesub <- transform(strokesub, 
+ obstime = ifelse(event, died-dstr, as.Date("1996-1-1") - dstr))
+strokesub
+juulgrl <- subset(juul, sex==2, select=-c(testvol,sex))
+juulboy <- subset(juul, sex==1, select=-c(menarche,sex))
+juulgrl$sex <- factor("F")
+juulgrl$testvol <- NA
+juulboy$sex <- factor("M")
+juulboy$menarche <- NA
+juulall <- rbind(juulboy, juulgrl)
+names(juulall)
+levels(juulall$sex)
+head(nickel)
+head(ewrates)
+nickel <- transform(nickel, 
+  agr = trunc(agein/5)*5, 
+  ygr = trunc((dob+agein-1)/5)*5+1)  
+mrg <- merge(nickel, ewrates, 
+  by.x=c("agr","ygr"), by.y=c("age","year"))
+head(mrg,10)
+head(alkfos)
+a2 <- alkfos
+names(a2) <- sub("c", "c.", names(a2))
+names(a2)
+a.long <- reshape(a2, varying=2:8, direction="long")
+head(a.long)
+tail(a.long)
+o <- with(a.long, order(id, time))
+head(a.long[o,], 10)
+a.long2 <- na.omit(a.long)
+attr(a.long2, "reshapeLong") <- NULL
+a.wide2 <- reshape(a.long2, direction="wide", v.names="c",
+                 idvar="id", timevar="time")
+head(a.wide2)
+l <- split(a.long$c, a.long$id)
+l[1:3] 
+l2 <- lapply(l, function(x) x / x[1])
+a.long$c.adj <- unsplit(l2, a.long$id)
+subset(a.long, id==1)
+a.long$c.adj <- ave(a.long$c, a.long$id, 
+    FUN = function(x) x / x[1])
+all.equal(unsplit(l2, a.long$id),  a.long$c.adj)
+l <- split(a.long, a.long$id)
+l2 <- lapply(l, transform, c.adj = c / c[1])
+a.long2 <- unsplit(l2, a.long$id)
+all.equal(a.long2$c.adj,  a.long$c.adj)
+head(nickel)
+entry <- pmax(nickel$agein, 60)
+exit <- pmin(nickel$ageout, 65)
+valid <- (entry < exit) 
+entry <- entry[valid]
+exit  <- exit[valid]
+cens <- (nickel$ageout[valid] > 65)  
+nickel60 <- nickel[valid,]
+nickel60$icd[cens] <- 0
+nickel60$agein <- entry
+nickel60$ageout <- exit
+nickel60$agr <- 60
+nickel60$ygr <- with(nickel60, trunc((dob+agein-1)/5)*5+1)
+head(nickel60)
+trim <- function(start)
+{
+  end   <- start + 5
+  entry <- pmax(nickel$agein, start)
+  exit  <- pmin(nickel$ageout, end)
+  valid <- (entry < exit) 
+  cens  <- (nickel$ageout[valid] > end)  
+  result <- nickel[valid,]
+  result$icd[cens] <- 0
+  result$agein <- entry[valid]
+  result$ageout <- exit[valid]
+  result$agr <- start
+  result$ygr <- with(result, trunc((dob+agein-1)/5)*5+1)
+  result
+}
+head(trim(60))
+nickel.expand <- do.call("rbind", lapply(seq(20,95,5), trim))
+head(nickel.expand)
+subset(nickel.expand, id==4)  
+nickel.expand <- merge(nickel.expand, ewrates, 
+  by.x=c("agr","ygr"), by.y=c("age","year"))
+head(nickel.expand)
+all.equal(nickel.expand, ISwR::nickel.expand)
+rm(list=ls())
+while(search()[2] != "package:ISwR") detach()

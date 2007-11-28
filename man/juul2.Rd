@@ -2,36 +2,36 @@
 \alias{juul2}
 \title{Juul's IGF data, extended version}
 \description{
-  The \code{juul2} data frame has 1339 rows and 8 columns.
-  Extended version of |juul|.
+  The \code{juul2} data frame has 1339 rows and 8 columns;
+  extended version of |juul|.
 }
 \usage{juul2}
 \format{
   This data frame contains the following columns:
   \describe{
-    \item{age}{
+    \item{\code{age}}{
       a numeric vector (years).
     }
-    \item{height}{
+    \item{\code{height}}{
       a numeric vector (cm).
     }
-    \item{menarche}{
+    \item{\code{menarche}}{
       a numeric vector. Has menarche occurred (code 1: no, 2: yes)?
     }
-    \item{sex}{
+    \item{\code{sex}}{
       a numeric vector (1: boy, 2: girl).
     }
-    \item{igf1}{
-      a numeric vector. Insulin-like growth factor ($\mu$g/l).
+    \item{\code{igf1}}{
+      a numeric vector, insulin-like growth factor ($\mu$g/l).
     }
-    \item{tanner}{
-      a numeric vector. Codes 1--5: Stages of puberty a.m. Tanner.
+    \item{\code{tanner}}{
+      a numeric vector, codes 1--5: Stages of puberty ad modum Tanner.
     }
-    \item{testvol}{
-      a numeric vector. Testicular volume (ml).
+    \item{\code{testvol}}{
+      a numeric vector, testicular volume (ml).
     }
-    \item{weight}{
-      a numeric vector. Weight (kg).
+    \item{\code{weight}}{
+      a numeric vector, weight (kg).
     }
   }
 }

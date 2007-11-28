@@ -1,62 +1,48 @@
-# Chapter 6: ANOVA and Kruskal-Wallis
-
-# 6.1 One-way analysis of variance
-
-data(red.cell.folate)
-attach(red.cell.folate)
-summary(red.cell.folate)
-anova(lm(folate~ventilation))
-
-data(juul)
-attach(juul)
-anova(lm(igf1~tanner))  ## WRONG!
-juul$tanner <- factor(juul$tanner, 
-                      labels=c("I","II","III","IV","V"))
-detach(juul)
-attach(juul)
-summary(tanner)
-anova(lm(igf1~tanner))
-
-summary(lm(folate~ventilation))
-
-pairwise.t.test(folate, ventilation, p.adj="bonferroni")
-pairwise.t.test(folate,ventilation)
-oneway.test(folate~ventilation)
-pairwise.t.test(folate,ventilation,pool.sd=F)
-
-xbar <- tapply(folate, ventilation, mean)
-s <- tapply(folate, ventilation, sd)
-n <- tapply(folate, ventilation, length)
-sem <- s/sqrt(n)
-stripchart(folate~ventilation,"jitter",jit=0.05,pch=16,vert=T)
-arrows(1:3,xbar+sem,1:3,xbar-sem,angle=90,code=3,length=.1)
-lines(1:3,xbar,pch=4,type="b",cex=2)
-
-bartlett.test(folate~ventilation)
-
-# 6.2 Kruskal-Wallis test
-
-kruskal.test(folate~ventilation)
-
-# 6.3 Two-way analysis of variance
-
-data(heart.rate)
-attach(heart.rate)
-heart.rate
-gl(9,1,36)
-gl(4,9,36,labels=c(0,30,60,120)) 
-anova(lm(hr~subj+time))
-
-interaction.plot(time, subj, hr)
-interaction.plot(ordered(time),subj,hr)
-
-# 6.4 The Friedman test
-
-friedman.test(hr~time|subj,data=heart.rate)
-
-# 6.5 The ANOVA table in regression analysis
-
-data(thuesen)
 attach(thuesen)
+lm(short.velocity~blood.glucose)
+summary(lm(short.velocity~blood.glucose))
+summary(lm(short.velocity~blood.glucose))
+plot(blood.glucose,short.velocity)
+abline(lm(short.velocity~blood.glucose))
+if (.make.epsf) dev.copy2eps(file="velo-gluc-line.ps")
 lm.velo <- lm(short.velocity~blood.glucose)
-anova(lm.velo)
+fitted(lm.velo)
+resid(lm.velo)
+options(error=expression(NULL))
+plot(blood.glucose,short.velocity)
+lines(blood.glucose,fitted(lm.velo))
+options(error=NULL)
+lines(blood.glucose[!is.na(short.velocity)],fitted(lm.velo))
+cc <- complete.cases(thuesen)
+options(na.action=na.exclude)
+lm.velo <- lm(short.velocity~blood.glucose)
+fitted(lm.velo)
+segments(blood.glucose,fitted(lm.velo),
+         blood.glucose,short.velocity)
+if (.make.epsf) dev.copy2eps(file="velo-gluc-seg.ps")
+plot(fitted(lm.velo),resid(lm.velo))
+if (.make.epsf) dev.copy2eps(file="velo-gluc-resid.ps")
+qqnorm(resid(lm.velo))
+if (.make.epsf) dev.copy2eps(file="velo-gluc-qqnorm.ps")
+predict(lm.velo)
+predict(lm.velo,int="c")
+predict(lm.velo,int="p")
+pred.frame <- data.frame(blood.glucose=4:20)
+pp <- predict(lm.velo, int="p", newdata=pred.frame)
+pc <- predict(lm.velo, int="c", newdata=pred.frame)
+plot(blood.glucose,short.velocity,
+     ylim=range(short.velocity, pp, na.rm=T))
+pred.gluc <- pred.frame$blood.glucose
+matlines(pred.gluc, pc, lty=c(1,2,2), col="black")
+matlines(pred.gluc, pp, lty=c(1,3,3), col="black")
+if (.make.epsf) dev.copy2eps(file="velo-gluc-final.ps")
+options(error=expression(NULL))
+cor(blood.glucose,short.velocity)
+options(error=NULL)
+cor(blood.glucose,short.velocity,use="complete.obs")
+cor(thuesen,use="complete.obs")
+cor.test(blood.glucose,short.velocity)
+cor.test(blood.glucose,short.velocity,method="spearman")
+cor.test(blood.glucose,short.velocity,method="kendall")
+rm(list=ls())
+while(search()[2] != "package:ISwR") detach()
