@@ -1,5 +1,4 @@
 \name{caesarean}
-\non_function{}
 \alias{caesarean}
 \alias{caesar.shoe}
 \title{Caesarean section and maternal shoe size}
@@ -7,6 +6,7 @@
   The table \code{caesar.shoe} contains the relation between caesarean
   section and maternal shoe sizes (UK sizes!)
 }
+\usage{caesar.shoe}
 \format{
   A matrix with two rows and six columns
 }
@@ -15,7 +15,6 @@
   10.1, Chapman & Hall.
 }
 \examples{
-data(caesarean)
 prop.trend.test(caesar.shoe["Yes",],margin.table(caesar.shoe,2))
 }
 \keyword{datasets}

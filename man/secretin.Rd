@@ -1,12 +1,11 @@
 \name{secretin}
 \alias{secretin}
-\non_function{}
 \title{Secretin-induced blood glucose changes}
-\usage{data(secretin)}
 \description{
 The \code{secretin} data frame has 50 rows and 6 columns. It contains
 data from a glucose response experiment.
 }
+\usage{secretin}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -39,6 +38,6 @@ data from a glucose response experiment.
  Aarhus University.
 }
 \examples{
-data(secretin)
+
 }
 \keyword{datasets}

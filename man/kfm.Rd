@@ -1,6 +1,5 @@
 \name{kfm}
 \alias{kfm}
-\non_function{}
 \title{Breast-feeding data}
 \description{
   The \code{kfm} data frame has 50 rows and 7 columns.
@@ -10,6 +9,7 @@
   after each breast feeding and the measured intake of breast milk was
   registered along with various other data.
 }
+\usage{kfm}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -46,7 +46,7 @@
  Original data.
 }
 \examples{
-data(kfm)
+
 plot(dl.milk~mat.height,pch=c(1,2)[sex],data=kfm)
 }
 \keyword{datasets}

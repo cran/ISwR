@@ -1,11 +1,11 @@
 \name{fake.trypsin}
 \alias{fake.trypsin}
-\non_function{}
 \title{ Trypsin by age groups }
 \description{
   The \code{trypsin} data frame has 271 rows and 3 columns.
   Serum levels of immunoreactive trypsin in healthy volunteers (faked!).
 }
+\usage{fake.trypsin}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -34,7 +34,7 @@
   9.12, Chapman & Hall.
 }
 \examples{
-data(fake.trypsin)
+
 plot(trypsin~grp, data=fake.trypsin)
 }
 \keyword{datasets}

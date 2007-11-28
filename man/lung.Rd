@@ -1,13 +1,12 @@
 \name{lung}
 \alias{lung}
-\non_function{}
 \title{Methods for determining lung volume}
-\usage{data(lung)}
 \description{
 The \code{lung} data frame has 18 rows and 3 columns. It contains data
 on three different  methods  of determining human
   lung volume.
 }
+\usage{lung}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -22,6 +21,6 @@ on three different  methods  of determining human
  Aarhus University.
 }
 \examples{
-data(lung)
+
 }
 \keyword{datasets}

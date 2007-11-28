@@ -1,6 +1,5 @@
 \name{juul}
 \alias{juul}
-\non_function{}
 \title{Juul's IGF data}
 \description{
   The \code{juul} data frame has 1339 rows and 6 columns.
@@ -9,6 +8,7 @@
   bulk of the data collected in connection with school physical
   examinations. 
 }
+\usage{juul}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -36,7 +36,7 @@
  Original data.
 }
 \examples{
-data(juul)
+
 plot(igf1~age, data=juul)
 }
 \keyword{datasets}

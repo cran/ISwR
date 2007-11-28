@@ -1,12 +1,11 @@
 \name{tb.dilute}
 \alias{tb.dilute}
-\non_function{}
 \title{Tuberculin dilution assay}
-\usage{data(tb.dilute)}
 \description{
 The \code{tb.dilute} data frame has 18 rows and 3 columns. It contains
 data from a drug test involving dilutions of tuberculin.
 }
+\usage{tb.dilute}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -25,6 +24,6 @@ data from a drug test involving dilutions of tuberculin.
  Aarhus University.
 }
 \examples{
-data(tb.dilute)
+
 }
 \keyword{datasets}

@@ -1,12 +1,12 @@
 \name{tlc}
 \alias{tlc}
-\non_function{}
 \title{Total lung capacity}
 \description{
 The \code{tlc} data frame has 32 rows and 4 columns. It contains data on
 pretransplant total lung capacity (TLC) for recipients of heart-lung
 transplants, by whole-body plethysmography.
 }
+\usage{tlc}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -29,7 +29,7 @@ a numeric vector. Total lung capacity (l).
   Exercise 12.5,  10.1, Chapman & Hall.
 }
 \examples{
-data(tlc)
+
 plot(tlc~height,data=tlc)
 }
 \keyword{datasets}

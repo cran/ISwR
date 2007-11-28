@@ -1,6 +1,5 @@
 \name{melanom}
 \alias{melanom}
-\non_function{}
 \title{Survival after malignant melanoma}
 \description{
   The \code{melanom} data frame has 205 rows and 7 columns.
@@ -8,6 +7,7 @@
   malignant melanoma collected at Odense University Hospital by K.T.
   Drzewiecki. 
 }
+\usage{melanom}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -38,7 +38,7 @@ a numeric vector code. 1: female, 2: male.
   Counting Processes}, Appendix 1, Springer-Verlag. 
 }
 \examples{
-data(melanom)
+
 require(survival)
 plot(survfit(Surv(days,status==1),data=melanom))
 }

@@ -1,12 +1,12 @@
 \name{thuesen}
 \alias{thuesen}
-\non_function{}
 \title{Ventricular shortening velocity}
 \description{
 The \code{thuesen} data frame has 24 rows and 2 columns.
 It contains ventricular shortening velocity and blood glucose for type 1
 diabetic patients.  
 }
+\usage{thuesen}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -23,7 +23,7 @@ a numeric vector. Mean circumferential shortening velocity (\%/s).
   11.6, Chapman & Hall.
 }
 \examples{
-data(thuesen)
+
 plot(short.velocity~blood.glucose, data=thuesen)
 }
 \keyword{datasets}

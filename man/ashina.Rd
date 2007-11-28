@@ -1,6 +1,5 @@
 \name{ashina}
 \alias{ashina}
-\non_function{}
 \title{Ashina's crossover trial}
 \description{
   The \code{ashina} data frame has 16 rows and 3 columns.
@@ -12,6 +11,7 @@
   was calculated as the sum of the differences from baseline. All
   patients received both treatment and placebo in randomized order.
 }
+\usage{ashina}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -33,7 +33,6 @@
   M.Ashina et al. (1999), \emph{Lancet} 353, pp. 287--289 
 }
 \examples{
-data(ashina)
 plot(vas.active~vas.plac,pch=grp,data=ashina)
 abline(0,1)
 }

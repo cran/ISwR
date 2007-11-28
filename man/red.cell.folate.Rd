@@ -1,12 +1,12 @@
 \name{red.cell.folate}
 \alias{red.cell.folate}
-\non_function{}
 \title{Red cell folate data}
 \description{
   The \code{folate} data frame has 22 rows and 2 columns.
   It contains data on red cell folate levels in patients receiving three
   different methods of ventilation during  anesthesia.
 }
+\usage{red.cell.folate}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -27,7 +27,7 @@ This data frame contains the following columns:
   9.10, Chapman & Hall.
 }
 \examples{
-data(red.cell.folate)
+
 plot(folate~ventilation,data=red.cell.folate)
 }
 \keyword{datasets}

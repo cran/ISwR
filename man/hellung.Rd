@@ -1,12 +1,12 @@
 \name{hellung}
 \alias{hellung}
-\non_function{}
 \title{Growth of Tetrahymena cells}
 \description{
   The \code{hellung} data frame has 51 rows and 3 columns.
   diameter and concentration of \emph{Tetrahymena} cells, with and without
   glucose added to growth medium.
 }
+\usage{hellung}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -26,7 +26,7 @@
   Table~1.1, FADLs Forlag (in Danish).
 }
 \examples{
-data(hellung)
+
 plot(diameter~conc,pch=glucose,log="xy",data=hellung)
 }
 \keyword{datasets}

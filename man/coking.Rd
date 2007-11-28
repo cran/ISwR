@@ -1,12 +1,12 @@
 \name{coking}
 \alias{coking}
-\non_function{}
 \title{Coking data}
 \description{
   The \code{coking} data frame has 18 rows and 3 columns.
   It contains the time to coking in an experiment where the oven width
   and temperature were varied.
 }
+\usage{coking}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -22,7 +22,7 @@
   Engineers}, 5th ed., Prentice-Hall. 
 }
 \examples{
-data(coking)
+
 attach(coking)
 matplot(tapply(time,list(width,temp),mean))
 detach(coking)

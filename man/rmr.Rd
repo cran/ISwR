@@ -1,11 +1,11 @@
 \name{rmr}
 \alias{rmr}
-\non_function{}
 \title{Resting metabolic rate}
 \description{
 The \code{rmr} data frame has 44 rows and 2 columns.
 It contains resting metabolic rate and body weight for 44 women.
 }
+\usage{rmr}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -23,7 +23,7 @@ a numeric vector. Metabolic rate (kcal/24~hr).
 }
 
 \examples{
-data(rmr)
+
 plot(metabolic.rate~body.weight,data=rmr)
 }
 \keyword{datasets}

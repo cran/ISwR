@@ -1,11 +1,10 @@
 \name{malaria}
 \alias{malaria}
-\non_function{}
 \title{Malaria antibody data}
-\usage{data(malaria)}
 \description{
 The \code{malaria} data frame has 100 rows and 4 columns.
 }
+\usage{malaria}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -28,7 +27,7 @@ The \code{malaria} data frame has 100 rows and 4 columns.
  Unpublished data.
 }
 \examples{
-data(malaria)
+
 summary(malaria)
 }
 \keyword{datasets}

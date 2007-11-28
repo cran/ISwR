@@ -1,6 +1,5 @@
 \name{heart.rate}
 \alias{heart.rate}
-\non_function{}
 \title{Heart rates after enalaprilat}
 \description{
  The \code{heart.rate} data frame has 36 rows and 3 columns.
@@ -8,6 +7,7 @@
  and shortly after administration of enalaprilat, in a balanced two-way
  layout.
 }
+\usage{heart.rate}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -32,7 +32,7 @@
   12.2, Chapman & Hall.
 }
 \examples{
-data(heart.rate)
+
 evalq(interaction.plot(time,subj,hr), heart.rate)
 }
 \keyword{datasets}

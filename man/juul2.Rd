@@ -1,11 +1,11 @@
 \name{juul2}
 \alias{juul2}
-\non_function{}
 \title{Juul's IGF data, extended version}
 \description{
   The \code{juul2} data frame has 1339 rows and 8 columns.
   Extended version of |juul|.
 }
+\usage{juul2}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -39,7 +39,7 @@
  Original data.
 }
 \examples{
-data(juul2)
+
 plot(igf1~age, data=juul2)
 }
 \keyword{datasets}

@@ -1,6 +1,5 @@
 \name{secher}
 \alias{secher}
-\non_function{}
 \title{Birth weight and ultrasonography}
 \description{
 The \code{secher} data frame has 107 rows and 4 columns. It contains
@@ -8,6 +7,7 @@ ultrasonographic measurements of fetuses immediately before birth and
 subsequent 
 birth weight.
 }
+\usage{secher}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -32,7 +32,7 @@ a numeric vector. Observation number.
   Secher et al. (1987), Eur.j.obs.gyn.repr.biol., 24, 1--11.
 }
 \examples{
-data(secher)
+
 plot(bwt~ad, data=secher, log="xy")
 }
 \keyword{datasets}

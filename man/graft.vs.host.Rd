@@ -1,6 +1,5 @@
 \name{graft.vs.host}
 \alias{graft.vs.host}
-\non_function{}
 \title{Graft versus host disease}
 \description{
   The \code{gvhd} data frame has 37 rows and 7 columns.
@@ -8,6 +7,7 @@
   marrow transplant, with the purpose of finding variables associated with
   the development of acute graft-versus-host disease.
 }
+\usage{graft.vs.host}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -43,7 +43,7 @@
   Exercise 12.3, Chapman & Hall.
 }
 \examples{
-data(graft.vs.host)
+
 plot(jitter(gvhd,0.2)~index,data=graft.vs.host)
 }
 \keyword{datasets}

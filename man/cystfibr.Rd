@@ -1,12 +1,12 @@
 \name{cystfibr}
 \alias{cystfibr}
-\non_function{}
 \title{Cystic fibrosis lung function data}
 \description{
   The \code{cystfibr} data frame has 25 rows and 10 columns.
   It contains lung function data for cystic fibrosis patients (7--23 years
   old)
 }
+\usage{cystfibr}
 \format{
   This data frame contains the following columns:
   \describe{

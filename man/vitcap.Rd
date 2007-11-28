@@ -1,12 +1,12 @@
 \name{vitcap}
 \alias{vitcap}
-\non_function{}
 \title{Vital capacity}
 \description{
 The \code{vitcap} data frame has 24 rows and 3 columns.
 It contains data on vital capacity for workers in the cadmium industry.
 It is a subset of the \code{vitcap2} data set.
 }
+\usage{vitcap}
 \format{
 This data frame contains the following columns:
 \describe{
@@ -25,7 +25,7 @@ a numeric vector. Vital capacity (a measure of lung volume) in liters.
   P. Armitage and G. Berry (1987), \emph{Statistical Methods in Medical Research}, 2nd ed., Blackwell, p.~286.
 }
 \examples{
-data(vitcap)
+
 plot(vital.capacity~age, pch=group, data=vitcap)
 }
 \keyword{datasets}

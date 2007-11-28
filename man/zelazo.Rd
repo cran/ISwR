@@ -1,9 +1,8 @@
 \name{zelazo}
 \alias{zelazo}
-\non_function{}
 \title{Age at walking}
-\usage{data(zelazo)}
 \description{The \code{zelazo} object is a list with four components.} 
+\usage{zelazo}
 \format{
   This is a list containing data on age at
   walking (in months) for four groups of infants: 
@@ -32,7 +31,7 @@ into a data frame for some uses. The rather unusual format of this data set
 mimics that situation. 
 }
 \examples{
-data(zelazo)
+
 }
 \keyword{datasets}
 

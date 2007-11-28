@@ -1,11 +1,11 @@
 \name{energy}
 \alias{energy}
-\non_function{}
 \title{Energy expenditure}
 \description{
   The \code{energy} data frame has 22 rows and 2 columns.
   It contains data on the energy expenditure in groups of lean and obese women.
 }
+\usage{energy}
 \format{
   This data frame contains the following columns:
   \describe{
@@ -24,7 +24,7 @@
   9.4, Chapman & Hall.
 }
 \examples{
-data(energy)
+
 plot(expend~stature,data=energy)
 }
 \keyword{datasets}
