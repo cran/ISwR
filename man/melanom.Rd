@@ -38,7 +38,6 @@ a numeric vector code. 1: female, 2: male.
   Counting Processes}, Appendix 1, Springer-Verlag. 
 }
 \examples{
-
 require(survival)
 plot(survfit(Surv(days,status==1),data=melanom))
 }

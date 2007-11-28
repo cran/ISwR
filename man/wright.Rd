@@ -22,7 +22,6 @@ a numeric vector. Data from mini flow meter (l/min).
 J.M. Bland and D.G. Altman (1986), \emph{Lancet}, pp. 307--310.
 }
 \examples{
-
 plot(wright)
 abline(0,1)
 }

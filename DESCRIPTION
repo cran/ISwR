@@ -1,5 +1,5 @@
 Package: ISwR
-Version: 1.0-7
+Version: 1.0-8
 Date: 2007-11-28
 Title: Introductory Statistics with R
 Author: Peter Dalgaard
@@ -11,4 +11,4 @@ Suggests: survival
 License: GPL (>= 2)
 ZipData: no
 LazyData: yes
-Packaged: Wed Nov 28 13:57:03 2007; pd
+Packaged: Wed Nov 28 15:31:32 2007; pd

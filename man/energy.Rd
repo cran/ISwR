@@ -24,7 +24,6 @@
   9.4, Chapman & Hall.
 }
 \examples{
-
 plot(expend~stature,data=energy)
 }
 \keyword{datasets}

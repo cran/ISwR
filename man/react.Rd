@@ -15,7 +15,6 @@
  Aarhus University.
 }
 \examples{
-
 hist(react) # not good because of discretization effects...
 plot(density(react))
 }

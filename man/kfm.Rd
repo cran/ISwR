@@ -46,7 +46,6 @@
  Original data.
 }
 \examples{
-
 plot(dl.milk~mat.height,pch=c(1,2)[sex],data=kfm)
 }
 \keyword{datasets}

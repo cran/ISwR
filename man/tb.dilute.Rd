@@ -23,7 +23,4 @@ data from a drug test involving dilutions of tuberculin.
  Theoretical Statistics,  
  Aarhus University.
 }
-\examples{
-
-}
 \keyword{datasets}

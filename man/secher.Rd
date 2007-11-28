@@ -28,11 +28,9 @@ a numeric vector. Observation number.
 \source{
   D. Kronborg and L.T. Skovgaard (1990), \emph{Regressionsanalyse},
   Table~3.1, FADLs Forlag (in Danish).
-
   Secher et al. (1987), Eur.j.obs.gyn.repr.biol., 24, 1--11.
 }
 \examples{
-
 plot(bwt~ad, data=secher, log="xy")
 }
 \keyword{datasets}

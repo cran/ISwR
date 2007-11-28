@@ -27,7 +27,6 @@ The \code{malaria} data frame has 100 rows and 4 columns.
  Unpublished data.
 }
 \examples{
-
 summary(malaria)
 }
 \keyword{datasets}

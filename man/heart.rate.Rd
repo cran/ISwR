@@ -32,8 +32,6 @@
   12.2, Chapman & Hall.
 }
 \examples{
-
 evalq(interaction.plot(time,subj,hr), heart.rate)
 }
 \keyword{datasets}
-

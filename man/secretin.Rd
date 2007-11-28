@@ -37,7 +37,4 @@ data from a glucose response experiment.
  Theoretical Statistics,  
  Aarhus University.
 }
-\examples{
-
-}
 \keyword{datasets}

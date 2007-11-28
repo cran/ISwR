@@ -29,7 +29,6 @@ a numeric vector. Total lung capacity (l).
   Exercise 12.5,  10.1, Chapman & Hall.
 }
 \examples{
-
 plot(tlc~height,data=tlc)
 }
 \keyword{datasets}

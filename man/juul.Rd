@@ -36,7 +36,6 @@
  Original data.
 }
 \examples{
-
 plot(igf1~age, data=juul)
 }
 \keyword{datasets}

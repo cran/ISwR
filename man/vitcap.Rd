@@ -25,7 +25,6 @@ a numeric vector. Vital capacity (a measure of lung volume) in liters.
   P. Armitage and G. Berry (1987), \emph{Statistical Methods in Medical Research}, 2nd ed., Blackwell, p.~286.
 }
 \examples{
-
 plot(vital.capacity~age, pch=group, data=vitcap)
 }
 \keyword{datasets}

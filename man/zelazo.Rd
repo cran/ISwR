@@ -30,10 +30,4 @@ students will use one vector per group and will need to reformat data
 into a data frame for some uses. The rather unusual format of this data set
 mimics that situation. 
 }
-\examples{
-
-}
 \keyword{datasets}
-
-
-

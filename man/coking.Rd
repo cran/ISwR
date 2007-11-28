@@ -22,7 +22,6 @@
   Engineers}, 5th ed., Prentice-Hall. 
 }
 \examples{
-
 attach(coking)
 matplot(tapply(time,list(width,temp),mean))
 detach(coking)

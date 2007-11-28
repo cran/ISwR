@@ -43,7 +43,6 @@
   Exercise 12.3, Chapman & Hall.
 }
 \examples{
-
 plot(jitter(gvhd,0.2)~index,data=graft.vs.host)
 }
 \keyword{datasets}

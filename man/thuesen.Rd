@@ -23,7 +23,6 @@ a numeric vector. Mean circumferential shortening velocity (\%/s).
   11.6, Chapman & Hall.
 }
 \examples{
-
 plot(short.velocity~blood.glucose, data=thuesen)
 }
 \keyword{datasets}

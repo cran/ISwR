@@ -34,7 +34,6 @@
   9.12, Chapman & Hall.
 }
 \examples{
-
 plot(trypsin~grp, data=fake.trypsin)
 }
 \keyword{datasets}

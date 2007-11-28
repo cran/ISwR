@@ -26,7 +26,6 @@
   Table~1.1, FADLs Forlag (in Danish).
 }
 \examples{
-
 plot(diameter~conc,pch=glucose,log="xy",data=hellung)
 }
 \keyword{datasets}

@@ -27,7 +27,6 @@ a numeric vector code. 0: male, 1: female.
   Wiley. 
 }
 \examples{
-
 plot(bp~obese,pch = ifelse(sex==1, "F", "M"), data = bp.obese)
 }
 \keyword{datasets}

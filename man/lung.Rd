@@ -20,7 +20,4 @@ on three different  methods  of determining human
  Theoretical Statistics,  
  Aarhus University.
 }
-\examples{
-
-}
 \keyword{datasets}

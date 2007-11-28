@@ -17,9 +17,7 @@ It contains paired values of energy intake for 11 women.
   D.G. Altman (1991), \emph{Practical Statistics for Medical Research}, Table
   9.3, Chapman & Hall.
 }
-
 \examples{
-
 plot(intake$pre, intake$post)
 }
 \keyword{datasets}

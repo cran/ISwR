@@ -21,9 +21,7 @@ a numeric vector. Metabolic rate (kcal/24~hr).
   D.G. Altman (1991), \emph{Practical Statistics for Medical Research},
   Exercise~11.2, Chapman & Hall. 
 }
-
 \examples{
-
 plot(metabolic.rate~body.weight,data=rmr)
 }
 \keyword{datasets}

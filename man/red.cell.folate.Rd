@@ -27,7 +27,6 @@ This data frame contains the following columns:
   9.10, Chapman & Hall.
 }
 \examples{
-
 plot(folate~ventilation,data=red.cell.folate)
 }
 \keyword{datasets}
