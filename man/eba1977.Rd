@@ -1,6 +1,6 @@
 \name{eba1977}
 \alias{eba1977}
-\encoding{utf8}
+\encoding{UTF-8}
 \docType{data}
 \title{Lung cancer incidence in four Danish cities 1968--1971}
 \description{
