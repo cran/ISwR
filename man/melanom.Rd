@@ -1,5 +1,6 @@
 \name{melanom}
 \alias{melanom}
+\encoding{UTF-8}
 \title{Survival after malignant melanoma}
 \description{
   The \code{melanom} data frame has 205 rows and 7 columns.
@@ -33,7 +34,7 @@ a numeric vector code; 1: female, 2: male.
 }
 }
 \source{
-  P.K. Andersen, {\O}. Borgan, R.D. Gill, and N. Keiding (1991),
+  P.K. Andersen, \enc{Ø}{O}. Borgan, R.D. Gill, and N. Keiding (1991),
   \emph{Statistical Models Based on 
   Counting Processes}, Appendix 1, Springer-Verlag. 
 }

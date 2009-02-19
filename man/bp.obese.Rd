@@ -23,7 +23,7 @@ a numeric vector code, 0: male, 1: female.
 }
 }
 \source{
-  B.W. Brown and M. Hollander (1977), {\em Statistics: A Biomedical
+  B.W. Brown and M. Hollander (1977), \emph{Statistics: A Biomedical
   Introduction,} 
   Wiley. 
 }

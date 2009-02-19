@@ -22,7 +22,8 @@
       a numeric vector (1: boy, 2: girl).
     }
     \item{\code{igf1}}{
-      a numeric vector, insulin-like growth factor ($\mu$g/l).
+      a numeric vector, insulin-like growth factor
+      (\eqn{\mu\mathrm{g}/\mathrm{l}}{microgram per liter}).
     }
     \item{\code{tanner}}{
       a numeric vector, codes 1--5: Stages of puberty ad modum Tanner.

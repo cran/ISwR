@@ -3,7 +3,7 @@ ps.options(height=3.5, width=4.4, pointsize=8, horiz=F)
 par(mar=c(4,4,3,2)+.1)
 set.seed(310367)
 x <- y <- c(7, 9, NA, NA, 13)
-all(is.na(x) == is.na(y)) & all((x == y)[!is.na(x)]) 
+all(is.na(x) == is.na(y)) & all((x == y)[!is.na(x)])
 x <- factor(c("Huey", "Dewey", "Louie", "Huey"))
 y <- c("blue", "red", "green")
 x
@@ -14,7 +14,7 @@ sapply(1:10, function(i) mean(rexp(20)))
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 x <- 1:10
-z <- append(x, 1.23, after=7) 
+z <- append(x, 1.23, after=7)
 z
 z <- c(x[1:7],1.23,x[8:10])
 z
@@ -34,7 +34,7 @@ while(search()[2] != "package:ISwR") detach()
 dbinom(10, size=10, prob=0.8)
 punif(0.9) # this one is obvious...
 1 - pchisq(6.5, df=2)
-pnorm(-2) * 2      
+pnorm(-2) * 2
 qnorm(1-.01/2)
 qnorm(1-.005/2)
 qnorm(1-.001/2)
@@ -42,7 +42,7 @@ qnorm(.25)
 qnorm(.75)
 rbinom(10, 1, .5)
 ifelse(rbinom(10, 1, .5) == 1, "H", "T")
-c("H", "T")[1 + rbinom(10, 1, .5)] 
+c("H", "T")[1 + rbinom(10, 1, .5)]
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 x <- 1:5 ; y <- rexp(5,1) ; opar <- par(mfrow=c(2,2))
@@ -73,7 +73,7 @@ wilcox.test(react)
 wilcox.test(vital.capacity~group, data=vitcap)
 attach(intake) ; opar <- par(mfrow=c(2,2))
 plot(post ~ pre) ; abline(0,1)
-plot((post+pre)/2, post - pre, 
+plot((post+pre)/2, post - pre,
     ylim=range(0,post-pre)); abline(h=0)
 hist(post-pre)
 qqnorm(post-pre)
@@ -84,7 +84,7 @@ shapiro.test(react[-c(1,334)])
 qqnorm(react[-c(1,334)])
 attach(ashina)
 t.test(vas.active, vas.plac, paired=TRUE)
-t.test((vas.active-vas.plac)[grp==1], 
+t.test((vas.active-vas.plac)[grp==1],
        (vas.plac-vas.active)[grp==2])
 t.test(rnorm(25))$p.value       #repeat 10x
 t.test(rt(25,df=2))$p.value     #repeat 10x
@@ -118,7 +118,7 @@ t.test(zelazo$active,zelazo$ctr.8w) # first vs. last
 t.test(zelazo$active,unlist(zelazo[-1])) # first vs. rest
 fit <- lm(volume~method+subject, data=lung)
 anova(fit)
-summary(fit)  
+summary(fit)
 kruskal.test(walk ~ group)
 wilcox.test(zelazo$active,zelazo$ctr.8w) # first vs. last
 wilcox.test(zelazo$active,unlist(zelazo[-1])) # first vs. rest
@@ -134,7 +134,7 @@ while(search()[2] != "package:ISwR") detach()
 binom.test(0, 10, p=.20, alt="less")
 binom.test(0, 13, p=.20, alt="less")
 binom.test(0, 14, p=.20, alt="less")
-prop.test(c(210,122),c(747,661))  
+prop.test(c(210,122),c(747,661))
 M <- matrix(c(23,7,18,13),2,2)
 chisq.test(M)
 fisher.test(M)
@@ -142,7 +142,7 @@ prop.test(M)
 tbl <- c(42, 157, 47, 62, 4, 15, 4, 1, 8, 28, 9, 7)
 dim(tbl) <- c(2,2,3)
 dimnames(tbl) <- list(c("A","B"),
-                      c("not pierced","pierced"), 
+                      c("not pierced","pierced"),
                       c("ok","broken","cracked"))
 ftable(tbl)
 fisher.test(tbl["B",,]) # slice analysis
@@ -171,10 +171,10 @@ levels(f) <- c("low", "intermediate", "high", "very high")
 bcmort2 <- within(bcmort,{
   period <- area <- cohort
   levels(period) <- rep(c("1991-2001","1981-1991"), each=2)
-  levels(area) <- rep(c("Cph+Frb","Nat"),2) 
+  levels(area) <- rep(c("Cph+Frb","Nat"),2)
 })
 summary(bcmort2)
-ashina.long <- reshape(ashina, direction="long", 
+ashina.long <- reshape(ashina, direction="long",
                     varying=1:2, timevar="treat")
 ashina.long <- within(ashina.long, {
      m <- matrix(c(2,1,1,2),2)
@@ -185,18 +185,18 @@ ashina.long <- within(ashina.long, {
      rm(m)
 })
 within(ashina.long,
-  period2 <- ifelse(treat != "active", 
+  period2 <- ifelse(treat != "active",
              as.numeric(grp), 3 - as.numeric(grp))
 )
-stroke.trim <- function(t1, t2) 
+stroke.trim <- function(t1, t2)
    subset(transform(stroke,
-                    entry=t1, exit=pmin(t2, obsmonths), 
-                    dead=dead & obsmonths <= t2), 
+                    entry=t1, exit=pmin(t2, obsmonths),
+                    dead=dead & obsmonths <= t2),
           entry < exit)
-stroke2 <- do.call(rbind, mapply(stroke.trim, 
+stroke2 <- do.call(rbind, mapply(stroke.trim,
        c(0,0.5,2,12), c(0.5,2,12,Inf), SIMPLIFY=F))
-table(stroke$dead)        
-table(stroke2$dead)        
+table(stroke$dead)
+table(stroke2$dead)
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 summary(lm(log(bwt) ~ log(bpd) + log(ad), data=secher))
@@ -215,7 +215,7 @@ par(mfrow=c(2,2))
 plot(lm(tlc ~ ., data=tlc), which=1:4) # slightly worse
 par(opar)
 summary(lm(sqrt(igf1) ~ age, data=juul2, subset=(age >= 25)))
-anova(lm(sqrt(igf1) ~ age + weight + height, 
+anova(lm(sqrt(igf1) ~ age + weight + height,
            data=juul2, subset=(age >= 25)))
 summary(lm(dl.milk ~ . - no, data=kfm))
 summary(lm(dl.milk ~ . - no - mat.weight, data=kfm))
@@ -223,7 +223,7 @@ summary(lm(dl.milk ~ . - no - mat.weight - sex, data=kfm))
 summary(lm(dl.milk ~ weight + mat.height, data=kfm))
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
-ashina.long <- reshape(ashina, direction="long", 
+ashina.long <- reshape(ashina, direction="long",
                     varying=1:2, timevar="treat")
 ashina.long <- within(ashina.long, {
      m <- matrix(c(2,1,1,2),2)
@@ -254,16 +254,16 @@ slopes <- reaction[logdose==0.5] - reaction[logdose==-0.5]
 t.test(slopes)
 
 anova(lm(reaction ~ animal*ld))
-a <- gl(2, 2, 8) 
+a <- gl(2, 2, 8)
 b <- gl(2, 4, 8)
 x <- 1:8
 y <- c(1:4,8:5)
-z <- rnorm(8)    
+z <- rnorm(8)
 model.matrix(~ a:b)         ; lm(z ~ a:b)
-model.matrix(~ a * b)       ; lm(z ~ a * b)   
-model.matrix(~ a:x)         ; lm(z ~ a:x)   
-model.matrix(~ a * x)       ; lm(z ~ a * x)   
-model.matrix(~ b * (x + y)) ; lm(z ~ b * (x + y))  
+model.matrix(~ a * b)       ; lm(z ~ a * b)
+model.matrix(~ a:x)         ; lm(z ~ a:x)
+model.matrix(~ a * x)       ; lm(z ~ a * x)
+model.matrix(~ b * (x + y)) ; lm(z ~ b * (x + y))
 attach(secretin)
 model1 <- lm(gluc ~ person * time)
 model2 <- lm(gluc ~ person + time)
@@ -284,7 +284,7 @@ plot(vital.capacity~age, pch=(20:22)[group])
 vit.fit <- lm(vital.capacity ~ age*group)
 summary(vit.fit)
 drop1(vit.fit, test="F")
-for (i in 1:3) abline(lm(vital.capacity ~ age, 
+for (i in 1:3) abline(lm(vital.capacity ~ age,
                          subset=as.numeric(group)==i), lty=i)
 legend(20, 3.5 ,legend=levels(group), pch=20:22, lty=1:3)
 juul.prepub <- subset(juul, tanner==1)
@@ -303,11 +303,11 @@ summary(update(fit.aicopt, ~ . - sex))
 plot(update(fit.aicopt, ~ . - sex - ml.suppl), which=1:4)
 par(opar)
 juulyoung <- subset(juul, age < 25)
-juulyoung <- transform(juulyoung, 
+juulyoung <- transform(juulyoung,
                  sex=factor(sex), tanner=factor(tanner))
-fit.untf <- lm(igf1 ~ age * sex * tanner, data=juulyoung, 
+fit.untf <- lm(igf1 ~ age * sex * tanner, data=juulyoung,
                na.action=na.exclude)
-plot(fitted(fit.untf) ~ age, data=juulyoung, 
+plot(fitted(fit.untf) ~ age, data=juulyoung,
      col=c("red","green")[sex])
 fit.log <- update(fit.untf, log(igf1) ~ .)
 fit.sqrt <- update(fit.untf, sqrt(igf1) ~ .)
@@ -340,14 +340,14 @@ counts <- c(13,40,157,40,21,61)
 total <- c(108,264,375,310,181,162)
 age <- gl(3,1,6)
 type <- gl(2,3,6)
-anova(glm(counts/total~age+type,weights=total, binomial), 
+anova(glm(counts/total~age+type,weights=total, binomial),
       test="Chisq")
 juul.girl <- transform(subset(juul,age>8 & age<20 &
                                complete.cases(menarche)),
                        menarche=factor(menarche))
-logit.menarche <- glm(menarche~age+I(age^2)+I(age^3), 
+logit.menarche <- glm(menarche~age+I(age^2)+I(age^3),
                       binomial, data=juul.girl)
-probit.menarche <- glm(menarche~age+I(age^2)+I(age^3), 
+probit.menarche <- glm(menarche~age+I(age^2)+I(age^3),
                        binomial(probit), data=juul.girl)
 summary(logit.menarche)
 summary(probit.menarche)
@@ -358,15 +358,15 @@ p.probit <- predict(probit.menarche,newdata=newages,type="resp")
 matplot(Age,cbind(p.probit,p.logit),type="l")
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
-library(survival)    
+library(survival)
 attach(graft.vs.host)
 plot(survfit(Surv(time,dead)~gvhd))
 survdiff(Surv(time,dead)~gvhd)
 summary(coxph(Surv(time,dead) ~ gvhd)) # for comparison
-summary(coxph(Surv(time,dead) ~ 
+summary(coxph(Surv(time,dead) ~
               gvhd + log(index) + donage + rcpage + preg))
 attach(melanom)
-cox1 <- coxph(Surv(days, status==1) ~ 
+cox1 <- coxph(Surv(days, status==1) ~
               log(thick) + sex + strata(ulc))
 new <- data.frame(sex=2, thick=c(0.1, 0.2, 0.5))
 svfit <-  survfit(cox1,newdata=new)
@@ -374,12 +374,12 @@ plot(svfit[2], ylim=c(.985, 1))
 summary(coxph(Surv(obsmonths, dead)~age+sex, data=stroke))
 summary(coxph(Surv(obsmonths, dead)~sex, data=stroke))
 with(stroke, tapply(age,sex,mean))
-stroke.trim <- function(t1, t2) 
+stroke.trim <- function(t1, t2)
    subset(transform(stroke,
-                    entry=t1, exit=pmin(t2, obsmonths), 
-                    dead=dead & obsmonths <= t2), 
+                    entry=t1, exit=pmin(t2, obsmonths),
+                    dead=dead & obsmonths <= t2),
           entry < exit)
-stroke2 <- do.call(rbind, mapply(stroke.trim, 
+stroke2 <- do.call(rbind, mapply(stroke.trim,
        c(0,0.5,2,12), c(0.5,2,12,Inf), SIMPLIFY=F))
 summary(coxph(Surv(entry, exit, dead)~age+sex, data=stroke2))
 rm(list=ls())
@@ -387,22 +387,22 @@ while(search()[2] != "package:ISwR") detach()
 bcmort2 <- within(bcmort,{
   period <- area <- cohort
   levels(period) <- rep(c("1991-2001","1981-1991"), each=2)
-  levels(area) <- rep(c("Cph+Frb","Nat"),2) 
+  levels(area) <- rep(c("Cph+Frb","Nat"),2)
 })
 bcfit <- glm(bc.deaths ~ (age + period + area)^2, poisson,
              offset=log(p.yr), data=bcmort2)
 summary(bcfit)
 drop1(bcfit, test="Chisq")
 confint(bcfit, parm="period1981-1991:areaNat")
-stroke.trim <- function(t1, t2) 
+stroke.trim <- function(t1, t2)
    subset(transform(stroke,
-                    entry=t1, exit=pmin(t2, obsmonths), 
-                    dead=dead & obsmonths <= t2), 
+                    entry=t1, exit=pmin(t2, obsmonths),
+                    dead=dead & obsmonths <= t2),
           entry < exit)
-stroke2 <- do.call(rbind, mapply(stroke.trim, 
+stroke2 <- do.call(rbind, mapply(stroke.trim,
        c(0,0.5,2,12), c(0.5,2,12,Inf), SIMPLIFY=F))
-summary(glm(dead~sex+age+factor(entry), poisson, 
-       offset=log(exit-entry), data=stroke2))  
+summary(glm(dead~sex+age+factor(entry), poisson,
+       offset=log(exit-entry), data=stroke2))
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 girls <- subset(juul2, age<20 & age>5 & sex==2)
@@ -416,9 +416,9 @@ fit.girls <- nls(height~alpha*exp(-beta*exp(-gamma*age)),
 fit.young <- nls(height~alpha*exp(-beta*exp(-gamma*age)),
        start=stval, data=young)
 ms.pooled <- (deviance(fit.boys) + deviance(fit.girls))/(499+625)
-ms.diff <- (deviance(fit.young) - 
+ms.diff <- (deviance(fit.young) -
             deviance(fit.boys) - deviance(fit.girls))/3
-ms.diff/ms.pooled   
+ms.diff/ms.pooled
 fit.young2 <- nls(height~(alpha+da*(sex==1))*
                    exp(-(beta+db*(sex==1))*
                    exp(-(gamma+dg*(sex==1))*age)),
@@ -427,18 +427,20 @@ fit.young2 <- nls(height~(alpha+da*(sex==1))*
 summary(fit.young2)
 anova(fit.young, fit.young2)
 e1 <- subset(philion, experiment==1)
-fit <- nls(sqrt(response) ~ sqrt(ymax / (1 + (dose/ec50)^exp(la))), 
-        start=list(ymax=28, ec50=.3, la=0), data=e1, 
+fit <- nls(sqrt(response) ~ sqrt(ymax / (1 + (dose/ec50)^exp(la))),
+        start=list(ymax=28, ec50=.3, la=0), data=e1,
         lower=c(.1,.0001,-Inf), algorithm="port")
 summary(fit)
 confint(fit)
-p <- profile(fit, alphamax=.2)
+# p <- profile(fit, alphamax=.2)
+# alphamax semantics got changed in R 2.8
+p <- profile(fit)
 par(mfrow=c(3,1))
 plot(p)
 confint(p)
 e1 <- subset(philion, experiment==1)
-fit1 <- nls(sqrt(response) ~ sqrt(ymax / (1 + dose/b)^exp(la)), 
-        start=list(ymax=28, b=.3, la=0), data=e1, 
+fit1 <- nls(sqrt(response) ~ sqrt(ymax / (1 + dose/b)^exp(la)),
+        start=list(ymax=28, b=.3, la=0), data=e1,
         lower=c(.1,.0001,-Inf), algorithm="port")
 summary(fit1)
 fit2 <- nls(sqrt(response) ~ sqrt(ymax / (1 +
@@ -449,6 +451,6 @@ summary(fit2)
 dd <- seq(0,1,,200)
 yy <- predict(fit, newdata=data.frame(dose=dd))
 y1 <- predict(fit2, newdata=data.frame(dose=dd))
-matplot(dd,cbind(yy,y1)^2, type="l")  
+matplot(dd,cbind(yy,y1)^2, type="l")
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()

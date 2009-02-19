@@ -34,9 +34,9 @@ bcmort
   just those accepting the invitation to be screened.    
 }
 \source{
-  A.H. Olsen et al. (2005), Breast cancer mortality in {C}openhagen after
+  A.H. Olsen et al. (2005), Breast cancer mortality in Copenhagen after
   introduction of
-  mammography screening. {\em British Medical Journal}, 330: 220--222.
+  mammography screening. \emph{British Medical Journal}, 330: 220--222.
 
 }
 \keyword{datasets}

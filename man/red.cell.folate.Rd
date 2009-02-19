@@ -11,7 +11,8 @@
 This data frame contains the following columns:
 \describe{
   \item{\code{folate}}{
-    a numeric vector, folate concentration ($\mu$g/l).
+    a numeric vector, folate concentration (\eqn{\mu\mathrm{g}/\mathrm{l}}{microgram per
+    liter}).
   }
   \item{\code{ventilation}}{
     a factor with levels

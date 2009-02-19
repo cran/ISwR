@@ -14,7 +14,7 @@ data from a drug test involving dilutions of tuberculin.
     \item{\code{logdose}}{a factor with levels \code{0.5}, \code{0}, and \code{-0.5}.}
   }
 }
-\details{The actual dilutions were 1:100, 1:100$\sqrt{10}$, 1:1000. 
+\details{The actual dilutions were 1:100, \eqn{1:100\sqrt{10}}, 1:1000. 
   Setting the middle one to 1 and using base-10 logarithms gives 
   the \code{logdose} values.}
 \source{

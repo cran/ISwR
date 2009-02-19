@@ -17,7 +17,7 @@
       a numeric vector, cell concentration (counts/ml).
     }
     \item{\code{diameter}}{
-      a numeric vector, cell diameter (\eqn{\mu}m).
+      a numeric vector, cell diameter (\eqn{\mu \mathrm{m}}{micrometre}).
     }
   }
 }
