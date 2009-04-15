@@ -124,11 +124,11 @@ order(intake$post)
 o <- order(intake$post)
 intake$post[o]
 intake$pre[o]
-intake.sorted <- intake[o,] 
-save.image("ch1.RData") 
+intake.sorted <- intake[o,]
+save.image("ch1.RData")
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
-load("ch1.RData")  
+load("ch1.RData")
 .foo <- dev.copy2eps
 rm(dev.copy2eps)
 ls()
@@ -174,11 +174,11 @@ title(main="Main title", sub="subtitle",
 set.seed(1234) #make it happen....
 x <- rnorm(100)
 hist(x,freq=F)
-curve(dnorm(x),add=T)  
+curve(dnorm(x),add=T)
 h <- hist(x, plot=F)
 ylim <- range(0, h$density, dnorm(0))
 hist(x, freq=F, ylim=ylim)
-curve(dnorm(x), add=T)  
+curve(dnorm(x), add=T)
 if (.make.epsf) dev.copy2eps(file="hist+norm.ps")
 hist.with.normal <- function(x, xlab=deparse(substitute(x)),...)
 {
@@ -191,12 +191,12 @@ hist.with.normal <- function(x, xlab=deparse(substitute(x)),...)
 }
 hist.with.normal(rnorm(200))
 y <- 12345
-x <- y/2 
+x <- y/2
 while (abs(x*x-y) > 1e-10) x <- (x + y/x)/2
 x
-x^2  
-x <- y/2 
-repeat{ 
+x^2
+x <- y/2
+repeat{
     x <- (x + y/x)/2
     if (abs(x*x-y) < 1e-10) break
 }
@@ -261,7 +261,7 @@ sum(!is.na(igf1))
 summary(igf1)
 summary(juul)
 detach(juul)
-juul$sex <- factor(juul$sex,labels=c("M","F"))            
+juul$sex <- factor(juul$sex,labels=c("M","F"))
 juul$menarche <- factor(juul$menarche,labels=c("No","Yes"))
 juul$tanner <- factor(juul$tanner,
                       labels=c("I","II","III","IV","V"))
@@ -295,7 +295,7 @@ n <- tapply(folate, ventilation, length)
 cbind(mean=xbar, std.dev=s, n=n)
 tapply(igf1, tanner, mean)
 tapply(igf1, tanner, mean, na.rm=T)
-aggregate(juul[c("age","igf1")], 
+aggregate(juul[c("age","igf1")],
           list(sex=juul$sex), mean, na.rm=T)
 aggregate(juul[c("age","igf1")], juul["sex"], mean, na.rm=T)
 by(juul, juul["sex"], summary)
@@ -340,7 +340,7 @@ margin.table(tanner.sex,1)
 margin.table(tanner.sex,2)
 prop.table(tanner.sex,1)
 tanner.sex/sum(tanner.sex)
-total.caff <- margin.table(caff.marital,2) 
+total.caff <- margin.table(caff.marital,2)
 total.caff
 barplot(total.caff, col="white")
 if (.make.epsf) dev.copy2eps(file="simple-bar.ps")
@@ -351,7 +351,7 @@ barplot(t(caff.marital), col="white", beside=T)
 barplot(prop.table(t(caff.marital),2), col="white", beside=T)
 par(mfrow=c(1,1))
 if (.make.epsf) dev.copy2eps(file="mat-4-bar.ps")
-barplot(prop.table(t(caff.marital),2),beside=T, 
+barplot(prop.table(t(caff.marital),2),beside=T,
 legend.text=colnames(caff.marital),
 col=c("white","grey80","grey50","black"))
 if (.make.epsf) dev.copy2eps(file="pretty-bar.ps")
@@ -442,7 +442,7 @@ summary(red.cell.folate)
 anova(lm(folate~ventilation))
 attach(juul)
 anova(lm(igf1~tanner))  ## WRONG!
-juul$tanner <- factor(juul$tanner, 
+juul$tanner <- factor(juul$tanner,
                       labels=c("I","II","III","IV","V"))
 detach(juul)
 attach(juul)
@@ -467,7 +467,7 @@ kruskal.test(folate~ventilation)
 attach(heart.rate)
 heart.rate
 gl(9,1,36)
-gl(4,9,36,labels=c(0,30,60,120)) 
+gl(4,9,36,labels=c(0,30,60,120))
 anova(lm(hr~subj+time))
 interaction.plot(time, subj, hr)
 if (.make.epsf) dev.copy2eps(file="interaction-plot.ps")
@@ -483,15 +483,15 @@ binom.test(39,215,.15)
 lewitt.machin.success <- c(9,4)
 lewitt.machin.total <- c(12,13)
 prop.test(lewitt.machin.success,lewitt.machin.total)
-matrix(c(9,4,3,9),2) 
+matrix(c(9,4,3,9),2)
 lewitt.machin <- matrix(c(9,4,3,9),2)
 fisher.test(lewitt.machin)
 chisq.test(lewitt.machin)
 caesar.shoe
 caesar.shoe.yes <- caesar.shoe["Yes",]
-caesar.shoe.total <- margin.table(caesar.shoe,2)    
-caesar.shoe.yes                     
-caesar.shoe.total                          
+caesar.shoe.total <- margin.table(caesar.shoe,2)
+caesar.shoe.yes
+caesar.shoe.total
 prop.test(caesar.shoe.yes,caesar.shoe.total)
 prop.trend.test(caesar.shoe.yes,caesar.shoe.total)
 caff.marital <- matrix(c(652,1537,598,242,36,46,38,21,218
@@ -503,11 +503,11 @@ caff.marital
 chisq.test(caff.marital)
 chisq.test(caff.marital)$expected
 chisq.test(caff.marital)$observed
-E <- chisq.test(caff.marital)$expected   
-O <- chisq.test(caff.marital)$observed   
+E <- chisq.test(caff.marital)$expected
+O <- chisq.test(caff.marital)$observed
 (O-E)^2/E
 attach(juul)
-chisq.test(tanner,sex)            
+chisq.test(tanner,sex)
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 curve(pt(x,25,ncp=3), from=0, to=6)
@@ -535,11 +535,11 @@ q
 ageQ <- cut(age, q, include.lowest=T)
 table(ageQ)
 levels(ageQ) <- c("1st", "2nd", "3rd", "4th")
-levels(agegr) <- c("10-11", "12-13", "14-15") 
+levels(agegr) <- c("10-11", "12-13", "14-15")
 pain <- c(0,3,2,2,1)
-fpain <- factor(pain,levels=0:3, 
+fpain <- factor(pain,levels=0:3,
        labels=c("none","mild","medium","severe"))
-text.pain <-  c("none","severe", "medium", "medium", "mild") 
+text.pain <-  c("none","severe", "medium", "medium", "mild")
 factor(text.pain)
 ftpain <- factor(text.pain)
 ftpain2 <- factor(ftpain,
@@ -555,13 +555,13 @@ levels(ftpain4) <- c("none","intermediate","intermediate","severe")
 ftpain4
 stroke <- read.csv2(
   system.file("rawdata","stroke.csv", package="ISwR"),
-  na.strings=".") 
+  na.strings=".")
 names(stroke) <- tolower(names(stroke))
 head(stroke)
 stroke <- transform(stroke,
    died = as.Date(died, format="%d.%m.%Y"),
    dstr = as.Date(dstr, format="%d.%m.%Y"))
-summary(stroke$died) 
+summary(stroke$died)
 summary(stroke$dstr)
 summary(stroke$died - stroke$dstr)
 head(stroke$died - stroke$dstr)
@@ -572,22 +572,22 @@ stroke <- transform(stroke,
 head(stroke)
 options(o); rm(o)
 stroke <- transform(stroke,
-  obstime = as.numeric(end - dstr, units="days")/365.25)  
+  obstime = as.numeric(end - dstr, units="days")/365.25)
 rawstroke <- read.csv2(
   system.file("rawdata","stroke.csv", package="ISwR"),
-  na.strings=".") 
+  na.strings=".")
 ix <- c("DSTR", "DIED")
-rawstroke[ix] <- lapply(rawstroke[ix], 
-                        as.Date, format="%d.%m.%Y") 
-head(rawstroke) 
+rawstroke[ix] <- lapply(rawstroke[ix],
+                        as.Date, format="%d.%m.%Y")
+head(rawstroke)
 ix <- 6:9
-rawstroke[ix] <- lapply(rawstroke[ix], 
-                        factor, levels=0:1, labels=c("No","Yes"))   
+rawstroke[ix] <- lapply(rawstroke[ix],
+                        factor, levels=0:1, labels=c("No","Yes"))
 strokesub <- ISwR::stroke[1:10,2:3]
 strokesub
-strokesub <- transform(strokesub, 
+strokesub <- transform(strokesub,
   event = !is.na(died))
-strokesub <- transform(strokesub, 
+strokesub <- transform(strokesub,
  obstime = ifelse(event, died-dstr, as.Date("1996-1-1") - dstr))
 strokesub
 juulgrl <- subset(juul, sex==2, select=-c(testvol,sex))
@@ -601,10 +601,10 @@ names(juulall)
 levels(juulall$sex)
 head(nickel)
 head(ewrates)
-nickel <- transform(nickel, 
-  agr = trunc(agein/5)*5, 
-  ygr = trunc((dob+agein-1)/5)*5+1)  
-mrg <- merge(nickel, ewrates, 
+nickel <- transform(nickel,
+  agr = trunc(agein/5)*5,
+  ygr = trunc((dob+agein-1)/5)*5+1)
+mrg <- merge(nickel, ewrates,
   by.x=c("agr","ygr"), by.y=c("age","year"))
 head(mrg,10)
 head(alkfos)
@@ -622,11 +622,11 @@ a.wide2 <- reshape(a.long2, direction="wide", v.names="c",
                  idvar="id", timevar="time")
 head(a.wide2)
 l <- split(a.long$c, a.long$id)
-l[1:3] 
+l[1:3]
 l2 <- lapply(l, function(x) x / x[1])
 a.long$c.adj <- unsplit(l2, a.long$id)
 subset(a.long, id==1)
-a.long$c.adj <- ave(a.long$c, a.long$id, 
+a.long$c.adj <- ave(a.long$c, a.long$id,
     FUN = function(x) x / x[1])
 all.equal(unsplit(l2, a.long$id),  a.long$c.adj)
 l <- split(a.long, a.long$id)
@@ -636,10 +636,10 @@ all.equal(a.long2$c.adj,  a.long$c.adj)
 head(nickel)
 entry <- pmax(nickel$agein, 60)
 exit <- pmin(nickel$ageout, 65)
-valid <- (entry < exit) 
+valid <- (entry < exit)
 entry <- entry[valid]
 exit  <- exit[valid]
-cens <- (nickel$ageout[valid] > 65)  
+cens <- (nickel$ageout[valid] > 65)
 nickel60 <- nickel[valid,]
 nickel60$icd[cens] <- 0
 nickel60$agein <- entry
@@ -652,8 +652,8 @@ trim <- function(start)
   end   <- start + 5
   entry <- pmax(nickel$agein, start)
   exit  <- pmin(nickel$ageout, end)
-  valid <- (entry < exit) 
-  cens  <- (nickel$ageout[valid] > end)  
+  valid <- (entry < exit)
+  cens  <- (nickel$ageout[valid] > end)
   result <- nickel[valid,]
   result$icd[cens] <- 0
   result$agein <- entry[valid]
@@ -665,8 +665,8 @@ trim <- function(start)
 head(trim(60))
 nickel.expand <- do.call("rbind", lapply(seq(20,95,5), trim))
 head(nickel.expand)
-subset(nickel.expand, id==4)  
-nickel.expand <- merge(nickel.expand, ewrates, 
+subset(nickel.expand, id==4)
+nickel.expand <- merge(nickel.expand, ewrates,
   by.x=c("agr","ygr"), by.y=c("age","year"))
 head(nickel.expand)
 all.equal(nickel.expand, ISwR::nickel.expand)
@@ -682,7 +682,7 @@ if (exists("weight",.GlobalEnv,inh=F)) rm(weight)
 summary(lm(pemax~age+sex+height+weight+bmp+fev1+rv+frc+tlc))
 1-25.5^2/var(pemax)
 anova(lm(pemax~age+sex+height+weight+bmp+fev1+rv+frc+tlc))
-955.4+155.0+632.3+2862.2+1549.1+561.9+194.6+92.4 
+955.4+155.0+632.3+2862.2+1549.1+561.9+194.6+92.4
 7002.9/8
 875.36/648.7
 1-pf(1.349407,8,15)
@@ -731,7 +731,7 @@ anova(lm(trypsin~grpf))
 anova(lm(trypsin~grp))
 model1 <- lm(trypsin~grp)
 model2 <- lm(trypsin~grpf)
-anova(model1,model2) 
+anova(model1,model2)
 anova(lm(trypsin~grp+grpf))
 xbar.trypsin <- tapply(trypsin,grpf,mean)
 stripchart(trypsin~grp, method="jitter",
@@ -753,7 +753,7 @@ sum(tryp.sd^2*(n-1))/sum(n-1)
 1-pf(4351/3318.007,4,265) # p-value
 attach(coking)
 anova(lm(time~width*temp))
-tapply(time,list(width,temp),mean)  
+tapply(time,list(width,temp),mean)
 hellung
 summary(hellung)
 hellung$glucose <- factor(hellung$glucose, labels=c("Yes","No"))
@@ -822,7 +822,7 @@ n.hyp <- c(5,2,1,0,35,13,15,8)
 data.frame(smoking,obesity,snoring,n.tot,n.hyp)
 expand.grid(smoking=no.yes, obesity=no.yes, snoring=no.yes)
 hyp.tbl <- cbind(n.hyp,n.tot-n.hyp)
-hyp.tbl 
+hyp.tbl
 glm(hyp.tbl~smoking+obesity+snoring,family=binomial("logit"))
 glm(hyp.tbl~smoking+obesity+snoring,binomial)
 prop.hyp <- n.hyp/n.tot
@@ -833,7 +833,7 @@ glm.hyp <- glm(hyp.tbl~smoking+obesity+snoring,binomial)
 summary(glm.hyp)
 summary(glm(formula = hyp.tbl ~ smoking + obesity + snoring, family =
 binomial))
-glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial) 
+glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial)
 summary(glm.hyp)
 glm.hyp <- glm(hyp.tbl~smoking+obesity+snoring,binomial)
 anova(glm.hyp, test="Chisq")
@@ -843,7 +843,7 @@ glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial)
 anova(glm.hyp, test="Chisq")
 drop1(glm.hyp, test="Chisq")
 caesar.shoe
-shoe.score <- 1:6                             
+shoe.score <- 1:6
 shoe.score
 summary(glm(t(caesar.shoe)~shoe.score,binomial))
 anova(glm(t(caesar.shoe)~shoe.score,binomial))
@@ -860,7 +860,7 @@ if (.make.epsf) dev.copy2eps(file="profile-hyp.ps")
 exp(cbind(OR=coef(glm.hyp), confint(glm.hyp)))
 juul$menarche <- factor(juul$menarche, labels=c("No","Yes"))
 juul$tanner <- factor(juul$tanner)
-juul.girl <- subset(juul,age>8 & age<20 & 
+juul.girl <- subset(juul,age>8 & age<20 &
                     complete.cases(menarche))
 attach(juul.girl)
 summary(glm(menarche~age,binomial))
@@ -876,7 +876,7 @@ predicted.probability <- predict(glm.menarche,
 plot(predicted.probability ~ Age, type="l")
 if (.make.epsf) dev.copy2eps(file="menarche-fit.ps")
 fitted(glm.hyp)
-prop.hyp   
+prop.hyp
 fitted(glm.hyp)*n.tot
 data.frame(fit=fitted(glm.hyp)*n.tot,n.hyp,n.tot)
 age.group <- cut(age,c(8,10,12,13,14,15,16,18,20))
@@ -892,7 +892,7 @@ anova(glm(menarche~age+age.gr,binomial))
 1-pchisq(8.058,3)
 anova(glm(menarche~age+I(age^2)+I(age^3)+age.gr,binomial))
 glm.menarche <- glm(menarche~age+I(age^2)+I(age^3), binomial)
-predicted.probability <- 
+predicted.probability <-
     predict(glm.menarche, newages, type="resp")
 plot(predicted.probability ~ Age, type="l")
 points(rel.freq~c(9,11,12.5,13.5,14.5,15.5,17,19), pch=5)
@@ -903,8 +903,8 @@ library(survival)
 attach(melanom)
 names(melanom)
 Surv(days, status==1)
-survfit(Surv(days,status==1)) 
-surv.all <- survfit(Surv(days,status==1))
+survfit(Surv(days,status==1)~1)
+surv.all <- survfit(Surv(days,status==1)~1)
 summary(surv.all)
 plot(surv.all)
 if (.make.epsf) dev.copy2eps(file="surv-all.ps")
@@ -929,7 +929,7 @@ min(fitted(fit))
 pchisq(deviance(fit), df.residual(fit), lower=F)
 pchisq(23.45, 15, lower=F)
 drop1(fit, test="Chisq")
-fit2 <- glm(cases~(city=="Fredericia")+age+offset(log(pop)), 
+fit2 <- glm(cases~(city=="Fredericia")+age+offset(log(pop)),
                  family=poisson)
 anova(fit, fit2, test="Chisq")
 drop1(fit2,  test="Chisq")
@@ -937,14 +937,14 @@ summary(fit2)
 cf <- coefficients(summary(fit2))
 est <- cf[,1]
 s.e. <- cf[,2]
-rr <- exp(cbind(est, est - s.e.*qnorm(.975), est 
+rr <- exp(cbind(est, est - s.e.*qnorm(.975), est
                      + s.e.*qnorm(.975) ))
 colnames(rr) <- c("RateRatio", "CI.lo","CI.hi")
 rr
 exp(cbind(coef(fit2), confint(fit2)))
 head(nickel.expand)
 subset(nickel.expand, id==325)
-nickel.expand <- within(nickel.expand, 
+nickel.expand <- within(nickel.expand,
      lung.cancer <- as.numeric(icd %in% c(162,163)))
 attach(nickel.expand)
 pyr <- tapply(ageout-agein,list(ygr,agr), sum)
@@ -1010,7 +1010,7 @@ y <- rnorm(11, mean=5*exp(-t/5), sd=.2)
 plot(y ~ t)
 if (.make.epsf) dev.copy2eps(file="nonlin-sim.ps")
 nlsout <- nls(y ~ A*exp(-alpha*t), start=c(A=2, alpha=0.05))
-summary(nlsout) 
+summary(nlsout)
 attach(subset(juul2, age<20 & age>5 & sex==1))
 plot(height ~ age)
 if (.make.epsf) dev.copy2eps(file="juul-a-h.ps")
@@ -1033,9 +1033,9 @@ lines(newage, predict(fit,newdata=data.frame(age=newage)),lwd=2)
 if (.make.epsf) dev.copy2eps(file="log-gompertz.ps")
 # count quoted in text, subtract 1 for SSD()
 length(ls(pattern="SS.*", "package:stats"))-1
-summary(nls(height~SSgompertz(age, Asym, b2, b3))) 
+summary(nls(height~SSgompertz(age, Asym, b2, b3)))
 cf <- coef(nls(height ~ SSgompertz(age, Asym, b2, b3)))
-summary(nls(log(height) ~ 
+summary(nls(log(height) ~
                log(as.vector(SSgompertz(age,Asym, b2, b3))),
             start=as.list(cf)))
 par(mfrow=c(3,1))

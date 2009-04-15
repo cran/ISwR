@@ -3613,14 +3613,14 @@ Attaching package: 'survival'
 [181] 3476+ 3523+ 3667+ 3695+ 3695+ 3776+ 3776+ 3830+ 3856+ 3872+
 [191] 3909+ 3968+ 4001+ 4103+ 4119+ 4124+ 4207+ 4310+ 4390+ 4479+
 [201] 4492+ 4668+ 4688+ 4926+ 5565+
-> survfit(Surv(days,status==1)) 
-Call: survfit(formula = Surv(days, status == 1))
+> survfit(Surv(days,status==1)~1) 
+Call: survfit(formula = Surv(days, status == 1) ~ 1)
 
       n  events  median 0.95LCL 0.95UCL 
     205      57     Inf     Inf     Inf 
-> surv.all <- survfit(Surv(days,status==1))
+> surv.all <- survfit(Surv(days,status==1)~1)
 > summary(surv.all)
-Call: survfit(formula = Surv(days, status == 1))
+Call: survfit(formula = Surv(days, status == 1) ~ 1)
 
  time n.risk n.event survival std.err lower 95% CI upper 95% CI
   185    201       1    0.995 0.00496        0.985        1.000
