@@ -7,7 +7,7 @@ par(mar=c(4,4,3,2)+.1)
 options(width=66, useFancyQuotes="TeX")
 suppressWarnings(RNGversion("1.5.1")) #Yes, Kinderman-Ramage was buggy...
 set.seed(310367)
-Rprof(interval=.001)
+#Rprof(interval=.001)
 plot(rnorm(500))
 2 + 2
 exp(-2)
