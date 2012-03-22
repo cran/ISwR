@@ -1,3 +1,21 @@
+
+R version 2.14.2 (2012-02-29)
+Copyright (C) 2012 The R Foundation for Statistical Computing
+ISBN 3-900051-07-0
+Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
 > library(ISwR)
 > .make.epsf <- Sys.getenv("EPSF")=="y"
 > ps.options(height=3.5, width=4.4, pointsize=8, horiz=F)
@@ -317,11 +335,11 @@ $short.velocity
  [1] 3885 3910 4220 4680 5160 5265 5645 5975 6790 6900 7335
 > intake$pre[o]
  [1] 5640 5260 5470 6515 6180 6805 6390 7515 7515 8230 8770
-> intake.sorted <- intake[o,] 
-> save.image("ch1.RData") 
+> intake.sorted <- intake[o,]
+> save.image("ch1.RData")
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
-> load("ch1.RData")  
+> load("ch1.RData")
 > .foo <- dev.copy2eps
 > rm(dev.copy2eps)
 > ls()
@@ -442,11 +460,11 @@ $short.velocity
 > set.seed(1234) #make it happen....
 > x <- rnorm(100)
 > hist(x,freq=F)
-> curve(dnorm(x),add=T)  
+> curve(dnorm(x),add=T)
 > h <- hist(x, plot=F)
 > ylim <- range(0, h$density, dnorm(0))
 > hist(x, freq=F, ylim=ylim)
-> curve(dnorm(x), add=T)  
+> curve(dnorm(x), add=T)
 > if (.make.epsf) dev.copy2eps(file="hist+norm.ps")
 > hist.with.normal <- function(x, xlab=deparse(substitute(x)),...)
 + {
@@ -459,14 +477,14 @@ $short.velocity
 + }
 > hist.with.normal(rnorm(200))
 > y <- 12345
-> x <- y/2 
+> x <- y/2
 > while (abs(x*x-y) > 1e-10) x <- (x + y/x)/2
 > x
 [1] 111.1081
-> x^2  
+> x^2
 [1] 12345
-> x <- y/2 
-> repeat{ 
+> x <- y/2
+> repeat{
 +     x <- (x + y/x)/2
 +     if (abs(x*x-y) < 1e-10) break
 + }
@@ -480,9 +498,10 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
+<bytecode: 0x10344ae68>
 <environment: namespace:base>
 > length(methods("print")) # quoted in text
-[1] 138
+[1] 170
 > thuesen2 <- read.table(
 +    system.file("rawdata","thuesen.txt",package="ISwR"), header=T)
 > thuesen2
@@ -514,7 +533,7 @@ UseMethod("print")
 > levels(secretin$time)
 [1] "20"  "30"  "60"  "90"  "pre"
 > system.file("rawdata", "thuesen.txt", package="ISwR")
-[1] "/home/pd/Rlibrary/ISwR/rawdata/thuesen.txt"
+[1] "/Users/pd/BIOSTAT/books/ISWR-2nd-ed/ISwR.Rcheck/ISwR/rawdata/thuesen.txt"
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > sample(1:40,5)
@@ -610,16 +629,16 @@ UseMethod("print")
  3rd Qu.:16.855   3rd Qu.:  2.000   3rd Qu.:2.000  
  Max.   :83.000   Max.   :  2.000   Max.   :2.000  
  NA's   : 5.000   NA's   :635.000   NA's   :5.000  
-      igf1           tanner           testvol       
- Min.   : 25.0   Min.   :  1.000   Min.   :  1.000  
- 1st Qu.:202.2   1st Qu.:  1.000   1st Qu.:  1.000  
- Median :313.5   Median :  2.000   Median :  3.000  
- Mean   :340.2   Mean   :  2.640   Mean   :  7.896  
- 3rd Qu.:462.8   3rd Qu.:  5.000   3rd Qu.: 15.000  
- Max.   :915.0   Max.   :  5.000   Max.   : 30.000  
- NA's   :321.0   NA's   :240.000   NA's   :859.000  
+      igf1           tanner          testvol       
+ Min.   : 25.0   Min.   :  1.00   Min.   :  1.000  
+ 1st Qu.:202.2   1st Qu.:  1.00   1st Qu.:  1.000  
+ Median :313.5   Median :  2.00   Median :  3.000  
+ Mean   :340.2   Mean   :  2.64   Mean   :  7.896  
+ 3rd Qu.:462.8   3rd Qu.:  5.00   3rd Qu.: 15.000  
+ Max.   :915.0   Max.   :  5.00   Max.   : 30.000  
+ NA's   :321.0   NA's   :240.00   NA's   :859.000  
 > detach(juul)
-> juul$sex <- factor(juul$sex,labels=c("M","F"))            
+> juul$sex <- factor(juul$sex,labels=c("M","F"))
 > juul$menarche <- factor(juul$menarche,labels=c("No","Yes"))
 > juul$tanner <- factor(juul$tanner,
 +                       labels=c("I","II","III","IV","V"))
@@ -683,7 +702,7 @@ O2,24h     278.0000 33.75648 5
 > tapply(igf1, tanner, mean, na.rm=T)
        I       II      III       IV        V 
 207.4727 352.6714 483.2222 513.0172 465.3344 
-> aggregate(juul[c("age","igf1")], 
+> aggregate(juul[c("age","igf1")],
 +           list(sex=juul$sex), mean, na.rm=T)
   sex      age     igf1
 1   M 15.38436 310.8866
@@ -871,7 +890,7 @@ tanner          M          F
    III 0.03093722 0.03457689
    IV  0.03730664 0.03639672
    V   0.11282985 0.18562329
-> total.caff <- margin.table(caff.marital,2) 
+> total.caff <- margin.table(caff.marital,2)
 > total.caff
 consumption
       0   1-150 151-300    >300 
@@ -885,7 +904,7 @@ consumption
 > barplot(prop.table(t(caff.marital),2), col="white", beside=T)
 > par(mfrow=c(1,1))
 > if (.make.epsf) dev.copy2eps(file="mat-4-bar.ps")
-> barplot(prop.table(t(caff.marital),2),beside=T, 
+> barplot(prop.table(t(caff.marital),2),beside=T,
 + legend.text=colnames(caff.marital),
 + col=c("white","grey80","grey50","black"))
 > if (.make.epsf) dev.copy2eps(file="pretty-bar.ps")
@@ -1256,8 +1275,7 @@ In predict.lm(lm.velo, int = "p") :
 > if (.make.epsf) dev.copy2eps(file="velo-gluc-final.ps")
 > options(error=expression(NULL))
 > cor(blood.glucose,short.velocity)
-Error in cor(blood.glucose, short.velocity) : 
-  missing observations in cov/cor
+[1] NA
 > options(error=NULL)
 > cor(blood.glucose,short.velocity,use="complete.obs")
 [1] 0.4167546
@@ -1322,8 +1340,8 @@ Analysis of Variance Table
 
 Response: folate
             Df Sum Sq Mean Sq F value  Pr(>F)  
-ventilation  2  15516    7758  3.7113 0.04359 *
-Residuals   19  39716    2090                  
+ventilation  2  15516  7757.9  3.7113 0.04359 *
+Residuals   19  39716  2090.3                  
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > attach(juul)
@@ -1336,7 +1354,7 @@ tanner      1 10985605 10985605  686.07 < 2.2e-16 ***
 Residuals 790 12649728    16012                      
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
-> juul$tanner <- factor(juul$tanner, 
+> juul$tanner <- factor(juul$tanner,
 +                       labels=c("I","II","III","IV","V"))
 > detach(juul)
 > attach(juul)
@@ -1347,9 +1365,9 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Analysis of Variance Table
 
 Response: igf1
-           Df   Sum Sq  Mean Sq F value    Pr(>F)    
-tanner      4 12696217  3174054  228.35 < 2.2e-16 ***
-Residuals 787 10939116    13900                      
+           Df   Sum Sq Mean Sq F value    Pr(>F)    
+tanner      4 12696217 3174054  228.35 < 2.2e-16 ***
+Residuals 787 10939116   13900                      
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > summary(lm(folate~ventilation))
@@ -1481,7 +1499,7 @@ Kruskal-Wallis chi-squared = 4.1852, df = 2, p-value =
  [1] 1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 1 2 3 4 5 6 7 8 9 1 2 3 4
 [32] 5 6 7 8 9
 Levels: 1 2 3 4 5 6 7 8 9
-> gl(4,9,36,labels=c(0,30,60,120)) 
+> gl(4,9,36,labels=c(0,30,60,120))
  [1] 0   0   0   0   0   0   0   0   0   30  30  30  30  30  30 
 [16] 30  30  30  60  60  60  60  60  60  60  60  60  120 120 120
 [31] 120 120 120 120 120 120
@@ -1491,9 +1509,9 @@ Analysis of Variance Table
 
 Response: hr
           Df Sum Sq Mean Sq F value    Pr(>F)    
-subj       8 8966.6  1120.8 90.6391 4.863e-16 ***
-time       3  151.0    50.3  4.0696   0.01802 *  
-Residuals 24  296.8    12.4                      
+subj       8 8966.6 1120.82 90.6391 4.863e-16 ***
+time       3  151.0   50.32  4.0696   0.01802 *  
+Residuals 24  296.8   12.37                      
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > interaction.plot(time, subj, hr)
@@ -1512,9 +1530,9 @@ Friedman chi-squared = 8.5059, df = 3, p-value = 0.03664
 Analysis of Variance Table
 
 Response: short.velocity
-              Df  Sum Sq Mean Sq F value Pr(>F)  
-blood.glucose  1 0.20727 0.20727   4.414 0.0479 *
-Residuals     21 0.98610 0.04696                 
+              Df  Sum Sq  Mean Sq F value Pr(>F)  
+blood.glucose  1 0.20727 0.207269   4.414 0.0479 *
+Residuals     21 0.98610 0.046957                 
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > rm(list=ls())
@@ -1562,7 +1580,7 @@ sample estimates:
    prop 1    prop 2 
 0.7500000 0.3076923 
 
-> matrix(c(9,4,3,9),2) 
+> matrix(c(9,4,3,9),2)
      [,1] [,2]
 [1,]    9    3
 [2,]    4    9
@@ -1593,11 +1611,11 @@ X-squared = 3.2793, df = 1, p-value = 0.07016
 Yes  5  7   6  7   8  10
 No  17 28  36 41  46 140
 > caesar.shoe.yes <- caesar.shoe["Yes",]
-> caesar.shoe.total <- margin.table(caesar.shoe,2)    
-> caesar.shoe.yes                     
+> caesar.shoe.total <- margin.table(caesar.shoe,2)
+> caesar.shoe.yes
  <4   4 4.5   5 5.5  6+ 
   5   7   6   7   8  10 
-> caesar.shoe.total                          
+> caesar.shoe.total
  <4   4 4.5   5 5.5  6+ 
  22  35  42  48  54 150 
 > prop.test(caesar.shoe.yes,caesar.shoe.total)
@@ -1650,15 +1668,15 @@ Single       167.31173  352.72119 137.02572  60.94136
 Married      652  1537     598  242
 Prev.married  36    46      38   21
 Single       218   327     106   67
-> E <- chisq.test(caff.marital)$expected   
-> O <- chisq.test(caff.marital)$observed   
+> E <- chisq.test(caff.marital)$expected
+> O <- chisq.test(caff.marital)$observed
 > (O-E)^2/E
                       0    1-150   151-300      >300
 Married       4.1055981 1.612783 0.6874502 0.8858331
 Prev.married  0.3007537 7.815444 4.5713926 6.8171090
 Single       15.3563704 1.875645 7.0249243 0.6023355
 > attach(juul)
-> chisq.test(tanner,sex)            
+> chisq.test(tanner,sex)
 
 	Pearson's Chi-squared test
 
@@ -1729,7 +1747,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
 
      Two-sample comparison of proportions power calculation 
 
-              n = 137.6040
+              n = 137.604
              p1 = 0.15
              p2 = 0.3
       sig.level = 0.05
@@ -1766,11 +1784,11 @@ ageQ
   [10,11.4] (11.4,12.6] (12.6,14.2]   (14.2,16] 
         126         125         125         126 
 > levels(ageQ) <- c("1st", "2nd", "3rd", "4th")
-> levels(agegr) <- c("10-11", "12-13", "14-15") 
+> levels(agegr) <- c("10-11", "12-13", "14-15")
 > pain <- c(0,3,2,2,1)
-> fpain <- factor(pain,levels=0:3, 
+> fpain <- factor(pain,levels=0:3,
 +        labels=c("none","mild","medium","severe"))
-> text.pain <-  c("none","severe", "medium", "medium", "mild") 
+> text.pain <-  c("none","severe", "medium", "medium", "mild")
 > factor(text.pain)
 [1] none   severe medium medium mild  
 Levels: medium mild none severe
@@ -1794,7 +1812,7 @@ Levels: none intermediate severe
 Levels: none intermediate severe
 > stroke <- read.csv2(
 +   system.file("rawdata","stroke.csv", package="ISwR"),
-+   na.strings=".") 
++   na.strings=".")
 > names(stroke) <- tolower(names(stroke))
 > head(stroke)
   sex       died       dstr age dgn coma diab minf han
@@ -1807,7 +1825,7 @@ Levels: none intermediate severe
 > stroke <- transform(stroke,
 +    died = as.Date(died, format="%d.%m.%Y"),
 +    dstr = as.Date(dstr, format="%d.%m.%Y"))
-> summary(stroke$died) 
+> summary(stroke$died)
         Min.      1st Qu.       Median         Mean      3rd Qu. 
 "1991-01-07" "1992-03-14" "1993-01-23" "1993-02-15" "1993-11-04" 
         Max. 
@@ -1818,8 +1836,8 @@ Levels: none intermediate severe
         Max. 
 "1993-12-31" 
 > summary(stroke$died - stroke$dstr)
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-    0.0     8.0    28.0   225.7   268.5  1836.0   338.0 
+  Length    Class     Mode 
+     829 difftime  numeric 
 > head(stroke$died - stroke$dstr)
 Time differences in days
 [1]    5   NA  145    2 1836    0
@@ -1844,14 +1862,14 @@ Time differences in days
 6 1991-01-13  TRUE
 > options(o); rm(o)
 > stroke <- transform(stroke,
-+   obstime = as.numeric(end - dstr, units="days")/365.25)  
++   obstime = as.numeric(end - dstr, units="days")/365.25)
 > rawstroke <- read.csv2(
 +   system.file("rawdata","stroke.csv", package="ISwR"),
-+   na.strings=".") 
++   na.strings=".")
 > ix <- c("DSTR", "DIED")
-> rawstroke[ix] <- lapply(rawstroke[ix], 
-+                         as.Date, format="%d.%m.%Y") 
-> head(rawstroke) 
+> rawstroke[ix] <- lapply(rawstroke[ix],
++                         as.Date, format="%d.%m.%Y")
+> head(rawstroke)
   SEX       DIED       DSTR AGE DGN COMA DIAB MINF HAN
 1   1 1991-01-07 1991-01-02  76 INF    0    0    1   0
 2   1       <NA> 1991-01-03  58 INF    0    0    0   0
@@ -1860,8 +1878,8 @@ Time differences in days
 5   0 1996-01-23 1991-01-13  76 INF    0    1    0   1
 6   1 1991-01-13 1991-01-13  48 ICH    1    0    0   1
 > ix <- 6:9
-> rawstroke[ix] <- lapply(rawstroke[ix], 
-+                         factor, levels=0:1, labels=c("No","Yes"))   
+> rawstroke[ix] <- lapply(rawstroke[ix],
++                         factor, levels=0:1, labels=c("No","Yes"))
 > strokesub <- ISwR::stroke[1:10,2:3]
 > strokesub
          died       dstr
@@ -1875,9 +1893,9 @@ Time differences in days
 8  1991-12-12 1991-01-14
 9        <NA> 1991-01-15
 10 1993-11-10 1991-01-15
-> strokesub <- transform(strokesub, 
+> strokesub <- transform(strokesub,
 +   event = !is.na(died))
-> strokesub <- transform(strokesub, 
+> strokesub <- transform(strokesub,
 +  obstime = ifelse(event, died-dstr, as.Date("1996-1-1") - dstr))
 > strokesub
          died       dstr event obstime
@@ -1919,10 +1937,10 @@ Time differences in days
 4 1931  25   14     0  3024
 5 1931  30   30     1  3188
 6 1931  35   68     1  4165
-> nickel <- transform(nickel, 
-+   agr = trunc(agein/5)*5, 
-+   ygr = trunc((dob+agein-1)/5)*5+1)  
-> mrg <- merge(nickel, ewrates, 
+> nickel <- transform(nickel,
++   agr = trunc(agein/5)*5,
++   ygr = trunc((dob+agein-1)/5)*5+1)
+> mrg <- merge(nickel, ewrates,
 +   by.x=c("agr","ygr"), by.y=c("age","year"))
 > head(mrg,10)
    agr  ygr  id icd exposure      dob  age1st   agein  ageout
@@ -2002,7 +2020,7 @@ Time differences in days
 5.0   1  5  94 107 146 124  128   98  114
 6.0   1  6 128  97 113 203   NA   NA   NA
 > l <- split(a.long$c, a.long$id)
-> l[1:3] 
+> l[1:3]
 $`1`
 [1] 142 140 159 162 152 175 148
 
@@ -2023,7 +2041,7 @@ $`3`
 1.12   1   12 152  1 1.0704225
 1.18   1   18 175  1 1.2323944
 1.24   1   24 148  1 1.0422535
-> a.long$c.adj <- ave(a.long$c, a.long$id, 
+> a.long$c.adj <- ave(a.long$c, a.long$id,
 +     FUN = function(x) x / x[1])
 > all.equal(unsplit(l2, a.long$id),  a.long$c.adj)
 [1] TRUE
@@ -2042,10 +2060,10 @@ $`3`
 6 10 163        2 1889.915 21.2877 44.3314 62.5413  40 1931
 > entry <- pmax(nickel$agein, 60)
 > exit <- pmin(nickel$ageout, 65)
-> valid <- (entry < exit) 
+> valid <- (entry < exit)
 > entry <- entry[valid]
 > exit  <- exit[valid]
-> cens <- (nickel$ageout[valid] > 65)  
+> cens <- (nickel$ageout[valid] > 65)
 > nickel60 <- nickel[valid,]
 > nickel60$icd[cens] <- 0
 > nickel60$agein <- entry
@@ -2065,8 +2083,8 @@ $`3`
 +   end   <- start + 5
 +   entry <- pmax(nickel$agein, start)
 +   exit  <- pmin(nickel$ageout, end)
-+   valid <- (entry < exit) 
-+   cens  <- (nickel$ageout[valid] > end)  
++   valid <- (entry < exit)
++   cens  <- (nickel$ageout[valid] > end)
 +   result <- nickel[valid,]
 +   result$icd[cens] <- 0
 +   result$agein <- entry[valid]
@@ -2092,13 +2110,13 @@ $`3`
 236 325   0        0 1910.500 14.0737 23.7465     25  20 1931
 384 546   0        0 1909.500 14.4945 24.7465     25  20 1931
 400 574   0        0 1909.729 14.0356 24.5177     25  20 1931
-> subset(nickel.expand, id==4)  
+> subset(nickel.expand, id==4)
      id icd exposure      dob  age1st   agein  ageout agr  ygr
 2     4   0        5 1885.978 23.1864 48.2684 50.0000  45 1931
 2100  4   0        5 1885.978 23.1864 50.0000 55.0000  50 1931
 2102  4   0        5 1885.978 23.1864 55.0000 60.0000  55 1936
 2104  4 162        5 1885.978 23.1864 60.0000 63.2712  60 1941
-> nickel.expand <- merge(nickel.expand, ewrates, 
+> nickel.expand <- merge(nickel.expand, ewrates,
 +   by.x=c("agr","ygr"), by.y=c("age","year"))
 > head(nickel.expand)
   agr  ygr  id icd exposure      dob  age1st   agein ageout lung
@@ -2123,11 +2141,9 @@ $`3`
 > pairs(cystfibr, gap=0, cex.labels=0.9)
 > if (.make.epsf) dev.copy2eps(file="cyst-fibr.ps",height=4.5,width=4.49)
 > attach(cystfibr)
+The following object(s) are masked from 'package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 tlc 
-
+    tlc
 > if (exists("age",.GlobalEnv,inh=F)) rm(age)
 > if (exists("height",.GlobalEnv,inh=F)) rm(height)
 > if (exists("weight",.GlobalEnv,inh=F)) rm(weight)
@@ -2177,7 +2193,7 @@ tlc        1    92.4    92.4  0.1424 0.711160
 Residuals 15  9731.2   648.7                    
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
-> 955.4+155.0+632.3+2862.2+1549.1+561.9+194.6+92.4 
+> 955.4+155.0+632.3+2862.2+1549.1+561.9+194.6+92.4
 [1] 7002.9
 > 7002.9/8
 [1] 875.3625
@@ -2231,8 +2247,8 @@ lm(formula = pemax ~ age + sex + height + weight + bmp + fev1 +
     rv + frc)
 
 Residuals:
-     Min       1Q   Median       3Q      Max 
--38.0718 -10.0665   0.1132  13.5259  36.9902 
+    Min      1Q  Median      3Q     Max 
+-38.072 -10.067   0.113  13.526  36.990 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)  
@@ -2285,8 +2301,8 @@ Call:
 lm(formula = pemax ~ age + sex + height + weight + bmp + fev1)
 
 Residuals:
-      Min        1Q    Median        3Q       Max 
--43.23832  -7.40344  -0.08133  15.53412  36.02770 
+    Min      1Q  Median      3Q     Max 
+-43.238  -7.403  -0.081  15.534  36.028 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)  
@@ -2371,7 +2387,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 25.24 on 21 degrees of freedom
 Multiple R-squared: 0.5015,	Adjusted R-squared: 0.4302 
-F-statistic: 7.041 on 3 and 21 DF,  p-value: 0.001870 
+F-statistic: 7.041 on 3 and 21 DF,  p-value: 0.00187 
 
 > summary(lm(pemax~weight+bmp))
 
@@ -2400,8 +2416,8 @@ Call:
 lm(formula = pemax ~ weight)
 
 Residuals:
-    Min      1Q  Median      3Q     Max 
--44.305 -22.691   2.230  15.908  48.408 
+   Min     1Q Median     3Q    Max 
+-44.30 -22.69   2.23  15.91  48.41 
 
 Coefficients:
             Estimate Std. Error t value Pr(>|t|)    
@@ -2496,11 +2512,9 @@ F-statistic: 12.89 on 1 and 23 DF,  p-value: 0.001549
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > attach(cystfibr)
+The following object(s) are masked from 'package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 tlc 
-
+    tlc
 > summary(lm(pemax~height+I(height^2)))
 
 Call:
@@ -2614,8 +2628,8 @@ Analysis of Variance Table
 
 Response: y
           Df Sum Sq Mean Sq F value    Pr(>F)    
-x          1 8.9450  8.9450  142.87 5.376e-10 ***
-Residuals 18 1.1270  0.0626                      
+x          1  8.945  8.9450  142.87 5.376e-10 ***
+Residuals 18  1.127  0.0626                      
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > anova(lm(y~x-1))
@@ -2716,14 +2730,14 @@ Residuals 269 896677    3333
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > model1 <- lm(trypsin~grp)
 > model2 <- lm(trypsin~grpf)
-> anova(model1,model2) 
+> anova(model1,model2)
 Analysis of Variance Table
 
 Model 1: trypsin ~ grp
 Model 2: trypsin ~ grpf
-  Res.Df    RSS  Df Sum of Sq      F Pr(>F)
-1    269 896677                            
-2    265 879272   4     17405 1.3114 0.2661
+  Res.Df    RSS Df Sum of Sq      F Pr(>F)
+1    269 896677                           
+2    265 879272  4     17405 1.3114 0.2661
 > anova(lm(trypsin~grp+grpf))
 Analysis of Variance Table
 
@@ -2752,6 +2766,9 @@ Response: tryp.mean
 gr          1 206698  206698               
 factor(gr)  4  17405    4351               
 Residuals   0      0                       
+Warning message:
+In anova.lm(lm(tryp.mean ~ gr + factor(gr), weights = n)) :
+  ANOVA F-tests on an essentially perfect fit are unreliable
 > sum(tryp.sd^2*(n-1))
 [1] 879271.9
 > sum(n-1)
@@ -2778,7 +2795,7 @@ width:temp  2   5.701   2.851  10.283  0.002504 **
 Residuals  12   3.327   0.277                      
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
-> tapply(time,list(width,temp),mean)  
+> tapply(time,list(width,temp),mean)
         1600     1900
 4   3.066667 2.300000
 8   7.166667 5.533333
@@ -2894,8 +2911,8 @@ Call:
 lm(formula = log10(diameter) ~ log10(conc), data = tethym.nogluc)
 
 Residuals:
-       Min         1Q     Median         3Q        Max 
--2.192e-02 -4.977e-03  5.598e-05  5.597e-03  1.663e-02 
+      Min        1Q    Median        3Q       Max 
+-0.021919 -0.004977  0.000056  0.005597  0.016625 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
@@ -2914,8 +2931,8 @@ Call:
 lm(formula = log10(diameter) ~ log10(conc) * glucose)
 
 Residuals:
-       Min         1Q     Median         3Q        Max 
--2.672e-02 -4.888e-03  5.598e-05  3.767e-03  1.761e-02 
+      Min        1Q    Median        3Q       Max 
+-0.026722 -0.004888  0.000056  0.003767  0.017608 
 
 Coefficients:
                        Estimate Std. Error t value Pr(>|t|)    
@@ -2936,8 +2953,8 @@ Call:
 lm(formula = log10(diameter) ~ log10(conc) + glucose)
 
 Residuals:
-       Min         1Q     Median         3Q        Max 
--0.0252426 -0.0057329 -0.0001950  0.0048943  0.0189136 
+      Min        1Q    Median        3Q       Max 
+-0.025243 -0.005733 -0.000195  0.004894  0.018914 
 
 Coefficients:
              Estimate Std. Error t value Pr(>|t|)    
@@ -3087,7 +3104,7 @@ F-statistic: 1.106 on 1 and 20 DF,  p-value: 0.3055
 7      No     Yes     Yes
 8     Yes     Yes     Yes
 > hyp.tbl <- cbind(n.hyp,n.tot-n.hyp)
-> hyp.tbl 
+> hyp.tbl
      n.hyp    
 [1,]     5  55
 [2,]     2  15
@@ -3099,7 +3116,7 @@ F-statistic: 1.106 on 1 and 20 DF,  p-value: 0.3055
 [8,]     8  15
 > glm(hyp.tbl~smoking+obesity+snoring,family=binomial("logit"))
 
-Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial("logit")) 
+Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial("logit"))
 
 Coefficients:
 (Intercept)   smokingYes   obesityYes   snoringYes  
@@ -3110,7 +3127,7 @@ Null Deviance:	    14.13
 Residual Deviance: 1.618 	AIC: 34.54 
 > glm(hyp.tbl~smoking+obesity+snoring,binomial)
 
-Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial) 
+Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial)
 
 Coefficients:
 (Intercept)   smokingYes   obesityYes   snoringYes  
@@ -3124,7 +3141,7 @@ Residual Deviance: 1.618 	AIC: 34.54
 +                binomial,weights=n.tot)
 > glm(hyp.tbl~smoking+obesity+snoring, binomial("logit"))
 
-Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial("logit")) 
+Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial("logit"))
 
 Coefficients:
 (Intercept)   smokingYes   obesityYes   snoringYes  
@@ -3191,7 +3208,7 @@ AIC: 34.537
 
 Number of Fisher Scoring iterations: 4
 
-> glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial) 
+> glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial)
 > summary(glm.hyp)
 
 Call:
@@ -3230,11 +3247,13 @@ Response: hyp.tbl
 Terms added sequentially (first to last)
 
 
-        Df Deviance Resid. Df Resid. Dev P(>|Chi|)
-NULL                        7    14.1259          
-smoking  1   0.0022         6    14.1237    0.9627
-obesity  1   6.8274         5     7.2963    0.0090
-snoring  1   5.6779         4     1.6184    0.0172
+        Df Deviance Resid. Df Resid. Dev Pr(>Chi)   
+NULL                        7    14.1259            
+smoking  1   0.0022         6    14.1237 0.962724   
+obesity  1   6.8274         5     7.2963 0.008977 **
+snoring  1   5.6779         4     1.6184 0.017179 * 
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > glm.hyp <- glm(hyp.tbl~snoring+obesity+smoking,binomial)
 > anova(glm.hyp, test="Chisq")
 Analysis of Deviance Table
@@ -3246,11 +3265,13 @@ Response: hyp.tbl
 Terms added sequentially (first to last)
 
 
-        Df Deviance Resid. Df Resid. Dev P(>|Chi|)
-NULL                        7    14.1259          
-snoring  1   6.7887         6     7.3372    0.0092
-obesity  1   5.6591         5     1.6781    0.0174
-smoking  1   0.0597         4     1.6184    0.8069
+        Df Deviance Resid. Df Resid. Dev Pr(>Chi)   
+NULL                        7    14.1259            
+snoring  1   6.7887         6     7.3372 0.009174 **
+obesity  1   5.6591         5     1.6781 0.017365 * 
+smoking  1   0.0597         4     1.6184 0.806938   
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial)
 > anova(glm.hyp, test="Chisq")
 Analysis of Deviance Table
@@ -3262,26 +3283,28 @@ Response: hyp.tbl
 Terms added sequentially (first to last)
 
 
-        Df Deviance Resid. Df Resid. Dev P(>|Chi|)
-NULL                        7    14.1259          
-obesity  1   6.8260         6     7.2999    0.0090
-snoring  1   5.6218         5     1.6781    0.0177
+        Df Deviance Resid. Df Resid. Dev Pr(>Chi)   
+NULL                        7    14.1259            
+obesity  1   6.8260         6     7.2999 0.008984 **
+snoring  1   5.6218         5     1.6781 0.017738 * 
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > drop1(glm.hyp, test="Chisq")
 Single term deletions
 
 Model:
 hyp.tbl ~ obesity + snoring
-        Df Deviance    AIC    LRT Pr(Chi)  
-<none>        1.678 32.597                 
-obesity  1    7.337 36.256  5.659 0.01737 *
-snoring  1    7.300 36.219  5.622 0.01774 *
+        Df Deviance    AIC    LRT Pr(>Chi)  
+<none>       1.6781 32.597                  
+obesity  1   7.3372 36.256 5.6591  0.01737 *
+snoring  1   7.2999 36.219 5.6218  0.01774 *
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > caesar.shoe
     <4  4 4.5  5 5.5  6+
 Yes  5  7   6  7   8  10
 No  17 28  36 41  46 140
-> shoe.score <- 1:6                             
+> shoe.score <- 1:6
 > shoe.score
 [1] 1 2 3 4 5 6
 > summary(glm(t(caesar.shoe)~shoe.score,binomial))
@@ -3290,8 +3313,8 @@ Call:
 glm(formula = t(caesar.shoe) ~ shoe.score, family = binomial)
 
 Deviance Residuals: 
-       <4          4        4.5          5        5.5         6+  
--0.185309   0.008767  -0.327604   0.340866   1.043130  -0.662148  
+      <4         4       4.5         5       5.5        6+  
+-0.18531   0.00877  -0.32760   0.34087   1.04313  -0.66215  
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)   
@@ -3350,9 +3373,9 @@ In prop.test(caesar.shoe.yes, caesar.shoe.total) :
 > confint(glm.hyp)
 Waiting for profiling to be done...
                  2.5 %    97.5 %
-(Intercept) -3.2102369 -1.718143
-obesityYes   0.1254382  1.246788
-snoringYes   0.1410865  1.715860
+(Intercept) -3.2101098 -1.718094
+obesityYes   0.1254244  1.246789
+snoringYes   0.1410076  1.715763
 > confint.default(glm.hyp)
                   2.5 %    97.5 %
 (Intercept) -3.12852108 -1.655631
@@ -3364,19 +3387,17 @@ snoringYes   0.08801498  1.642902
 > exp(cbind(OR=coef(glm.hyp), confint(glm.hyp)))
 Waiting for profiling to be done...
                     OR      2.5 %    97.5 %
-(Intercept) 0.09143963 0.04034706 0.1793989
-obesityYes  2.00454846 1.13364514 3.4791490
-snoringYes  2.37609483 1.15152424 5.5614585
+(Intercept) 0.09143963 0.04035218 0.1794079
+obesityYes  2.00454846 1.13362951 3.4791517
+snoringYes  2.37609483 1.15143343 5.5609161
 > juul$menarche <- factor(juul$menarche, labels=c("No","Yes"))
 > juul$tanner <- factor(juul$tanner)
-> juul.girl <- subset(juul,age>8 & age<20 & 
+> juul.girl <- subset(juul,age>8 & age<20 &
 +                     complete.cases(menarche))
 > attach(juul.girl)
+The following object(s) are masked from 'package:MASS':
 
-	The following object(s) are masked from package:MASS :
-
-	 menarche 
-
+    menarche
 > summary(glm(menarche~age,binomial))
 
 Call:
@@ -3423,8 +3444,8 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
-    Null deviance: 604.2  on 435  degrees of freedom
-Residual deviance: 106.6  on 430  degrees of freedom
+    Null deviance: 604.19  on 435  degrees of freedom
+Residual deviance: 106.60  on 430  degrees of freedom
   (83 observations deleted due to missingness)
 AIC: 118.6
 
@@ -3435,10 +3456,10 @@ Single term deletions
 
 Model:
 menarche ~ age + tanner
-       Df Deviance     AIC     LRT   Pr(Chi)    
-<none>     106.599 118.599                      
-age     1  124.500 134.500  17.901 2.327e-05 ***
-tanner  4  161.881 165.881  55.282 2.835e-11 ***
+       Df Deviance    AIC    LRT  Pr(>Chi)    
+<none>      106.60 118.60                     
+age     1   124.50 134.50 17.901 2.327e-05 ***
+tanner  4   161.88 165.88 55.282 2.835e-11 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > predict(glm.hyp)
@@ -3463,7 +3484,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 0.08377892 0.08377892 0.15490233 0.15490233 0.17848906 0.17848906 
          7          8 
 0.30339158 0.30339158 
-> prop.hyp   
+> prop.hyp
 [1] 0.08333333 0.11764706 0.12500000 0.00000000 0.18716578
 [6] 0.15294118 0.29411765 0.34782609
 > fitted(glm.hyp)*n.tot
@@ -3509,8 +3530,8 @@ Call:
 glm(formula = menarche ~ age + age.gr, family = binomial)
 
 Deviance Residuals: 
-      Min         1Q     Median         3Q        Max  
--2.456972  -0.154339   0.008348   0.095055   2.590335  
+     Min        1Q    Median        3Q       Max  
+-2.45697  -0.15434   0.00835   0.09505   2.59033  
 
 Coefficients:
               Estimate Std. Error z value Pr(>|z|)    
@@ -3540,10 +3561,10 @@ Response: menarche
 Terms added sequentially (first to last)
 
 
-        Df Deviance Resid. Df Resid. Dev
-NULL                      518     719.39
-age      1   518.73       517     200.66
-age.gr   3     8.06       514     192.61
+       Df Deviance Resid. Df Resid. Dev
+NULL                     518     719.39
+age     1   518.73       517     200.66
+age.gr  3     8.06       514     192.61
 > 1-pchisq(8.058,3)
 [1] 0.04482811
 > anova(glm(menarche~age+I(age^2)+I(age^3)+age.gr,binomial))
@@ -3556,22 +3577,19 @@ Response: menarche
 Terms added sequentially (first to last)
 
 
-          Df Deviance Resid. Df Resid. Dev
-NULL                        518     719.39
-age        1   518.73       517     200.66
-I(age^2)   1     0.05       516     200.61
-I(age^3)   1     8.82       515     191.80
-age.gr     3     3.34       512     188.46
+         Df Deviance Resid. Df Resid. Dev
+NULL                       518     719.39
+age       1   518.73       517     200.66
+I(age^2)  1     0.05       516     200.61
+I(age^3)  1     8.82       515     191.80
+age.gr    3     3.34       512     188.46
 Warning messages:
-1: In glm.fit(x = X, y = Y, weights = weights, start = start, etastart = etastart,  :
-  fitted probabilities numerically 0 or 1 occurred
-2: In method(x = x[, varseq <= i, drop = FALSE], y = object$y, weights = object$prior.weights,  :
-  fitted probabilities numerically 0 or 1 occurred
+1: glm.fit: fitted probabilities numerically 0 or 1 occurred 
+2: glm.fit: fitted probabilities numerically 0 or 1 occurred 
 > glm.menarche <- glm(menarche~age+I(age^2)+I(age^3), binomial)
 Warning message:
-In glm.fit(x = X, y = Y, weights = weights, start = start, etastart = etastart,  :
-  fitted probabilities numerically 0 or 1 occurred
-> predicted.probability <- 
+glm.fit: fitted probabilities numerically 0 or 1 occurred 
+> predicted.probability <-
 +     predict(glm.menarche, newages, type="resp")
 > plot(predicted.probability ~ Age, type="l")
 > points(rel.freq~c(9,11,12.5,13.5,14.5,15.5,17,19), pch=5)
@@ -3581,12 +3599,11 @@ In glm.fit(x = X, y = Y, weights = weights, start = start, etastart = etastart, 
 > library(survival)
 Loading required package: splines
 
-Attaching package: 'survival'
+Attaching package: `survival'
 
+The following object(s) are masked from `package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 lung 
+    lung
 
 > attach(melanom)
 > names(melanom)
@@ -3613,11 +3630,11 @@ Attaching package: 'survival'
 [181] 3476+ 3523+ 3667+ 3695+ 3695+ 3776+ 3776+ 3830+ 3856+ 3872+
 [191] 3909+ 3968+ 4001+ 4103+ 4119+ 4124+ 4207+ 4310+ 4390+ 4479+
 [201] 4492+ 4668+ 4688+ 4926+ 5565+
-> survfit(Surv(days,status==1)~1) 
+> survfit(Surv(days,status==1)~1)
 Call: survfit(formula = Surv(days, status == 1) ~ 1)
 
-      n  events  median 0.95LCL 0.95UCL 
-    205      57     Inf     Inf     Inf 
+records   n.max n.start  events  median 0.95LCL 0.95UCL 
+    205     205     205      57      NA      NA      NA 
 > surv.all <- survfit(Surv(days,status==1)~1)
 > summary(surv.all)
 Call: survfit(formula = Surv(days, status == 1) ~ 1)
@@ -3708,36 +3725,44 @@ sex=2  79       29     22.3      1.99      3.31
 Call:
 coxph(formula = Surv(days, status == 1) ~ sex)
 
-  n= 205 
-     coef exp(coef) se(coef)   z     p
-sex 0.662      1.94    0.265 2.5 0.013
+  n= 205, number of events= 57 
+
+      coef exp(coef) se(coef)     z Pr(>|z|)  
+sex 0.6622    1.9390   0.2651 2.498   0.0125 *
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
     exp(coef) exp(-coef) lower .95 upper .95
-sex      1.94      0.516      1.15      3.26
+sex     1.939     0.5157     1.153      3.26
 
+Concordance= 0.59  (se = 0.033 )
 Rsquare= 0.03   (max possible= 0.937 )
-Likelihood ratio test= 6.15  on 1 df,   p=0.0131
-Wald test            = 6.24  on 1 df,   p=0.0125
-Score (logrank) test = 6.47  on 1 df,   p=0.0110
+Likelihood ratio test= 6.15  on 1 df,   p=0.01314
+Wald test            = 6.24  on 1 df,   p=0.01251
+Score (logrank) test = 6.47  on 1 df,   p=0.01098
 
 > summary(coxph(Surv(days,status==1)~sex+log(thick)+strata(ulc)))
 Call:
 coxph(formula = Surv(days, status == 1) ~ sex + log(thick) + 
     strata(ulc))
 
-  n= 205 
-           coef exp(coef) se(coef)    z      p
-sex        0.36      1.43    0.270 1.33 0.1800
-log(thick) 0.56      1.75    0.178 3.14 0.0017
+  n= 205, number of events= 57 
+
+             coef exp(coef) se(coef)     z Pr(>|z|)   
+sex        0.3600    1.4333   0.2702 1.332   0.1828   
+log(thick) 0.5599    1.7505   0.1784 3.139   0.0017 **
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 
            exp(coef) exp(-coef) lower .95 upper .95
-sex             1.43      0.698     0.844      2.43
-log(thick)      1.75      0.571     1.234      2.48
+sex            1.433     0.6977     0.844     2.434
+log(thick)     1.750     0.5713     1.234     2.483
 
+Concordance= 0.673  (se = 0.058 )
 Rsquare= 0.063   (max possible= 0.9 )
-Likelihood ratio test= 13.3  on 2 df,   p=0.00130
-Wald test            = 12.9  on 2 df,   p=0.00160
-Score (logrank) test = 13.0  on 2 df,   p=0.00152
+Likelihood ratio test= 13.3  on 2 df,   p=0.001296
+Wald test            = 12.88  on 2 df,   p=0.001598
+Score (logrank) test = 12.98  on 2 df,   p=0.00152
 
 > plot(survfit(coxph(Surv(days,status==1)~
 +              log(thick)+sex+strata(ulc))))
@@ -3790,31 +3815,31 @@ Single term deletions
 
 Model:
 cases ~ city + age + offset(log(pop))
-       Df Deviance     AIC     LRT Pr(Chi)    
-<none>      23.447 137.836                    
-city    3   28.307 136.695   4.859  0.1824    
-age     5  126.515 230.903 103.068  <2e-16 ***
+       Df Deviance    AIC     LRT Pr(>Chi)    
+<none>      23.447 137.84                     
+city    3   28.307 136.69   4.859   0.1824    
+age     5  126.515 230.90 103.068   <2e-16 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
-> fit2 <- glm(cases~(city=="Fredericia")+age+offset(log(pop)), 
+> fit2 <- glm(cases~(city=="Fredericia")+age+offset(log(pop)),
 +                  family=poisson)
 > anova(fit, fit2, test="Chisq")
 Analysis of Deviance Table
 
 Model 1: cases ~ city + age + offset(log(pop))
 Model 2: cases ~ (city == "Fredericia") + age + offset(log(pop))
-  Resid. Df Resid. Dev Df Deviance P(>|Chi|)
-1        15    23.4475                      
-2        17    23.7001 -2  -0.2526    0.8814
+  Resid. Df Resid. Dev Df Deviance Pr(>Chi)
+1        15     23.448                     
+2        17     23.700 -2  -0.2526   0.8814
 > drop1(fit2,  test="Chisq")
 Single term deletions
 
 Model:
 cases ~ (city == "Fredericia") + age + offset(log(pop))
-                     Df Deviance     AIC     LRT Pr(Chi)    
-<none>                    23.700 134.088                    
-city == "Fredericia"  1   28.307 136.695   4.606 0.03185 *  
-age                   5  127.117 227.505 103.417 < 2e-16 ***
+                     Df Deviance    AIC     LRT Pr(>Chi)    
+<none>                    23.700 134.09                     
+city == "Fredericia"  1   28.307 136.69   4.606  0.03185 *  
+age                   5  127.117 227.50 103.417  < 2e-16 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > summary(fit2)
@@ -3850,7 +3875,7 @@ Number of Fisher Scoring iterations: 4
 > cf <- coefficients(summary(fit2))
 > est <- cf[,1]
 > s.e. <- cf[,2]
-> rr <- exp(cbind(est, est - s.e.*qnorm(.975), est 
+> rr <- exp(cbind(est, est - s.e.*qnorm(.975), est
 +                      + s.e.*qnorm(.975) ))
 > colnames(rr) <- c("RateRatio", "CI.lo","CI.hi")
 > rr
@@ -3865,13 +3890,13 @@ age75+                   4.142034525 2.536571645  6.763637070
 > exp(cbind(coef(fit2), confint(fit2)))
 Waiting for profiling to be done...
                                            2.5 %       97.5 %
-(Intercept)              0.002582626 0.001776461  0.003617228
-city == "Fredericia"TRUE 1.384992752 1.029362341  1.841224091
-age55-59                 3.008134852 1.843578634  4.902339637
-age60-64                 4.573665854 2.912314045  7.248143959
-age65-69                 5.863391064 3.752718226  9.256907108
-age70-74                 6.418715646 4.053262281 10.234338998
-age75+                   4.142034525 2.527117848  6.771833979
+(Intercept)              0.002582626 0.001776585  0.003617461
+city == "Fredericia"TRUE 1.384992752 1.029364554  1.841214351
+age55-59                 3.008134852 1.843566451  4.902377896
+age60-64                 4.573665854 2.912314202  7.248205161
+age65-69                 5.863391064 3.752718512  9.256967983
+age70-74                 6.418715646 4.053251339 10.234350656
+age75+                   4.142034525 2.527103521  6.771889935
 > head(nickel.expand)
   agr  ygr  id icd exposure      dob  age1st   agein ageout lung
 1  20 1931 325   0        0 1910.500 14.0737 23.7465     25    6
@@ -3900,14 +3925,12 @@ age75+                   4.142034525 2.527117848  6.771833979
 172     1  3188
 391     1  3549
 728     3  3643
-> nickel.expand <- within(nickel.expand, 
+> nickel.expand <- within(nickel.expand,
 +      lung.cancer <- as.numeric(icd %in% c(162,163)))
 > attach(nickel.expand)
+The following object(s) are masked from 'package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 lung 
-
+    lung
 > pyr <- tapply(ageout-agein,list(ygr,agr), sum)
 > print(round(pyr), na.print="-")
      20 25  30  35  40  45  50  55  60  65  70  75 80
@@ -3977,8 +4000,8 @@ glm(formula = lung.cancer ~ 1, family = poisson, offset = log((ageout -
     agein) * lung/1e+06))
 
 Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--0.67584  -0.31593  -0.18214  -0.09184   4.19724  
+    Min       1Q   Median       3Q      Max  
+-0.6758  -0.3159  -0.1821  -0.0918   4.1972  
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
@@ -4017,11 +4040,9 @@ Number of Fisher Scoring iterations: 7
 +     rm(lv)
 + })
 > attach(nickel.expand)
+The following object(s) are masked from 'package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 lung 
-
+    lung
 > fit <- glm(lung.cancer ~ A + Y, poisson,
 +            offset=log((ageout-agein)*lung/1e6))
 > drop1(fit, test="Chisq")
@@ -4029,10 +4050,10 @@ Single term deletions
 
 Model:
 lung.cancer ~ A + Y
-       Df Deviance     AIC     LRT  Pr(Chi)    
-<none>     1069.73 1367.73                     
-A       5  1073.81 1361.81    4.08   0.5376    
-Y       6  1118.50 1404.50   48.77 8.29e-09 ***
+       Df Deviance    AIC    LRT Pr(>Chi)    
+<none>      1069.7 1367.7                    
+A       5   1073.8 1361.8  4.082   0.5376    
+Y       6   1118.5 1404.5 48.770 8.29e-09 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > fit <- glm(lung.cancer ~ Y - 1, poisson,
@@ -4090,11 +4111,9 @@ Number of Fisher Scoring iterations: 7
 +     EXP <- cut(exposure, c(0, 0.5, 4.5, 8.5, 12.5, 25), right=F)
 + })
 > attach(nickel.expand)
+The following object(s) are masked from 'package:ISwR':
 
-	The following object(s) are masked from package:ISwR :
-
-	 lung 
-
+    lung
 > fit <- glm(lung.cancer ~ TFE + AFE + YFE + EXP, poisson,
 +            offset=log((ageout-agein)*lung/1e6))
 > drop1(fit, test="Chisq")
@@ -4102,12 +4121,12 @@ Single term deletions
 
 Model:
 lung.cancer ~ TFE + AFE + YFE + EXP
-       Df Deviance     AIC     LRT   Pr(Chi)    
-<none>     1052.91 1356.91                      
-TFE     4  1107.33 1403.33   54.43 4.287e-11 ***
-AFE     3  1054.99 1352.99    2.08 0.5560839    
-YFE     3  1058.06 1356.06    5.15 0.1608219    
-EXP     4  1071.98 1367.98   19.07 0.0007606 ***
+       Df Deviance    AIC    LRT  Pr(>Chi)    
+<none>      1052.9 1356.9                     
+TFE     4   1107.3 1403.3 54.425 4.287e-11 ***
+AFE     3   1055.0 1353.0  2.079 0.5560839    
+YFE     3   1058.1 1356.1  5.155 0.1608219    
+EXP     4   1072.0 1368.0 19.072 0.0007606 ***
 ---
 Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
 > summary(fit)
@@ -4155,7 +4174,7 @@ Number of Fisher Scoring iterations: 7
 > plot(y ~ t)
 > if (.make.epsf) dev.copy2eps(file="nonlin-sim.ps")
 > nlsout <- nls(y ~ A*exp(-alpha*t), start=c(A=2, alpha=0.05))
-> summary(nlsout) 
+> summary(nlsout)
 
 Formula: y ~ A * exp(-alpha * t)
 
@@ -4169,7 +4188,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.2283 on 9 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 6.025e-09 
+Achieved convergence tolerance: 1.199e-08 
 
 > attach(subset(juul2, age<20 & age>5 & sex==1))
 > plot(height ~ age)
@@ -4206,7 +4225,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 6.811 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 5.239e-06 
+Achieved convergence tolerance: 5.27e-06 
   (3 observations deleted due to missingness)
 
 > plot(age, height)
@@ -4222,7 +4241,7 @@ Formula: log(height) ~ log(alpha * exp(-beta * exp(-gamma * age)))
 
 Parameters:
        Estimate Std. Error t value Pr(>|t|)    
-alpha 255.97696   15.03921  17.021   <2e-16 ***
+alpha 255.97694   15.03920  17.021   <2e-16 ***
 beta    1.18949    0.02971  40.033   <2e-16 ***
 gamma   0.07033    0.00811   8.673   <2e-16 ***
 ---
@@ -4231,7 +4250,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 2.766e-06 
+Achieved convergence tolerance: 2.948e-06 
   (3 observations deleted due to missingness)
 
 > plot(age, log(height))
@@ -4240,7 +4259,7 @@ Achieved convergence tolerance: 2.766e-06
 > # count quoted in text, subtract 1 for SSD()
 > length(ls(pattern="SS.*", "package:stats"))-1
 [1] 10
-> summary(nls(height~SSgompertz(age, Asym, b2, b3))) 
+> summary(nls(height~SSgompertz(age, Asym, b2, b3)))
 
 Formula: height ~ SSgompertz(age, Asym, b2, b3)
 
@@ -4259,7 +4278,7 @@ Achieved convergence tolerance: 1.411e-06
   (3 observations deleted due to missingness)
 
 > cf <- coef(nls(height ~ SSgompertz(age, Asym, b2, b3)))
-> summary(nls(log(height) ~ 
+> summary(nls(log(height) ~
 +                log(as.vector(SSgompertz(age,Asym, b2, b3))),
 +             start=as.list(cf)))
 
@@ -4276,7 +4295,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 5.412e-06 
+Achieved convergence tolerance: 5.472e-06 
   (3 observations deleted due to missingness)
 
 > par(mfrow=c(3,1))
@@ -4284,15 +4303,15 @@ Achieved convergence tolerance: 5.412e-06
 > if (.make.epsf) dev.copy2eps(file="gomp-prof.ps")
 > confint(fit)
 Waiting for profiling to be done...
-              2.5%        97.5%
-alpha 233.49714410 294.76621773
-beta    1.14429949   1.27416342
-gamma   0.05505776   0.08574984
+             2.5%        97.5%
+alpha 233.5007561 294.76267631
+beta    1.1442683   1.27411439
+gamma   0.0550577   0.08574974
 > confint.default(fit)
-             2.5 %      97.5 %
-alpha 226.50065424 285.4532573
-beta    1.13125578   1.2477285
-gamma   0.05443818   0.0862269
+             2.5 %       97.5 %
+alpha 226.50064553 285.45324094
+beta    1.13125578   1.24772849
+gamma   0.05443818   0.08622691
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > 
