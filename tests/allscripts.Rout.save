@@ -1,8 +1,7 @@
 
-R version 2.14.2 (2012-02-29)
-Copyright (C) 2012 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
-Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+R version 3.2.0 Patched (2015-06-05 r68479) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin14.3.0/x86_64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -70,11 +69,11 @@ Type 'q()' to quit R.
 
 	One Sample t-test
 
-data:  bmi 
-t = 0.3449, df = 5, p-value = 0.7442
-alternative hypothesis: true mean is not equal to 22.5 
+data:  bmi
+t = 0.34488, df = 5, p-value = 0.7442
+alternative hypothesis: true mean is not equal to 22.5
 95 percent confidence interval:
- 18.41734 27.84791 
+ 18.41734 27.84791
 sample estimates:
 mean of x 
  23.13262 
@@ -498,10 +497,10 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
-<bytecode: 0x10344ae68>
+<bytecode: 0x7fb934196390>
 <environment: namespace:base>
 > length(methods("print")) # quoted in text
-[1] 170
+[1] 186
 > thuesen2 <- read.table(
 +    system.file("rawdata","thuesen.txt",package="ISwR"), header=T)
 > thuesen2
@@ -619,24 +618,24 @@ UseMethod("print")
 [1] 1018
 > summary(igf1)
    Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
-   25.0   202.2   313.5   340.2   462.8   915.0   321.0 
+   25.0   202.2   313.5   340.2   462.8   915.0     321 
 > summary(juul)
-      age            menarche            sex       
- Min.   : 0.170   Min.   :  1.000   Min.   :1.000  
- 1st Qu.: 9.053   1st Qu.:  1.000   1st Qu.:1.000  
- Median :12.560   Median :  1.000   Median :2.000  
- Mean   :15.095   Mean   :  1.476   Mean   :1.534  
- 3rd Qu.:16.855   3rd Qu.:  2.000   3rd Qu.:2.000  
- Max.   :83.000   Max.   :  2.000   Max.   :2.000  
- NA's   : 5.000   NA's   :635.000   NA's   :5.000  
-      igf1           tanner          testvol       
- Min.   : 25.0   Min.   :  1.00   Min.   :  1.000  
- 1st Qu.:202.2   1st Qu.:  1.00   1st Qu.:  1.000  
- Median :313.5   Median :  2.00   Median :  3.000  
- Mean   :340.2   Mean   :  2.64   Mean   :  7.896  
- 3rd Qu.:462.8   3rd Qu.:  5.00   3rd Qu.: 15.000  
- Max.   :915.0   Max.   :  5.00   Max.   : 30.000  
- NA's   :321.0   NA's   :240.00   NA's   :859.000  
+      age            menarche          sex             igf1      
+ Min.   : 0.170   Min.   :1.000   Min.   :1.000   Min.   : 25.0  
+ 1st Qu.: 9.053   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:202.2  
+ Median :12.560   Median :1.000   Median :2.000   Median :313.5  
+ Mean   :15.095   Mean   :1.476   Mean   :1.534   Mean   :340.2  
+ 3rd Qu.:16.855   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:462.8  
+ Max.   :83.000   Max.   :2.000   Max.   :2.000   Max.   :915.0  
+ NA's   :5        NA's   :635     NA's   :5       NA's   :321    
+     tanner        testvol      
+ Min.   :1.00   Min.   : 1.000  
+ 1st Qu.:1.00   1st Qu.: 1.000  
+ Median :2.00   Median : 3.000  
+ Mean   :2.64   Mean   : 7.896  
+ 3rd Qu.:5.00   3rd Qu.:15.000  
+ Max.   :5.00   Max.   :30.000  
+ NA's   :240    NA's   :859     
 > detach(juul)
 > juul$sex <- factor(juul$sex,labels=c("M","F"))
 > juul$menarche <- factor(juul$menarche,labels=c("No","Yes"))
@@ -651,15 +650,15 @@ UseMethod("print")
  Mean   :15.095                         Mean   :340.2  
  3rd Qu.:16.855                         3rd Qu.:462.8  
  Max.   :83.000                         Max.   :915.0  
- NA's   : 5.000                         NA's   :321.0  
-  tanner       testvol       
- I   :515   Min.   :  1.000  
- II  :103   1st Qu.:  1.000  
- III : 72   Median :  3.000  
- IV  : 81   Mean   :  7.896  
- V   :328   3rd Qu.: 15.000  
- NA's:240   Max.   : 30.000  
-            NA's   :859.000  
+ NA's   :5                              NA's   :321    
+  tanner       testvol      
+ I   :515   Min.   : 1.000  
+ II  :103   1st Qu.: 1.000  
+ III : 72   Median : 3.000  
+ IV  : 81   Mean   : 7.896  
+ V   :328   3rd Qu.:15.000  
+ NA's:240   Max.   :30.000  
+            NA's   :859     
 > hist(x)
 > if (.make.epsf) dev.copy2eps(file="hist.ps")
 > mid.age <- c(2.5,7.5,13,16.5,17.5,19,22.5,44.5,70.5)
@@ -720,15 +719,15 @@ sex: M
  Mean   :15.38                      Mean   :310.9   IV  : 41  
  3rd Qu.:16.77                      3rd Qu.:430.2   V   :124  
  Max.   :83.00                      Max.   :915.0   NA's: 76  
-                                    NA's   :145.0             
-    testvol       
- Min.   :  1.000  
- 1st Qu.:  1.000  
- Median :  3.000  
- Mean   :  7.896  
- 3rd Qu.: 15.000  
- Max.   : 30.000  
- NA's   :141.000  
+                                    NA's   :145               
+    testvol      
+ Min.   : 1.000  
+ 1st Qu.: 1.000  
+ Median : 3.000  
+ Mean   : 7.896  
+ 3rd Qu.:15.000  
+ Max.   :30.000  
+ NA's   :141     
 ------------------------------------------------- 
 sex: F
       age        menarche   sex          igf1        tanner   
@@ -738,7 +737,7 @@ sex: F
  Mean   :14.84                      Mean   :368.1   IV  : 40  
  3rd Qu.:16.93                      3rd Qu.:483.0   V   :204  
  Max.   :75.12                      Max.   :914.0   NA's:159  
-                                    NA's   :176.0             
+                                    NA's   :176               
     testvol   
  Min.   : NA  
  1st Qu.: NA  
@@ -933,11 +932,11 @@ consumption
 
 	One Sample t-test
 
-data:  daily.intake 
+data:  daily.intake
 t = -2.8208, df = 10, p-value = 0.01814
-alternative hypothesis: true mean is not equal to 7725 
+alternative hypothesis: true mean is not equal to 7725
 95 percent confidence interval:
- 5986.348 7520.925 
+ 5986.348 7520.925
 sample estimates:
 mean of x 
  6753.636 
@@ -946,11 +945,11 @@ mean of x
 
 	One Sample t-test
 
-data:  daily.intake 
+data:  daily.intake
 t = -2.8208, df = 10, p-value = 0.01814
-alternative hypothesis: true mean is not equal to 7725 
+alternative hypothesis: true mean is not equal to 7725
 95 percent confidence interval:
- 5986.348 7520.925 
+ 5986.348 7520.925
 sample estimates:
 mean of x 
  6753.636 
@@ -959,9 +958,9 @@ mean of x
 
 	Wilcoxon signed rank test with continuity correction
 
-data:  daily.intake 
+data:  daily.intake
 V = 8, p-value = 0.0293
-alternative hypothesis: true location is not equal to 7725 
+alternative hypothesis: true location is not equal to 7725
 
 Warning message:
 In wilcox.test.default(daily.intake, mu = 7725) :
@@ -995,11 +994,11 @@ In wilcox.test.default(daily.intake, mu = 7725) :
 
 	Welch Two Sample t-test
 
-data:  expend by stature 
+data:  expend by stature
 t = -3.8555, df = 15.919, p-value = 0.001411
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -3.459167 -1.004081 
+ -3.459167 -1.004081
 sample estimates:
  mean in group lean mean in group obese 
            8.066154           10.297778 
@@ -1008,11 +1007,11 @@ sample estimates:
 
 	Two Sample t-test
 
-data:  expend by stature 
+data:  expend by stature
 t = -3.9456, df = 20, p-value = 0.000799
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -3.411451 -1.051796 
+ -3.411451 -1.051796
 sample estimates:
  mean in group lean mean in group obese 
            8.066154           10.297778 
@@ -1021,11 +1020,11 @@ sample estimates:
 
 	F test to compare two variances
 
-data:  expend by stature 
-F = 0.7844, num df = 12, denom df = 8, p-value = 0.6797
-alternative hypothesis: true ratio of variances is not equal to 1 
+data:  expend by stature
+F = 0.78445, num df = 12, denom df = 8, p-value = 0.6797
+alternative hypothesis: true ratio of variances is not equal to 1
 95 percent confidence interval:
- 0.1867876 2.7547991 
+ 0.1867876 2.7547991
 sample estimates:
 ratio of variances 
           0.784446 
@@ -1034,9 +1033,9 @@ ratio of variances
 
 	Wilcoxon rank sum test with continuity correction
 
-data:  expend by stature 
+data:  expend by stature
 W = 12, p-value = 0.002122
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(x = c(7.53, 7.48, 8.08, 8.09, 10.15, 8.4,  :
@@ -1062,11 +1061,11 @@ In wilcox.test.default(x = c(7.53, 7.48, 8.08, 8.09, 10.15, 8.4,  :
 
 	Paired t-test
 
-data:  pre and post 
-t = 11.9414, df = 10, p-value = 3.059e-07
-alternative hypothesis: true difference in means is not equal to 0 
+data:  pre and post
+t = 11.941, df = 10, p-value = 3.059e-07
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- 1074.072 1566.838 
+ 1074.072 1566.838
 sample estimates:
 mean of the differences 
                1320.455 
@@ -1075,11 +1074,11 @@ mean of the differences
 
 	Welch Two Sample t-test
 
-data:  pre and post 
+data:  pre and post
 t = 2.6242, df = 19.92, p-value = 0.01629
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
-  270.5633 2370.3458 
+  270.5633 2370.3458
 sample estimates:
 mean of x mean of y 
  6753.636  5433.182 
@@ -1088,9 +1087,9 @@ mean of x mean of y
 
 	Wilcoxon signed rank test with continuity correction
 
-data:  pre and post 
+data:  pre and post
 V = 66, p-value = 0.00384
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(pre, post, paired = T) :
@@ -1121,12 +1120,12 @@ Coefficients:
 (Intercept)    1.09781    0.11748   9.345 6.26e-09 ***
 blood.glucose  0.02196    0.01045   2.101   0.0479 *  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.2167 on 21 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared: 0.1737,	Adjusted R-squared: 0.1343 
-F-statistic: 4.414 on 1 and 21 DF,  p-value: 0.0479 
+Multiple R-squared:  0.1737,	Adjusted R-squared:  0.1343 
+F-statistic: 4.414 on 1 and 21 DF,  p-value: 0.0479
 
 > summary(lm(short.velocity~blood.glucose))
 
@@ -1142,12 +1141,12 @@ Coefficients:
 (Intercept)    1.09781    0.11748   9.345 6.26e-09 ***
 blood.glucose  0.02196    0.01045   2.101   0.0479 *  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.2167 on 21 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared: 0.1737,	Adjusted R-squared: 0.1343 
-F-statistic: 4.414 on 1 and 21 DF,  p-value: 0.0479 
+Multiple R-squared:  0.1737,	Adjusted R-squared:  0.1343 
+F-statistic: 4.414 on 1 and 21 DF,  p-value: 0.0479
 
 > plot(blood.glucose,short.velocity)
 > abline(lm(short.velocity~blood.glucose))
@@ -1262,7 +1261,7 @@ Calls: lines -> lines.default -> plot.xy -> xy.coords
 24 1.306459 0.8457315 1.767186
 Warning message:
 In predict.lm(lm.velo, int = "p") :
-  Predictions on current data refer to _future_ responses
+  predictions on current data refer to _future_ responses
 
 > pred.frame <- data.frame(blood.glucose=4:20)
 > pp <- predict(lm.velo, int="p", newdata=pred.frame)
@@ -1287,11 +1286,11 @@ short.velocity     0.4167546      1.0000000
 
 	Pearson's product-moment correlation
 
-data:  blood.glucose and short.velocity 
+data:  blood.glucose and short.velocity
 t = 2.101, df = 21, p-value = 0.0479
-alternative hypothesis: true correlation is not equal to 0 
+alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- 0.005496682 0.707429479 
+ 0.005496682 0.707429479
 sample estimates:
       cor 
 0.4167546 
@@ -1300,23 +1299,23 @@ sample estimates:
 
 	Spearman's rank correlation rho
 
-data:  blood.glucose and short.velocity 
-S = 1380.364, p-value = 0.1392
-alternative hypothesis: true rho is not equal to 0 
+data:  blood.glucose and short.velocity
+S = 1380.4, p-value = 0.1392
+alternative hypothesis: true rho is not equal to 0
 sample estimates:
      rho 
 0.318002 
 
 Warning message:
 In cor.test.default(blood.glucose, short.velocity, method = "spearman") :
-  Cannot compute exact p-values with ties
+  Cannot compute exact p-value with ties
 > cor.test(blood.glucose,short.velocity,method="kendall")
 
 	Kendall's rank correlation tau
 
-data:  blood.glucose and short.velocity 
+data:  blood.glucose and short.velocity
 z = 1.5604, p-value = 0.1187
-alternative hypothesis: true tau is not equal to 0 
+alternative hypothesis: true tau is not equal to 0
 sample estimates:
       tau 
 0.2350616 
@@ -1343,7 +1342,7 @@ Response: folate
 ventilation  2  15516  7757.9  3.7113 0.04359 *
 Residuals   19  39716  2090.3                  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > attach(juul)
 > anova(lm(igf1~tanner))  ## WRONG!
 Analysis of Variance Table
@@ -1353,7 +1352,7 @@ Response: igf1
 tanner      1 10985605 10985605  686.07 < 2.2e-16 ***
 Residuals 790 12649728    16012                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > juul$tanner <- factor(juul$tanner,
 +                       labels=c("I","II","III","IV","V"))
 > detach(juul)
@@ -1369,7 +1368,7 @@ Response: igf1
 tanner      4 12696217 3174054  228.35 < 2.2e-16 ***
 Residuals 787 10939116   13900                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > summary(lm(folate~ventilation))
 
 Call:
@@ -1385,11 +1384,11 @@ Coefficients:
 ventilationN2O+O2,op   -60.18      22.22  -2.709   0.0139 *  
 ventilationO2,24h      -38.62      26.06  -1.482   0.1548    
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 45.72 on 19 degrees of freedom
-Multiple R-squared: 0.2809,	Adjusted R-squared: 0.2052 
-F-statistic: 3.711 on 2 and 19 DF,  p-value: 0.04359 
+Multiple R-squared:  0.2809,	Adjusted R-squared:  0.2052 
+F-statistic: 3.711 on 2 and 19 DF,  p-value: 0.04359
 
 > pairwise.t.test(folate, ventilation, p.adj="bonferroni")
 
@@ -1417,7 +1416,7 @@ P value adjustment method: holm
 
 	One-way analysis of means (not assuming equal variances)
 
-data:  folate and ventilation 
+data:  folate and ventilation
 F = 2.9704, num df = 2.000, denom df = 11.065, p-value =
 0.09277
 
@@ -1445,14 +1444,14 @@ P value adjustment method: holm
 
 	Bartlett test of homogeneity of variances
 
-data:  folate by ventilation 
+data:  folate by ventilation
 Bartlett's K-squared = 2.0951, df = 2, p-value = 0.3508
 
 > kruskal.test(folate~ventilation)
 
 	Kruskal-Wallis rank sum test
 
-data:  folate by ventilation 
+data:  folate by ventilation
 Kruskal-Wallis chi-squared = 4.1852, df = 2, p-value =
 0.1234
 
@@ -1513,7 +1512,7 @@ subj       8 8966.6 1120.82 90.6391 4.863e-16 ***
 time       3  151.0   50.32  4.0696   0.01802 *  
 Residuals 24  296.8   12.37                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > interaction.plot(time, subj, hr)
 > if (.make.epsf) dev.copy2eps(file="interaction-plot.ps")
 > interaction.plot(ordered(time),subj,hr)
@@ -1521,7 +1520,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 	Friedman rank sum test
 
-data:  hr and time and subj 
+data:  hr and time and subj
 Friedman chi-squared = 8.5059, df = 3, p-value = 0.03664
 
 > attach(thuesen)
@@ -1534,18 +1533,18 @@ Response: short.velocity
 blood.glucose  1 0.20727 0.207269   4.414 0.0479 *
 Residuals     21 0.98610 0.046957                 
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > prop.test(39,215,.15)
 
 	1-sample proportions test with continuity correction
 
-data:  39 out of 215, null probability 0.15 
+data:  39 out of 215, null probability 0.15
 X-squared = 1.425, df = 1, p-value = 0.2326
-alternative hypothesis: true p is not equal to 0.15 
+alternative hypothesis: true p is not equal to 0.15
 95 percent confidence interval:
- 0.1335937 0.2408799 
+ 0.1335937 0.2408799
 sample estimates:
         p 
 0.1813953 
@@ -1554,12 +1553,12 @@ sample estimates:
 
 	Exact binomial test
 
-data:  39 and 215 
+data:  39 and 215
 number of successes = 39, number of trials = 215, p-value
 = 0.2135
-alternative hypothesis: true probability of success is not equal to 0.15 
+alternative hypothesis: true probability of success is not equal to 0.15
 95 percent confidence interval:
- 0.1322842 0.2395223 
+ 0.1322842 0.2395223
 sample estimates:
 probability of success 
              0.1813953 
@@ -1571,11 +1570,11 @@ probability of success
 	2-sample test for equality of proportions with continuity
 	correction
 
-data:  lewitt.machin.success out of lewitt.machin.total 
+data:  lewitt.machin.success out of lewitt.machin.total
 X-squared = 3.2793, df = 1, p-value = 0.07016
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 95 percent confidence interval:
- 0.01151032 0.87310506 
+ 0.01151032 0.87310506
 sample estimates:
    prop 1    prop 2 
 0.7500000 0.3076923 
@@ -1589,11 +1588,11 @@ sample estimates:
 
 	Fisher's Exact Test for Count Data
 
-data:  lewitt.machin 
+data:  lewitt.machin
 p-value = 0.04718
-alternative hypothesis: true odds ratio is not equal to 1 
+alternative hypothesis: true odds ratio is not equal to 1
 95 percent confidence interval:
-  0.9006803 57.2549701 
+  0.9006803 57.2549701
 sample estimates:
 odds ratio 
   6.180528 
@@ -1603,7 +1602,7 @@ odds ratio
 	Pearson's Chi-squared test with Yates' continuity
 	correction
 
-data:  lewitt.machin 
+data:  lewitt.machin
 X-squared = 3.2793, df = 1, p-value = 0.07016
 
 > caesar.shoe
@@ -1623,9 +1622,9 @@ No  17 28  36 41  46 140
 	6-sample test for equality of proportions without
 	continuity correction
 
-data:  caesar.shoe.yes out of caesar.shoe.total 
+data:  caesar.shoe.yes out of caesar.shoe.total
 X-squared = 9.2874, df = 5, p-value = 0.09814
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 sample estimates:
     prop 1     prop 2     prop 3     prop 4     prop 5     prop 6 
 0.22727273 0.20000000 0.14285714 0.14583333 0.14814815 0.06666667 
@@ -1638,7 +1637,7 @@ In prop.test(caesar.shoe.yes, caesar.shoe.total) :
 	Chi-squared Test for Trend in Proportions
 
 data:  caesar.shoe.yes out of caesar.shoe.total ,
- using scores: 1 2 3 4 5 6 
+ using scores: 1 2 3 4 5 6
 X-squared = 8.0237, df = 1, p-value = 0.004617
 
 > caff.marital <- matrix(c(652,1537,598,242,36,46,38,21,218
@@ -1655,8 +1654,8 @@ Single       218   327     106   67
 
 	Pearson's Chi-squared test
 
-data:  caff.marital 
-X-squared = 51.6556, df = 6, p-value = 2.187e-09
+data:  caff.marital
+X-squared = 51.656, df = 6, p-value = 2.187e-09
 
 > chisq.test(caff.marital)$expected
                      0      1-150   151-300      >300
@@ -1680,8 +1679,8 @@ Single       15.3563704 1.875645 7.0249243 0.6023355
 
 	Pearson's Chi-squared test
 
-data:  tanner and sex 
-X-squared = 28.8672, df = 4, p-value = 8.318e-06
+data:  tanner and sex
+X-squared = 28.867, df = 4, p-value = 8.318e-06
 
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
@@ -1701,7 +1700,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
           power = 0.9
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.t.test(n=450, delta=0.5, sd=2, sig.level = 0.01)
 
@@ -1714,7 +1713,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
           power = 0.8784433
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.t.test(delta=0.5, sd=2, sig.level = 0.01, power=0.9,
 + alt="one.sided")
@@ -1728,7 +1727,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
           power = 0.9
     alternative = one.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.t.test(delta=10, sd=10*sqrt(2), power=0.85, type="paired")
 
@@ -1741,7 +1740,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
           power = 0.85
     alternative = two.sided
 
- NOTE: n is number of *pairs*, sd is std.dev. of *differences* within pairs 
+NOTE: n is number of *pairs*, sd is std.dev. of *differences* within pairs
 
 > power.prop.test(power=.85,p1=.15,p2=.30)
 
@@ -1754,7 +1753,7 @@ X-squared = 28.8672, df = 4, p-value = 8.318e-06
           power = 0.85
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > ### no data sets in exercises
 > rm(list=ls())
@@ -1828,8 +1827,8 @@ Levels: none intermediate severe
 > summary(stroke$died)
         Min.      1st Qu.       Median         Mean      3rd Qu. 
 "1991-01-07" "1992-03-14" "1993-01-23" "1993-02-15" "1993-11-04" 
-        Max. 
-"1996-02-22" 
+        Max.         NA's 
+"1996-02-22"        "338" 
 > summary(stroke$dstr)
         Min.      1st Qu.       Median         Mean      3rd Qu. 
 "1991-01-02" "1991-11-08" "1992-08-12" "1992-07-27" "1993-04-30" 
@@ -2141,9 +2140,10 @@ $`3`
 > pairs(cystfibr, gap=0, cex.labels=0.9)
 > if (.make.epsf) dev.copy2eps(file="cyst-fibr.ps",height=4.5,width=4.49)
 > attach(cystfibr)
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from package:ISwR:
 
     tlc
+
 > if (exists("age",.GlobalEnv,inh=F)) rm(age)
 > if (exists("height",.GlobalEnv,inh=F)) rm(height)
 > if (exists("weight",.GlobalEnv,inh=F)) rm(weight)
@@ -2171,8 +2171,8 @@ frc          -0.3084     0.4924  -0.626    0.540
 tlc           0.1886     0.4997   0.377    0.711
 
 Residual standard error: 25.47 on 15 degrees of freedom
-Multiple R-squared: 0.6373,	Adjusted R-squared: 0.4197 
-F-statistic: 2.929 on 9 and 15 DF,  p-value: 0.03195 
+Multiple R-squared:  0.6373,	Adjusted R-squared:  0.4197 
+F-statistic: 2.929 on 9 and 15 DF,  p-value: 0.03195
 
 > 1-25.5^2/var(pemax)
 [1] 0.4183949
@@ -2192,7 +2192,7 @@ frc        1   194.6   194.6  0.2999 0.592007
 tlc        1    92.4    92.4  0.1424 0.711160   
 Residuals 15  9731.2   648.7                    
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > 955.4+155.0+632.3+2862.2+1549.1+561.9+194.6+92.4
 [1] 7002.9
 > 7002.9/8
@@ -2237,8 +2237,8 @@ frc          -0.3084     0.4924  -0.626    0.540
 tlc           0.1886     0.4997   0.377    0.711
 
 Residual standard error: 25.47 on 15 degrees of freedom
-Multiple R-squared: 0.6373,	Adjusted R-squared: 0.4197 
-F-statistic: 2.929 on 9 and 15 DF,  p-value: 0.03195 
+Multiple R-squared:  0.6373,	Adjusted R-squared:  0.4197 
+F-statistic: 2.929 on 9 and 15 DF,  p-value: 0.03195
 
 > summary(lm(pemax~age+sex+height+weight+bmp+fev1+rv+frc))
 
@@ -2262,11 +2262,11 @@ fev1          1.0183     1.0392   0.980   0.3417
 rv            0.1857     0.1887   0.984   0.3396  
 frc          -0.2605     0.4628  -0.563   0.5813  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 24.78 on 16 degrees of freedom
-Multiple R-squared: 0.6339,	Adjusted R-squared: 0.4508 
-F-statistic: 3.463 on 8 and 16 DF,  p-value: 0.01649 
+Multiple R-squared:  0.6339,	Adjusted R-squared:  0.4508 
+F-statistic: 3.463 on 8 and 16 DF,  p-value: 0.01649
 
 > summary(lm(pemax~age+sex+height+weight+bmp+fev1+rv))
 
@@ -2289,11 +2289,11 @@ bmp          -1.94971    0.98415  -1.981   0.0640 .
 fev1          1.41526    0.74788   1.892   0.0756 .
 rv            0.09567    0.09798   0.976   0.3425  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 24.28 on 17 degrees of freedom
-Multiple R-squared: 0.6266,	Adjusted R-squared: 0.4729 
-F-statistic: 4.076 on 7 and 17 DF,  p-value: 0.008452 
+Multiple R-squared:  0.6266,	Adjusted R-squared:  0.4729 
+F-statistic: 4.076 on 7 and 17 DF,  p-value: 0.008452
 
 > summary(lm(pemax~age+sex+height+weight+bmp+fev1))
 
@@ -2314,11 +2314,11 @@ weight        3.3463     1.4719   2.273   0.0355 *
 bmp          -2.3042     0.9136  -2.522   0.0213 *
 fev1          1.0274     0.6329   1.623   0.1219  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 24.24 on 18 degrees of freedom
-Multiple R-squared: 0.6057,	Adjusted R-squared: 0.4743 
-F-statistic: 4.608 on 6 and 18 DF,  p-value: 0.00529 
+Multiple R-squared:  0.6057,	Adjusted R-squared:  0.4743 
+F-statistic: 4.608 on 6 and 18 DF,  p-value: 0.00529
 
 > summary(lm(pemax~age+sex+height+weight+bmp))
 
@@ -2338,11 +2338,11 @@ height       -0.6853     0.7962  -0.861   0.4001
 weight        3.5546     1.5281   2.326   0.0312 *
 bmp          -1.9613     0.9263  -2.117   0.0476 *
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 25.27 on 19 degrees of freedom
-Multiple R-squared: 0.548,	Adjusted R-squared: 0.429 
-F-statistic: 4.606 on 5 and 19 DF,  p-value: 0.006388 
+Multiple R-squared:  0.548,	Adjusted R-squared:  0.429 
+F-statistic: 4.606 on 5 and 19 DF,  p-value: 0.006388
 
 > summary(lm(pemax~age+height+weight+bmp))
 
@@ -2361,11 +2361,11 @@ height       -0.6985     0.8008  -0.872   0.3934
 weight        3.6338     1.5354   2.367   0.0282 *
 bmp          -1.9621     0.9317  -2.106   0.0480 *
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 25.41 on 20 degrees of freedom
-Multiple R-squared: 0.5186,	Adjusted R-squared: 0.4223 
-F-statistic: 5.386 on 4 and 20 DF,  p-value: 0.004137 
+Multiple R-squared:  0.5186,	Adjusted R-squared:  0.4223 
+F-statistic: 5.386 on 4 and 20 DF,  p-value: 0.004137
 
 > summary(lm(pemax~height+weight+bmp))
 
@@ -2383,11 +2383,11 @@ height       -0.8264     0.7808  -1.058   0.3019
 weight        2.7717     1.1377   2.436   0.0238 *
 bmp          -1.4876     0.7375  -2.017   0.0566 .
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 25.24 on 21 degrees of freedom
-Multiple R-squared: 0.5015,	Adjusted R-squared: 0.4302 
-F-statistic: 7.041 on 3 and 21 DF,  p-value: 0.00187 
+Multiple R-squared:  0.5015,	Adjusted R-squared:  0.4302 
+F-statistic: 7.041 on 3 and 21 DF,  p-value: 0.00187
 
 > summary(lm(pemax~weight+bmp))
 
@@ -2404,11 +2404,11 @@ Coefficients:
 weight        1.6403     0.3900   4.206 0.000365 ***
 bmp          -1.0054     0.5814  -1.729 0.097797 .  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 25.31 on 22 degrees of freedom
-Multiple R-squared: 0.4749,	Adjusted R-squared: 0.4271 
-F-statistic: 9.947 on 2 and 22 DF,  p-value: 0.0008374 
+Multiple R-squared:  0.4749,	Adjusted R-squared:  0.4271 
+F-statistic: 9.947 on 2 and 22 DF,  p-value: 0.0008374
 
 > summary(lm(pemax~weight))
 
@@ -2424,11 +2424,11 @@ Coefficients:
 (Intercept)  63.5456    12.7016   5.003 4.63e-05 ***
 weight        1.1867     0.3009   3.944 0.000646 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 26.38 on 23 degrees of freedom
-Multiple R-squared: 0.4035,	Adjusted R-squared: 0.3776 
-F-statistic: 15.56 on 1 and 23 DF,  p-value: 0.0006457 
+Multiple R-squared:  0.4035,	Adjusted R-squared:  0.3776 
+F-statistic: 15.56 on 1 and 23 DF,  p-value: 0.0006457
 
 > summary(lm(pemax~age+weight+height))
 
@@ -2447,8 +2447,8 @@ weight       0.86949    0.85922   1.012    0.323
 height      -0.07608    0.80278  -0.095    0.925
 
 Residual standard error: 27.41 on 21 degrees of freedom
-Multiple R-squared: 0.4118,	Adjusted R-squared: 0.3278 
-F-statistic: 4.901 on 3 and 21 DF,  p-value: 0.009776 
+Multiple R-squared:  0.4118,	Adjusted R-squared:  0.3278 
+F-statistic: 4.901 on 3 and 21 DF,  p-value: 0.009776
 
 > summary(lm(pemax~age+height))
 
@@ -2466,8 +2466,8 @@ age           2.7178     2.9325   0.927    0.364
 height        0.3397     0.6900   0.492    0.627
 
 Residual standard error: 27.43 on 22 degrees of freedom
-Multiple R-squared: 0.3831,	Adjusted R-squared: 0.3271 
-F-statistic: 6.832 on 2 and 22 DF,  p-value: 0.00492 
+Multiple R-squared:  0.3831,	Adjusted R-squared:  0.3271 
+F-statistic: 6.832 on 2 and 22 DF,  p-value: 0.00492
 
 > summary(lm(pemax~age))
 
@@ -2483,11 +2483,11 @@ Coefficients:
 (Intercept)   50.408     16.657   3.026  0.00601 **
 age            4.055      1.088   3.726  0.00111 **
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 26.97 on 23 degrees of freedom
-Multiple R-squared: 0.3764,	Adjusted R-squared: 0.3492 
-F-statistic: 13.88 on 1 and 23 DF,  p-value: 0.001109 
+Multiple R-squared:  0.3764,	Adjusted R-squared:  0.3492 
+F-statistic: 13.88 on 1 and 23 DF,  p-value: 0.001109
 
 > summary(lm(pemax~height))
 
@@ -2503,18 +2503,19 @@ Coefficients:
 (Intercept) -33.2757    40.0445  -0.831  0.41453   
 height        0.9319     0.2596   3.590  0.00155 **
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 27.34 on 23 degrees of freedom
-Multiple R-squared: 0.3591,	Adjusted R-squared: 0.3312 
-F-statistic: 12.89 on 1 and 23 DF,  p-value: 0.001549 
+Multiple R-squared:  0.3591,	Adjusted R-squared:  0.3312 
+F-statistic: 12.89 on 1 and 23 DF,  p-value: 0.001549
 
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > attach(cystfibr)
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from package:ISwR:
 
     tlc
+
 > summary(lm(pemax~height+I(height^2)))
 
 Call:
@@ -2530,11 +2531,11 @@ Coefficients:
 height       -8.08324    3.32052  -2.434   0.0235 *
 I(height^2)   0.03064    0.01126   2.721   0.0125 *
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 24.18 on 22 degrees of freedom
-Multiple R-squared: 0.5205,	Adjusted R-squared: 0.4769 
-F-statistic: 11.94 on 2 and 22 DF,  p-value: 0.0003081 
+Multiple R-squared:  0.5205,	Adjusted R-squared:  0.4769 
+F-statistic: 11.94 on 2 and 22 DF,  p-value: 0.0003081
 
 > pred.frame <- data.frame(height=seq(110,180,2))
 > lm.pemax.hq <- lm(pemax~height+I(height^2))
@@ -2598,11 +2599,11 @@ Coefficients:
 (Intercept)  -0.2224     0.1249  -1.781   0.0918 .  
 x             2.4369     0.2039  11.953 5.38e-10 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.2502 on 18 degrees of freedom
-Multiple R-squared: 0.8881,	Adjusted R-squared: 0.8819 
-F-statistic: 142.9 on 1 and 18 DF,  p-value: 5.376e-10 
+Multiple R-squared:  0.8881,	Adjusted R-squared:  0.8819 
+F-statistic: 142.9 on 1 and 18 DF,  p-value: 5.376e-10
 
 > summary(lm(y~x-1))
 
@@ -2617,11 +2618,11 @@ Coefficients:
   Estimate Std. Error t value Pr(>|t|)    
 x  2.11227    0.09642   21.91 6.04e-15 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.2641 on 19 degrees of freedom
-Multiple R-squared: 0.9619,	Adjusted R-squared: 0.9599 
-F-statistic:   480 on 1 and 19 DF,  p-value: 6.039e-15 
+Multiple R-squared:  0.9619,	Adjusted R-squared:  0.9599 
+F-statistic:   480 on 1 and 19 DF,  p-value: 6.039e-15
 
 > anova(lm(y~x))
 Analysis of Variance Table
@@ -2631,7 +2632,7 @@ Response: y
 x          1  8.945  8.9450  142.87 5.376e-10 ***
 Residuals 18  1.127  0.0626                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > anova(lm(y~x-1))
 Analysis of Variance Table
 
@@ -2640,7 +2641,7 @@ Response: y
 x          1 33.484  33.484  479.96 6.039e-15 ***
 Residuals 19  1.326   0.070                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > model.matrix(pemax~height+weight)
    (Intercept) height weight
 1            1    109   13.1
@@ -2718,7 +2719,7 @@ Response: trypsin
 grpf        5 224103   44821  13.508 9.592e-12 ***
 Residuals 265 879272    3318                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > anova(lm(trypsin~grp))
 Analysis of Variance Table
 
@@ -2727,7 +2728,7 @@ Response: trypsin
 grp         1 206698  206698  62.009 8.451e-14 ***
 Residuals 269 896677    3333                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > model1 <- lm(trypsin~grp)
 > model2 <- lm(trypsin~grpf)
 > anova(model1,model2)
@@ -2747,7 +2748,7 @@ grp         1 206698  206698 62.2959 7.833e-14 ***
 grpf        4  17405    4351  1.3114    0.2661    
 Residuals 265 879272    3318                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > xbar.trypsin <- tapply(trypsin,grpf,mean)
 > stripchart(trypsin~grp, method="jitter",
 +    jitter=.1, vertical=T, pch=20)
@@ -2794,7 +2795,7 @@ temp        1  17.209  17.209  62.076 4.394e-06 ***
 width:temp  2   5.701   2.851  10.283  0.002504 ** 
 Residuals  12   3.327   0.277                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > tapply(time,list(width,temp),mean)
         1600     1900
 4   3.066667 2.300000
@@ -2858,7 +2859,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
  Min.   :1.000   Min.   : 11000   Min.   :19.20  
  1st Qu.:1.000   1st Qu.: 27500   1st Qu.:21.40  
  Median :1.000   Median : 69000   Median :23.30  
- Mean   :1.373   Mean   :164325   Mean   :23.00  
+ Mean   :1.373   Mean   :164326   Mean   :23.00  
  3rd Qu.:2.000   3rd Qu.:243000   3rd Qu.:24.35  
  Max.   :2.000   Max.   :631000   Max.   :26.30  
 > hellung$glucose <- factor(hellung$glucose, labels=c("Yes","No"))
@@ -2867,7 +2868,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
  Yes:32   Min.   : 11000   Min.   :19.20  
  No :19   1st Qu.: 27500   1st Qu.:21.40  
           Median : 69000   Median :23.30  
-          Mean   :164325   Mean   :23.00  
+          Mean   :164326   Mean   :23.00  
           3rd Qu.:243000   3rd Qu.:24.35  
           Max.   :631000   Max.   :26.30  
 > attach(hellung)
@@ -2899,11 +2900,11 @@ Coefficients:
 (Intercept)  1.63134    0.01345  121.29   <2e-16 ***
 log10(conc) -0.05320    0.00272  -19.56   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.008779 on 30 degrees of freedom
-Multiple R-squared: 0.9273,	Adjusted R-squared: 0.9248 
-F-statistic: 382.5 on 1 and 30 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.9273,	Adjusted R-squared:  0.9248 
+F-statistic: 382.5 on 1 and 30 DF,  p-value: < 2.2e-16
 
 > summary(lm(log10(diameter)~ log10(conc), data=tethym.nogluc))
 
@@ -2919,11 +2920,11 @@ Coefficients:
 (Intercept)  1.634761   0.020209   80.89  < 2e-16 ***
 log10(conc) -0.059677   0.004125  -14.47 5.48e-11 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.009532 on 17 degrees of freedom
-Multiple R-squared: 0.9249,	Adjusted R-squared: 0.9205 
-F-statistic: 209.3 on 1 and 17 DF,  p-value: 5.482e-11 
+Multiple R-squared:  0.9249,	Adjusted R-squared:  0.9205 
+F-statistic: 209.3 on 1 and 17 DF,  p-value: 5.482e-11
 
 > summary(lm(log10(diameter)~log10(conc)*glucose))
 
@@ -2941,11 +2942,11 @@ log10(conc)           -0.053196   0.002807 -18.954   <2e-16 ***
 glucoseNo              0.003418   0.023695   0.144    0.886    
 log10(conc):glucoseNo -0.006480   0.004821  -1.344    0.185    
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.009059 on 47 degrees of freedom
-Multiple R-squared: 0.9361,	Adjusted R-squared: 0.9321 
-F-statistic: 229.6 on 3 and 47 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.9361,	Adjusted R-squared:  0.9321 
+F-statistic: 229.6 on 3 and 47 DF,  p-value: < 2.2e-16
 
 > summary(lm(log10(diameter)~log10(conc)+glucose))
 
@@ -2962,21 +2963,21 @@ Coefficients:
 log10(conc) -0.055393   0.002301  -24.07  < 2e-16 ***
 glucoseNo   -0.028238   0.002647  -10.67 2.93e-14 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.009134 on 48 degrees of freedom
-Multiple R-squared: 0.9337,	Adjusted R-squared: 0.9309 
-F-statistic: 337.9 on 2 and 48 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.9337,	Adjusted R-squared:  0.9309 
+F-statistic: 337.9 on 2 and 48 DF,  p-value: < 2.2e-16
 
 > var.test(lm.gluc,lm.nogluc)
 
 	F test to compare two variances
 
-data:  lm.gluc and lm.nogluc 
-F = 0.8482, num df = 30, denom df = 17, p-value = 0.6731
-alternative hypothesis: true ratio of variances is not equal to 1 
+data:  lm.gluc and lm.nogluc
+F = 0.84817, num df = 30, denom df = 17, p-value = 0.6731
+alternative hypothesis: true ratio of variances is not equal to 1
 95 percent confidence interval:
- 0.3389901 1.9129940 
+ 0.3389901 1.9129940
 sample estimates:
 ratio of variances 
          0.8481674 
@@ -2991,7 +2992,7 @@ glucose              1 0.009494 0.009494 115.698  2.89e-14 ***
 log10(conc):glucose  1 0.000148 0.000148   1.807    0.1853    
 Residuals           47 0.003857 0.000082                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > anova(lm(log10(diameter)~glucose+log10(conc)))
 Analysis of Variance Table
 
@@ -3001,7 +3002,7 @@ glucose      1 0.008033 0.008033  96.278 4.696e-13 ***
 log10(conc)  1 0.048351 0.048351 579.494 < 2.2e-16 ***
 Residuals   48 0.004005 0.000083                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > anova(lm(log10(diameter)~log10(conc)+ glucose))
 Analysis of Variance Table
 
@@ -3011,16 +3012,16 @@ log10(conc)  1 0.046890 0.046890  561.99 < 2.2e-16 ***
 glucose      1 0.009494 0.009494  113.78 2.932e-14 ***
 Residuals   48 0.004005 0.000083                      
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > t.test(log10(diameter)~glucose)
 
 	Welch Two Sample t-test
 
-data:  log10(diameter) by glucose 
+data:  log10(diameter) by glucose
 t = 2.7037, df = 36.31, p-value = 0.01037
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- 0.006492194 0.045424241 
+ 0.006492194 0.045424241
 sample estimates:
 mean in group Yes  mean in group No 
          1.370046          1.344088 
@@ -3054,12 +3055,12 @@ Coefficients:
 (Intercept)    1.18929    0.11061  10.752 9.22e-10 ***
 blood.glucose  0.01082    0.01029   1.052    0.305    
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.193 on 20 degrees of freedom
   (1 observation deleted due to missingness)
-Multiple R-squared: 0.05241,	Adjusted R-squared: 0.005026 
-F-statistic: 1.106 on 1 and 20 DF,  p-value: 0.3055 
+Multiple R-squared:  0.05241,	Adjusted R-squared:  0.005026 
+F-statistic: 1.106 on 1 and 20 DF,  p-value: 0.3055
 
 > cookd <- cooks.distance(lm(pemax~height+weight))
 > cookd <- cookd/max(cookd)
@@ -3124,7 +3125,7 @@ Coefficients:
 
 Degrees of Freedom: 7 Total (i.e. Null);  4 Residual
 Null Deviance:	    14.13 
-Residual Deviance: 1.618 	AIC: 34.54 
+Residual Deviance: 1.618 	AIC: 34.54
 > glm(hyp.tbl~smoking+obesity+snoring,binomial)
 
 Call:  glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial)
@@ -3135,7 +3136,7 @@ Coefficients:
 
 Degrees of Freedom: 7 Total (i.e. Null);  4 Residual
 Null Deviance:	    14.13 
-Residual Deviance: 1.618 	AIC: 34.54 
+Residual Deviance: 1.618 	AIC: 34.54
 > prop.hyp <- n.hyp/n.tot
 > glm.hyp <- glm(prop.hyp~smoking+obesity+snoring,
 +                binomial,weights=n.tot)
@@ -3149,7 +3150,7 @@ Coefficients:
 
 Degrees of Freedom: 7 Total (i.e. Null);  4 Residual
 Null Deviance:	    14.13 
-Residual Deviance: 1.618 	AIC: 34.54 
+Residual Deviance: 1.618 	AIC: 34.54
 > glm.hyp <- glm(hyp.tbl~smoking+obesity+snoring,binomial)
 > summary(glm.hyp)
 
@@ -3169,7 +3170,7 @@ smokingYes  -0.06777    0.27812  -0.244   0.8075
 obesityYes   0.69531    0.28509   2.439   0.0147 *  
 snoringYes   0.87194    0.39757   2.193   0.0283 *  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3198,7 +3199,7 @@ smokingYes  -0.06777    0.27812  -0.244   0.8075
 obesityYes   0.69531    0.28509   2.439   0.0147 *  
 snoringYes   0.87194    0.39757   2.193   0.0283 *  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3226,7 +3227,7 @@ Coefficients:
 obesityYes    0.6954     0.2851   2.440   0.0147 *  
 snoringYes    0.8655     0.3967   2.182   0.0291 *  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3253,7 +3254,7 @@ smoking  1   0.0022         6    14.1237 0.962724
 obesity  1   6.8274         5     7.2963 0.008977 **
 snoring  1   5.6779         4     1.6184 0.017179 * 
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > glm.hyp <- glm(hyp.tbl~snoring+obesity+smoking,binomial)
 > anova(glm.hyp, test="Chisq")
 Analysis of Deviance Table
@@ -3271,7 +3272,7 @@ snoring  1   6.7887         6     7.3372 0.009174 **
 obesity  1   5.6591         5     1.6781 0.017365 * 
 smoking  1   0.0597         4     1.6184 0.806938   
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > glm.hyp <- glm(hyp.tbl~obesity+snoring,binomial)
 > anova(glm.hyp, test="Chisq")
 Analysis of Deviance Table
@@ -3288,7 +3289,7 @@ NULL                        7    14.1259
 obesity  1   6.8260         6     7.2999 0.008984 **
 snoring  1   5.6218         5     1.6781 0.017738 * 
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > drop1(glm.hyp, test="Chisq")
 Single term deletions
 
@@ -3299,7 +3300,7 @@ hyp.tbl ~ obesity + snoring
 obesity  1   7.3372 36.256 5.6591  0.01737 *
 snoring  1   7.2999 36.219 5.6218  0.01774 *
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > caesar.shoe
     <4  4 4.5  5 5.5  6+
 Yes  5  7   6  7   8  10
@@ -3321,7 +3322,7 @@ Coefficients:
 (Intercept) -0.87058    0.40506  -2.149  0.03161 * 
 shoe.score  -0.25971    0.09361  -2.774  0.00553 **
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3352,7 +3353,7 @@ shoe.score  1   7.5597         4     1.7845
 	Chi-squared Test for Trend in Proportions
 
 data:  caesar.shoe.yes out of caesar.shoe.total ,
- using scores: 1 2 3 4 5 6 
+ using scores: 1 2 3 4 5 6
 X-squared = 8.0237, df = 1, p-value = 0.004617
 
 > prop.test(caesar.shoe.yes,caesar.shoe.total)
@@ -3360,9 +3361,9 @@ X-squared = 8.0237, df = 1, p-value = 0.004617
 	6-sample test for equality of proportions without
 	continuity correction
 
-data:  caesar.shoe.yes out of caesar.shoe.total 
+data:  caesar.shoe.yes out of caesar.shoe.total
 X-squared = 9.2874, df = 5, p-value = 0.09814
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 sample estimates:
     prop 1     prop 2     prop 3     prop 4     prop 5     prop 6 
 0.22727273 0.20000000 0.14285714 0.14583333 0.14814815 0.06666667 
@@ -3395,9 +3396,10 @@ snoringYes  2.37609483 1.15143343 5.5609161
 > juul.girl <- subset(juul,age>8 & age<20 &
 +                     complete.cases(menarche))
 > attach(juul.girl)
-The following object(s) are masked from 'package:MASS':
+The following object is masked from package:MASS:
 
     menarche
+
 > summary(glm(menarche~age,binomial))
 
 Call:
@@ -3412,7 +3414,7 @@ Coefficients:
 (Intercept) -20.0132     2.0284  -9.867   <2e-16 ***
 age           1.5173     0.1544   9.829   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3440,7 +3442,7 @@ tanner3       0.8264     1.2377   0.668 0.504313
 tanner4       2.5645     1.2172   2.107 0.035132 *  
 tanner5       5.1897     1.4140   3.670 0.000242 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3461,7 +3463,7 @@ menarche ~ age + tanner
 age     1   124.50 134.50 17.901 2.327e-05 ***
 tanner  4   161.88 165.88 55.282 2.835e-11 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > predict(glm.hyp)
          1          2          3          4          5          6 
 -2.3920763 -2.3920763 -1.6966575 -1.6966575 -1.5266180 -1.5266180 
@@ -3541,7 +3543,7 @@ age.gr(12,13]   0.7296     0.7856   0.929 0.353024
 age.gr(13,14]  -0.5219     1.1184  -0.467 0.640765    
 age.gr(14,20]   0.2751     1.6065   0.171 0.864053    
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -3601,7 +3603,7 @@ Loading required package: splines
 
 Attaching package: `survival'
 
-The following object(s) are masked from `package:ISwR':
+The following object is masked from `package:ISwR':
 
     lung
 
@@ -3730,7 +3732,7 @@ coxph(formula = Surv(days, status == 1) ~ sex)
       coef exp(coef) se(coef)     z Pr(>|z|)  
 sex 0.6622    1.9390   0.2651 2.498   0.0125 *
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
     exp(coef) exp(-coef) lower .95 upper .95
 sex     1.939     0.5157     1.153      3.26
@@ -3752,7 +3754,7 @@ coxph(formula = Surv(days, status == 1) ~ sex + log(thick) +
 sex        0.3600    1.4333   0.2702 1.332   0.1828   
 log(thick) 0.5599    1.7505   0.1784 3.139   0.0017 **
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
            exp(coef) exp(-coef) lower .95 upper .95
 sex            1.433     0.6977     0.844     2.434
@@ -3794,7 +3796,7 @@ age65-69      1.7677     0.2294   7.704 1.31e-14 ***
 age70-74      1.8569     0.2353   7.891 3.00e-15 ***
 age75+        1.4197     0.2503   5.672 1.41e-08 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -3820,7 +3822,7 @@ cases ~ city + age + offset(log(pop))
 city    3   28.307 136.69   4.859   0.1824    
 age     5  126.515 230.90 103.068   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > fit2 <- glm(cases~(city=="Fredericia")+age+offset(log(pop)),
 +                  family=poisson)
 > anova(fit, fit2, test="Chisq")
@@ -3841,7 +3843,7 @@ cases ~ (city == "Fredericia") + age + offset(log(pop))
 city == "Fredericia"  1   28.307 136.69   4.606  0.03185 *  
 age                   5  127.117 227.50 103.417  < 2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > summary(fit2)
 
 Call:
@@ -3862,7 +3864,7 @@ age65-69                   1.7687     0.2294   7.712 1.24e-14 ***
 age70-74                   1.8592     0.2352   7.904 2.71e-15 ***
 age75+                     1.4212     0.2502   5.680 1.34e-08 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -3928,9 +3930,10 @@ age75+                   4.142034525 2.527103521  6.771889935
 > nickel.expand <- within(nickel.expand,
 +      lung.cancer <- as.numeric(icd %in% c(162,163)))
 > attach(nickel.expand)
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from package:ISwR:
 
     lung
+
 > pyr <- tapply(ageout-agein,list(ygr,agr), sum)
 > print(round(pyr), na.print="-")
      20 25  30  35  40  45  50  55  60  65  70  75 80
@@ -4007,7 +4010,7 @@ Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept)  1.73367    0.08544   20.29   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -4040,9 +4043,10 @@ Number of Fisher Scoring iterations: 7
 +     rm(lv)
 + })
 > attach(nickel.expand)
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from package:ISwR:
 
     lung
+
 > fit <- glm(lung.cancer ~ A + Y, poisson,
 +            offset=log((ageout-agein)*lung/1e6))
 > drop1(fit, test="Chisq")
@@ -4055,7 +4059,7 @@ lung.cancer ~ A + Y
 A       5   1073.8 1361.8  4.082   0.5376    
 Y       6   1118.5 1404.5 48.770 8.29e-09 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > fit <- glm(lung.cancer ~ Y - 1, poisson,
 +            offset=log((ageout-agein)*lung/1e6))
 > summary(fit)
@@ -4078,7 +4082,7 @@ Y1951     1.8038     0.2132   8.461  < 2e-16 ***
 Y1956     1.3698     0.2500   5.479 4.27e-08 ***
 Y1961ff   0.4746     0.2425   1.957   0.0504 .  
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -4111,9 +4115,10 @@ Number of Fisher Scoring iterations: 7
 +     EXP <- cut(exposure, c(0, 0.5, 4.5, 8.5, 12.5, 25), right=F)
 + })
 > attach(nickel.expand)
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from package:ISwR:
 
     lung
+
 > fit <- glm(lung.cancer ~ TFE + AFE + YFE + EXP, poisson,
 +            offset=log((ageout-agein)*lung/1e6))
 > drop1(fit, test="Chisq")
@@ -4128,7 +4133,7 @@ AFE     3   1055.0 1353.0  2.079 0.5560839
 YFE     3   1058.1 1356.1  5.155 0.1608219    
 EXP     4   1072.0 1368.0 19.072 0.0007606 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > summary(fit)
 
 Call:
@@ -4157,7 +4162,7 @@ EXP[4.5,8.5)    1.03175    0.28364   3.638 0.000275 ***
 EXP[8.5,12.5)   1.18345    0.37406   3.164 0.001557 ** 
 EXP[12.5,25)    1.28601    0.48236   2.666 0.007674 ** 
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -4183,12 +4188,12 @@ Parameters:
 A      5.05784    0.17626   28.70 3.69e-10 ***
 alpha  0.20282    0.01227   16.53 4.85e-08 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.2283 on 9 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 1.199e-08 
+Achieved convergence tolerance: 1.582e-08
 
 > attach(subset(juul2, age<20 & age>5 & sex==1))
 > plot(height ~ age)
@@ -4220,12 +4225,12 @@ alpha 2.428e+02  1.157e+01  20.978   <2e-16 ***
 beta  1.176e+00  1.892e-02  62.149   <2e-16 ***
 gamma 7.903e-02  8.569e-03   9.222   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 6.811 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 5.27e-06 
+Achieved convergence tolerance: 5.243e-06
   (3 observations deleted due to missingness)
 
 > plot(age, height)
@@ -4241,16 +4246,16 @@ Formula: log(height) ~ log(alpha * exp(-beta * exp(-gamma * age)))
 
 Parameters:
        Estimate Std. Error t value Pr(>|t|)    
-alpha 255.97694   15.03920  17.021   <2e-16 ***
+alpha 255.97696   15.03921  17.021   <2e-16 ***
 beta    1.18949    0.02971  40.033   <2e-16 ***
 gamma   0.07033    0.00811   8.673   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 2.948e-06 
+Achieved convergence tolerance: 2.681e-06
   (3 observations deleted due to missingness)
 
 > plot(age, log(height))
@@ -4269,12 +4274,12 @@ Asym 2.428e+02  1.157e+01   20.98   <2e-16 ***
 b2   1.176e+00  1.892e-02   62.15   <2e-16 ***
 b3   9.240e-01  7.918e-03  116.69   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 6.811 on 499 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 1.411e-06 
+Achieved convergence tolerance: 1.411e-06
   (3 observations deleted due to missingness)
 
 > cf <- coef(nls(height ~ SSgompertz(age, Asym, b2, b3)))
@@ -4290,12 +4295,12 @@ Asym 2.560e+02  1.504e+01   17.02   <2e-16 ***
 b2   1.189e+00  2.971e-02   40.03   <2e-16 ***
 b3   9.321e-01  7.559e-03  123.31   <2e-16 ***
 ---
-Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1 
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 5.472e-06 
+Achieved convergence tolerance: 5.506e-06
   (3 observations deleted due to missingness)
 
 > par(mfrow=c(3,1))
@@ -4304,14 +4309,17 @@ Achieved convergence tolerance: 5.472e-06
 > confint(fit)
 Waiting for profiling to be done...
              2.5%        97.5%
-alpha 233.5007561 294.76267631
+alpha 233.5007560 294.76267652
 beta    1.1442683   1.27411439
 gamma   0.0550577   0.08574974
 > confint.default(fit)
-             2.5 %       97.5 %
-alpha 226.50064553 285.45324094
-beta    1.13125578   1.24772849
-gamma   0.05443818   0.08622691
+             2.5 %      97.5 %
+alpha 226.50065351 285.4532669
+beta    1.13125577   1.2477285
+gamma   0.05443818   0.0862269
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > 
+> proc.time()
+   user  system elapsed 
+  4.989   0.237   5.380 

@@ -1,8 +1,7 @@
 
-R version 2.14.2 (2012-02-29)
-Copyright (C) 2012 The R Foundation for Statistical Computing
-ISBN 3-900051-07-0
-Platform: x86_64-apple-darwin9.8.0/x86_64 (64-bit)
+R version 3.2.0 Patched (2015-06-05 r68479) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin14.3.0/x86_64 (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -32,14 +31,14 @@ Levels: Dewey Huey Louie
 [1] "red"   "blue"  "green" "red"  
 > juul.girl <- juul[juul$age >=7 & juul$age < 14 & juul$sex == 2,]
 > summary(juul.girl)
-      age            menarche           sex         igf1           tanner      
- Min.   : 7.000   Min.   : 1.000   Min.   :2   Min.   : 95.0   Min.   : 1.000  
- 1st Qu.: 8.885   1st Qu.: 1.000   1st Qu.:2   1st Qu.:214.2   1st Qu.: 1.000  
- Median :10.560   Median : 1.000   Median :2   Median :302.5   Median : 1.000  
- Mean   :10.557   Mean   : 1.132   Mean   :2   Mean   :351.8   Mean   : 1.951  
- 3rd Qu.:12.207   3rd Qu.: 1.000   3rd Qu.:2   3rd Qu.:473.2   3rd Qu.: 3.000  
- Max.   :13.940   Max.   : 2.000   Max.   :2   Max.   :914.0   Max.   : 5.000  
- NA's   : 5.000   NA's   :11.000   NA's   :5   NA's   :119.0   NA's   :66.000  
+      age            menarche          sex         igf1           tanner     
+ Min.   : 7.000   Min.   :1.000   Min.   :2   Min.   : 95.0   Min.   :1.000  
+ 1st Qu.: 8.885   1st Qu.:1.000   1st Qu.:2   1st Qu.:214.2   1st Qu.:1.000  
+ Median :10.560   Median :1.000   Median :2   Median :302.5   Median :1.000  
+ Mean   :10.557   Mean   :1.132   Mean   :2   Mean   :351.8   Mean   :1.951  
+ 3rd Qu.:12.207   3rd Qu.:1.000   3rd Qu.:2   3rd Qu.:473.2   3rd Qu.:3.000  
+ Max.   :13.940   Max.   :2.000   Max.   :2   Max.   :914.0   Max.   :5.000  
+ NA's   :5        NA's   :11      NA's   :5   NA's   :119     NA's   :66     
     testvol   
  Min.   : NA  
  1st Qu.: NA  
@@ -179,11 +178,11 @@ Levels: Dewey Huey Louie
 
 	One Sample t-test
 
-data:  react 
+data:  react
 t = -7.7512, df = 333, p-value = 1.115e-13
-alternative hypothesis: true mean is not equal to 0 
+alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
- -0.9985214 -0.5942930 
+ -0.9985214 -0.5942930
 sample estimates:
  mean of x 
 -0.7964072 
@@ -192,17 +191,17 @@ sample estimates:
 
 	Wilcoxon signed rank test with continuity correction
 
-data:  react 
+data:  react
 V = 9283.5, p-value = 2.075e-13
-alternative hypothesis: true location is not equal to 0 
+alternative hypothesis: true location is not equal to 0
 
 > wilcox.test(vital.capacity~group, data=vitcap)
 
 	Wilcoxon rank sum test with continuity correction
 
-data:  vital.capacity by group 
+data:  vital.capacity by group
 W = 30.5, p-value = 0.01783
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(x = c(4.62, 5.29, 5.52, 3.71, 4.02, 5.09,  :
@@ -219,15 +218,15 @@ In wilcox.test.default(x = c(4.62, 5.29, 5.52, 3.71, 4.02, 5.09,  :
 
 	Shapiro-Wilk normality test
 
-data:  react 
-W = 0.957, p-value = 2.512e-08
+data:  react
+W = 0.95701, p-value = 2.512e-08
 
 > shapiro.test(react[-c(1,334)])
 
 	Shapiro-Wilk normality test
 
-data:  react[-c(1, 334)] 
-W = 0.9687, p-value = 1.377e-06
+data:  react[-c(1, 334)]
+W = 0.96869, p-value = 1.377e-06
 
 > qqnorm(react[-c(1,334)])
 > attach(ashina)
@@ -235,11 +234,11 @@ W = 0.9687, p-value = 1.377e-06
 
 	Paired t-test
 
-data:  vas.active and vas.plac 
+data:  vas.active and vas.plac
 t = -3.2269, df = 15, p-value = 0.005644
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -71.1946 -14.5554 
+ -71.1946 -14.5554
 sample estimates:
 mean of the differences 
                 -42.875 
@@ -249,11 +248,11 @@ mean of the differences
 
 	Welch Two Sample t-test
 
-data:  (vas.active - vas.plac)[grp == 1] and (vas.plac - vas.active)[grp == 2] 
+data:  (vas.active - vas.plac)[grp == 1] and (vas.plac - vas.active)[grp == 2]
 t = -3.2517, df = 13.97, p-value = 0.005807
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -130.56481  -26.76853 
+ -130.56481  -26.76853
 sample estimates:
 mean of x mean of y 
 -53.50000  25.16667 
@@ -283,11 +282,11 @@ Coefficients:
 (Intercept) 811.2267    76.9755  10.539 2.29e-13 ***
 body.weight   7.0595     0.9776   7.221 7.03e-09 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 157.9 on 42 degrees of freedom
-Multiple R-squared: 0.5539,	Adjusted R-squared: 0.5433 
-F-statistic: 52.15 on 1 and 42 DF,  p-value: 7.025e-09 
+Multiple R-squared:  0.5539,	Adjusted R-squared:  0.5433 
+F-statistic: 52.15 on 1 and 42 DF,  p-value: 7.025e-09
 
 > 811.2267 + 7.0595 * 70 # , or:
 [1] 1305.392
@@ -316,11 +315,11 @@ Coefficients:
 (Intercept)  3.83697    0.38021  10.092   <2e-16 ***
 age          0.10350    0.03954   2.618   0.0103 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.478 on 98 degrees of freedom
-Multiple R-squared: 0.06536,	Adjusted R-squared: 0.05582 
-F-statistic: 6.853 on 1 and 98 DF,  p-value: 0.01025 
+Multiple R-squared:  0.06536,	Adjusted R-squared:  0.05582 
+F-statistic: 6.853 on 1 and 98 DF,  p-value: 0.01025
 
 > plot(log(ab)~age, data=malaria)
 > rho <- .90 ; n <- 100
@@ -331,11 +330,11 @@ F-statistic: 6.853 on 1 and 98 DF,  p-value: 0.01025
 
 	Pearson's product-moment correlation
 
-data:  x and y 
-t = 17.6732, df = 98, p-value < 2.2e-16
-alternative hypothesis: true correlation is not equal to 0 
+data:  x and y
+t = 17.673, df = 98, p-value < 2.2e-16
+alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- 0.8158420 0.9124999 
+ 0.8158420 0.9124999
 sample estimates:
       cor 
 0.8724529 
@@ -344,9 +343,9 @@ sample estimates:
 
 	Spearman's rank correlation rho
 
-data:  x and y 
+data:  x and y
 S = 23676, p-value < 2.2e-16
-alternative hypothesis: true rho is not equal to 0 
+alternative hypothesis: true rho is not equal to 0
 sample estimates:
       rho 
 0.8579298 
@@ -355,9 +354,9 @@ sample estimates:
 
 	Kendall's rank correlation tau
 
-data:  x and y 
+data:  x and y
 z = 9.8457, p-value < 2.2e-16
-alternative hypothesis: true tau is not equal to 0 
+alternative hypothesis: true tau is not equal to 0
 sample estimates:
       tau 
 0.6678788 
@@ -382,21 +381,21 @@ grouppassive   1.2500     0.8755   1.428   0.1696
 groupnone      1.5833     0.8755   1.809   0.0864 .  
 groupctr.8w    2.2250     0.9182   2.423   0.0255 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.516 on 19 degrees of freedom
-Multiple R-squared: 0.2528,	Adjusted R-squared: 0.1348 
-F-statistic: 2.142 on 3 and 19 DF,  p-value: 0.1285 
+Multiple R-squared:  0.2528,	Adjusted R-squared:  0.1348 
+F-statistic: 2.142 on 3 and 19 DF,  p-value: 0.1285
 
 > t.test(zelazo$active,zelazo$ctr.8w) # first vs. last
 
 	Welch Two Sample t-test
 
-data:  zelazo$active and zelazo$ctr.8w 
-t = -3.0449, df = 8.663, p-value = 0.01453
-alternative hypothesis: true difference in means is not equal to 0 
+data:  zelazo$active and zelazo$ctr.8w
+t = -3.0449, df = 8.6632, p-value = 0.01453
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -3.8878619 -0.5621381 
+ -3.8878619 -0.5621381
 sample estimates:
 mean of x mean of y 
    10.125    12.350 
@@ -405,11 +404,11 @@ mean of x mean of y
 
 	Welch Two Sample t-test
 
-data:  zelazo$active and unlist(zelazo[-1]) 
-t = -2.386, df = 9.086, p-value = 0.04058
-alternative hypothesis: true difference in means is not equal to 0 
+data:  zelazo$active and unlist(zelazo[-1])
+t = -2.386, df = 9.0865, p-value = 0.04058
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -3.22070952 -0.08811401 
+ -3.22070952 -0.08811401
 sample estimates:
 mean of x mean of y 
  10.12500  11.77941 
@@ -424,7 +423,7 @@ method     2 1.08111 0.54056  6.4953 0.01557 *
 subject    5 2.18278 0.43656  5.2457 0.01271 *
 Residuals 10 0.83222 0.08322                  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > summary(fit)
 
 Call:
@@ -445,26 +444,26 @@ subject4    -0.06667    0.23555  -0.283  0.78293
 subject5    -0.03333    0.23555  -0.142  0.89027    
 subject6    -0.60000    0.23555  -2.547  0.02900 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.2885 on 10 degrees of freedom
-Multiple R-squared: 0.7968,	Adjusted R-squared: 0.6546 
-F-statistic: 5.603 on 7 and 10 DF,  p-value: 0.00768 
+Multiple R-squared:  0.7968,	Adjusted R-squared:  0.6546 
+F-statistic: 5.603 on 7 and 10 DF,  p-value: 0.00768
 
 > kruskal.test(walk ~ group)
 
 	Kruskal-Wallis rank sum test
 
-data:  walk by group 
+data:  walk by group
 Kruskal-Wallis chi-squared = 6.8805, df = 3, p-value = 0.0758
 
 > wilcox.test(zelazo$active,zelazo$ctr.8w) # first vs. last
 
 	Wilcoxon rank sum test with continuity correction
 
-data:  zelazo$active and zelazo$ctr.8w 
+data:  zelazo$active and zelazo$ctr.8w
 W = 3, p-value = 0.03493
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(zelazo$active, zelazo$ctr.8w) :
@@ -473,9 +472,9 @@ In wilcox.test.default(zelazo$active, zelazo$ctr.8w) :
 
 	Wilcoxon rank sum test with continuity correction
 
-data:  zelazo$active and unlist(zelazo[-1]) 
+data:  zelazo$active and unlist(zelazo[-1])
 W = 18, p-value = 0.02224
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(zelazo$active, unlist(zelazo[-1])) :
@@ -484,7 +483,7 @@ In wilcox.test.default(zelazo$active, unlist(zelazo[-1])) :
 
 	Friedman rank sum test
 
-data:  volume and method and subject 
+data:  volume and method and subject
 Friedman chi-squared = 5.8261, df = 2, p-value = 0.05431
 
 > wilcox.test(lung$volume[lung$method=="A"],
@@ -492,9 +491,9 @@ Friedman chi-squared = 5.8261, df = 2, p-value = 0.05431
 
 	Wilcoxon signed rank test with continuity correction
 
-data:  lung$volume[lung$method == "A"] and lung$volume[lung$method == "C"] 
+data:  lung$volume[lung$method == "A"] and lung$volume[lung$method == "C"]
 V = 0, p-value = 0.05906
-alternative hypothesis: true location shift is not equal to 0 
+alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
 In wilcox.test.default(lung$volume[lung$method == "A"], lung$volume[lung$method ==  :
@@ -508,8 +507,8 @@ In wilcox.test.default(lung$volume[lung$method == "A"], lung$volume[lung$method 
 
 	One-way analysis of means (not assuming equal variances)
 
-data:  sqrt(igf1) and tanner 
-F = 254.1667, num df = 4.000, denom df = 162.434, p-value < 2.2e-16
+data:  sqrt(igf1) and tanner
+F = 254.17, num df = 4.00, denom df = 162.43, p-value < 2.2e-16
 
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
@@ -517,11 +516,11 @@ F = 254.1667, num df = 4.000, denom df = 162.434, p-value < 2.2e-16
 
 	Exact binomial test
 
-data:  0 and 10 
+data:  0 and 10
 number of successes = 0, number of trials = 10, p-value = 0.1074
-alternative hypothesis: true probability of success is less than 0.2 
+alternative hypothesis: true probability of success is less than 0.2
 95 percent confidence interval:
- 0.0000000 0.2588656 
+ 0.0000000 0.2588656
 sample estimates:
 probability of success 
                      0 
@@ -530,11 +529,11 @@ probability of success
 
 	Exact binomial test
 
-data:  0 and 13 
+data:  0 and 13
 number of successes = 0, number of trials = 13, p-value = 0.05498
-alternative hypothesis: true probability of success is less than 0.2 
+alternative hypothesis: true probability of success is less than 0.2
 95 percent confidence interval:
- 0.0000000 0.2058167 
+ 0.0000000 0.2058167
 sample estimates:
 probability of success 
                      0 
@@ -543,11 +542,11 @@ probability of success
 
 	Exact binomial test
 
-data:  0 and 14 
+data:  0 and 14
 number of successes = 0, number of trials = 14, p-value = 0.04398
-alternative hypothesis: true probability of success is less than 0.2 
+alternative hypothesis: true probability of success is less than 0.2
 95 percent confidence interval:
- 0.0000000 0.1926362 
+ 0.0000000 0.1926362
 sample estimates:
 probability of success 
                      0 
@@ -556,11 +555,11 @@ probability of success
 
 	2-sample test for equality of proportions with continuity correction
 
-data:  c(210, 122) out of c(747, 661) 
+data:  c(210, 122) out of c(747, 661)
 X-squared = 17.612, df = 1, p-value = 2.709e-05
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 95 percent confidence interval:
- 0.05138139 0.14172994 
+ 0.05138139 0.14172994
 sample estimates:
    prop 1    prop 2 
 0.2811245 0.1845688 
@@ -570,18 +569,18 @@ sample estimates:
 
 	Pearson's Chi-squared test with Yates' continuity correction
 
-data:  M 
+data:  M
 X-squared = 1.6243, df = 1, p-value = 0.2025
 
 > fisher.test(M)
 
 	Fisher's Exact Test for Count Data
 
-data:  M 
+data:  M
 p-value = 0.1737
-alternative hypothesis: true odds ratio is not equal to 1 
+alternative hypothesis: true odds ratio is not equal to 1
 95 percent confidence interval:
- 0.6936416 8.4948588 
+ 0.6936416 8.4948588
 sample estimates:
 odds ratio 
   2.339104 
@@ -590,11 +589,11 @@ odds ratio
 
 	2-sample test for equality of proportions with continuity correction
 
-data:  M 
+data:  M
 X-squared = 1.6243, df = 1, p-value = 0.2025
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 95 percent confidence interval:
- -0.08462185  0.50657307 
+ -0.08462185  0.50657307
 sample estimates:
    prop 1    prop 2 
 0.5609756 0.3500000 
@@ -615,25 +614,25 @@ B not pierced  157     15      28
 
 	Fisher's Exact Test for Count Data
 
-data:  tbl["B", , ] 
+data:  tbl["B", , ]
 p-value = 0.1116
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 
 > fisher.test(tbl["A",,])
 
 	Fisher's Exact Test for Count Data
 
-data:  tbl["A", , ] 
+data:  tbl["A", , ]
 p-value = 1
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 
 > fisher.test(margin.table(tbl,2:3)) # marginal
 
 	Fisher's Exact Test for Count Data
 
-data:  margin.table(tbl, 2:3) 
+data:  margin.table(tbl, 2:3)
 p-value = 0.3211
-alternative hypothesis: two.sided 
+alternative hypothesis: two.sided
 
 > p <- seq(0,1,0.001)
 > pval <- sapply(p,function(p)binom.test(3,15,p=p)$p.value)
@@ -651,7 +650,7 @@ alternative hypothesis: two.sided
           power = 0.8
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.t.test(power=.8,delta=.30,sd=.20,alt="one.sided")
 
@@ -664,7 +663,7 @@ alternative hypothesis: two.sided
           power = 0.8
     alternative = one.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > (qnorm(.975)+qnorm(.8))^2*2*(.2/.3)^2 # approx. formula
 [1] 6.976782
@@ -679,7 +678,7 @@ alternative hypothesis: two.sided
           power = 0.7965441
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > d2 <- .30 * sqrt(2/8) / sqrt(1/6+1/10) # corr.f.uneq. size
 > power.t.test(n=8, delta=d2, sd=.20)
@@ -693,7 +692,7 @@ alternative hypothesis: two.sided
           power = 0.7707066
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.prop.test(power=.9, p1=.6, p2=.75)
 
@@ -706,7 +705,7 @@ alternative hypothesis: two.sided
           power = 0.9
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > power.prop.test(power=.8, p1=.6, p2=.75)
 
@@ -719,7 +718,7 @@ alternative hypothesis: two.sided
           power = 0.8
     alternative = two.sided
 
- NOTE: n is number in *each* group 
+NOTE: n is number in *each* group
 
 > curve(dt(x-3, 25), from=0, to=5)
 > curve(dt(x, 25, 3), add=TRUE)
@@ -827,11 +826,11 @@ Coefficients:
 log(bpd)      1.5519     0.2294   6.764 8.09e-10 ***
 log(ad)       1.4667     0.1467   9.998  < 2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1068 on 104 degrees of freedom
-Multiple R-squared: 0.8583,	Adjusted R-squared: 0.8556 
-F-statistic: 314.9 on 2 and 104 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.8583,	Adjusted R-squared:  0.8556 
+F-statistic: 314.9 on 2 and 104 DF,  p-value: < 2.2e-16
 
 > summary(lm(log(bwt) ~ log(ad), data=secher))
 
@@ -847,11 +846,11 @@ Coefficients:
 (Intercept)  -2.4446     0.5103  -4.791 5.49e-06 ***
 log(ad)       2.2365     0.1105  20.238  < 2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1275 on 105 degrees of freedom
-Multiple R-squared: 0.7959,	Adjusted R-squared: 0.794 
-F-statistic: 409.6 on 1 and 105 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.7959,	Adjusted R-squared:  0.794 
+F-statistic: 409.6 on 1 and 105 DF,  p-value: < 2.2e-16
 
 > pairs(tlc)
 > summary(lm(log(tlc) ~ ., data=tlc))
@@ -870,11 +869,11 @@ age         -0.003647   0.003864  -0.944 0.353272
 sex          0.086184   0.082015   1.051 0.302324    
 height       0.017328   0.004032   4.298 0.000188 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1898 on 28 degrees of freedom
-Multiple R-squared: 0.5927,	Adjusted R-squared: 0.549 
-F-statistic: 13.58 on 3 and 28 DF,  p-value: 1.181e-05 
+Multiple R-squared:  0.5927,	Adjusted R-squared:  0.549 
+F-statistic: 13.58 on 3 and 28 DF,  p-value: 1.181e-05
 
 > opar <- par(mfrow=c(2,2))
 > plot(lm(log(tlc) ~ ., data=tlc), which=1:4)
@@ -919,12 +918,12 @@ Coefficients:
 (Intercept) 18.89742    0.46904   40.29   <2e-16 ***
 age         -0.10871    0.01034  -10.52   <2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.742 on 126 degrees of freedom
   (9 observations deleted due to missingness)
-Multiple R-squared: 0.4676,	Adjusted R-squared: 0.4633 
-F-statistic: 110.6 on 1 and 126 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.4676,	Adjusted R-squared:  0.4633 
+F-statistic: 110.6 on 1 and 126 DF,  p-value: < 2.2e-16
 
 > anova(lm(sqrt(igf1) ~ age + weight + height,
 +            data=juul2, subset=(age >= 25)))
@@ -937,7 +936,7 @@ weight     1   2.454  2.4536  0.5632 0.45848
 height     1   0.004  0.0036  0.0008 0.97715  
 Residuals 32 139.419  4.3568                  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > summary(lm(dl.milk ~ . - no, data=kfm))
 
 Call:
@@ -956,11 +955,11 @@ ml.suppl     -0.002233   0.001241  -1.799 0.078829 .
 mat.weight    0.006212   0.023708   0.262 0.794535    
 mat.height    0.072278   0.030169   2.396 0.020906 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.075 on 44 degrees of freedom
-Multiple R-squared: 0.5459,	Adjusted R-squared: 0.4943 
-F-statistic: 10.58 on 5 and 44 DF,  p-value: 1.03e-06 
+Multiple R-squared:  0.5459,	Adjusted R-squared:  0.4943 
+F-statistic: 10.58 on 5 and 44 DF,  p-value: 1.03e-06
 
 > summary(lm(dl.milk ~ . - no - mat.weight, data=kfm))
 
@@ -979,11 +978,11 @@ weight        1.372524   0.306612   4.476 5.14e-05 ***
 ml.suppl     -0.002313   0.001190  -1.943  0.05824 .  
 mat.height    0.076363   0.025560   2.988  0.00454 ** 
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.064 on 45 degrees of freedom
-Multiple R-squared: 0.5452,	Adjusted R-squared: 0.5047 
-F-statistic: 13.48 on 4 and 45 DF,  p-value: 2.658e-07 
+Multiple R-squared:  0.5452,	Adjusted R-squared:  0.5047 
+F-statistic: 13.48 on 4 and 45 DF,  p-value: 2.658e-07
 
 > summary(lm(dl.milk ~ . - no - mat.weight - sex, data=kfm))
 
@@ -1001,11 +1000,11 @@ weight        1.464781   0.306231   4.783 1.81e-05 ***
 ml.suppl     -0.002237   0.001209  -1.850  0.07074 .  
 mat.height    0.077600   0.025979   2.987  0.00451 ** 
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.082 on 46 degrees of freedom
-Multiple R-squared: 0.5192,	Adjusted R-squared: 0.4879 
-F-statistic: 16.56 on 3 and 46 DF,  p-value: 1.953e-07 
+Multiple R-squared:  0.5192,	Adjusted R-squared:  0.4879 
+F-statistic: 16.56 on 3 and 46 DF,  p-value: 1.953e-07
 
 > summary(lm(dl.milk ~ weight + mat.height, data=kfm))
 
@@ -1022,11 +1021,11 @@ Coefficients:
 weight        1.42862    0.31338   4.559 3.67e-05 ***
 mat.height    0.07063    0.02636   2.680  0.01013 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.109 on 47 degrees of freedom
-Multiple R-squared: 0.4835,	Adjusted R-squared: 0.4615 
-F-statistic:    22 on 2 and 47 DF,  p-value: 1.811e-07 
+Multiple R-squared:  0.4835,	Adjusted R-squared:  0.4615 
+F-statistic:    22 on 2 and 47 DF,  p-value: 1.811e-07
 
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
@@ -1052,7 +1051,7 @@ id     15     51137 70816 252.47  2.4254 0.05287 .
 period  1      1505 21184 241.85  1.0709 0.31830  
 treat   1     11603 31282 254.32  8.2550 0.01228 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > anova(fit.ashina)
 Analysis of Variance Table
 
@@ -1063,7 +1062,7 @@ period     1   4608  4608.0  3.2783 0.09171 .
 treat      1  11603 11603.3  8.2550 0.01228 *
 Residuals 14  19679  1405.6                  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > attach(ashina)
 > dd <- vas.active - vas.plac
@@ -1071,11 +1070,11 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 	Two Sample t-test
 
-data:  dd[grp == 1] and -dd[grp == 2] 
+data:  dd[grp == 1] and -dd[grp == 2]
 t = -2.8731, df = 14, p-value = 0.01228
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -137.39089  -19.94244 
+ -137.39089  -19.94244
 sample estimates:
 mean of x mean of y 
 -53.50000  25.16667 
@@ -1084,11 +1083,11 @@ mean of x mean of y
 
 	Two Sample t-test
 
-data:  dd[grp == 1] and dd[grp == 2] 
+data:  dd[grp == 1] and dd[grp == 2]
 t = -1.0348, df = 14, p-value = 0.3183
-alternative hypothesis: true difference in means is not equal to 0 
+alternative hypothesis: true difference in means is not equal to 0
 95 percent confidence interval:
- -87.05756  30.39089 
+ -87.05756  30.39089
 sample estimates:
 mean of x mean of y 
 -53.50000 -25.16667 
@@ -1103,7 +1102,7 @@ animal     5 35.208   7.042  8.2641  0.002527 **
 logdose    2 72.396  36.198 42.4817 1.295e-05 ***
 Residuals 10  8.521   0.852                      
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > ld <- c(0.5, 0, -0.5)[logdose]
 > anova(lm(reaction ~ animal + ld))
 Analysis of Variance Table
@@ -1114,7 +1113,7 @@ animal     5 35.208   7.042  6.4353   0.00496 **
 ld         1 68.880  68.880 62.9489 7.067e-06 ***
 Residuals 11 12.036   1.094                      
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > summary(lm(reaction ~ animal + ld))
 
 Call:
@@ -1134,11 +1133,11 @@ animal5       3.5833     0.8541   4.195 0.001497 **
 animal6       4.0833     0.8541   4.781 0.000571 ***
 ld            4.7917     0.6039   7.934 7.07e-06 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.046 on 11 degrees of freedom
-Multiple R-squared: 0.8963,	Adjusted R-squared: 0.8398 
-F-statistic: 15.85 on 6 and 11 DF,  p-value: 7.816e-05 
+Multiple R-squared:  0.8963,	Adjusted R-squared:  0.8398 
+F-statistic: 15.85 on 6 and 11 DF,  p-value: 7.816e-05
 
 > 4.7917 + 0.6039 * qt(c(.025,.975), 11)
 [1] 3.462525 6.120875
@@ -1152,11 +1151,11 @@ F-statistic: 15.85 on 6 and 11 DF,  p-value: 7.816e-05
 
 	One Sample t-test
 
-data:  slopes 
-t = 16.4286, df = 5, p-value = 1.525e-05
-alternative hypothesis: true mean is not equal to 0 
+data:  slopes
+t = 16.429, df = 5, p-value = 1.525e-05
+alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
- 4.041914 5.541420 
+ 4.041914 5.541420
 sample estimates:
 mean of x 
  4.791667 
@@ -1172,7 +1171,7 @@ ld         1 68.880  68.880 38.4076 0.0008133 ***
 animal:ld  5  1.276   0.255  0.1423 0.9753664    
 Residuals  6 10.760   1.793                      
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > a <- gl(2, 2, 8)
 > b <- gl(2, 4, 8)
 > x <- 1:8
@@ -1327,11 +1326,11 @@ Coefficients:
 (Intercept)  4.84396    0.02037 237.851   <2e-16 ***
 sexF        -0.01569    0.02701  -0.581    0.563    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1351 on 100 degrees of freedom
-Multiple R-squared: 0.003365,	Adjusted R-squared: -0.006601 
-F-statistic: 0.3376 on 1 and 100 DF,  p-value: 0.5625 
+Multiple R-squared:  0.003365,	Adjusted R-squared:  -0.006601 
+F-statistic: 0.3376 on 1 and 100 DF,  p-value: 0.5625
 
 > summary(lm(log(bp) ~ sex + log(obese), data=bp.obese))
 
@@ -1348,11 +1347,11 @@ Coefficients:
 sexF        -0.06393    0.02744   -2.33   0.0218 *  
 log(obese)   0.31235    0.07366    4.24 5.02e-05 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1249 on 99 degrees of freedom
-Multiple R-squared: 0.1565,	Adjusted R-squared: 0.1395 
-F-statistic: 9.187 on 2 and 99 DF,  p-value: 0.0002188 
+Multiple R-squared:  0.1565,	Adjusted R-squared:  0.1395 
+F-statistic: 9.187 on 2 and 99 DF,  p-value: 0.0002188
 
 > summary(lm(log(bp) ~ sex*log(obese), data=bp.obese))
 
@@ -1370,11 +1369,11 @@ sexF            -0.09047    0.04393  -2.059   0.0421 *
 log(obese)       0.22798    0.13159   1.733   0.0863 .  
 sexF:log(obese)  0.12310    0.15895   0.774   0.4405    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.1252 on 98 degrees of freedom
-Multiple R-squared: 0.1617,	Adjusted R-squared: 0.136 
-F-statistic:   6.3 on 3 and 98 DF,  p-value: 0.0005933 
+Multiple R-squared:  0.1617,	Adjusted R-squared:  0.136 
+F-statistic:   6.3 on 3 and 98 DF,  p-value: 0.0005933
 
 > vitcap2 <- transform(vitcap2,group=factor(group,
 +                                           labels=c("exp>10",
@@ -1400,11 +1399,11 @@ groupunexp      -2.50315    1.04184  -2.403   0.0187 *
 age:groupexp<10  0.03858    0.02327   1.658   0.1014    
 age:groupunexp   0.05450    0.02107   2.587   0.0116 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.5942 on 78 degrees of freedom
-Multiple R-squared: 0.422,	Adjusted R-squared: 0.385 
-F-statistic: 11.39 on 5 and 78 DF,  p-value: 2.871e-08 
+Multiple R-squared:  0.422,	Adjusted R-squared:  0.385 
+F-statistic: 11.39 on 5 and 78 DF,  p-value: 2.871e-08
 
 > drop1(vit.fit, test="F")
 Single term deletions
@@ -1415,7 +1414,7 @@ vital.capacity ~ age * group
 <none>                 27.535 -81.689                  
 age:group  2    2.4995 30.035 -78.391  3.5402 0.03376 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > for (i in 1:3) abline(lm(vital.capacity ~ age,
 +                          subset=as.numeric(group)==i), lty=i)
 > legend(20, 3.5 ,legend=levels(group), pch=20:22, lty=1:3)
@@ -1436,12 +1435,12 @@ Coefficients:
 (Intercept)  8.50382    0.46198   18.41   <2e-16 ***
 age          0.64564    0.05357   12.05   <2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 2.678 on 190 degrees of freedom
   (99 observations deleted due to missingness)
-Multiple R-squared: 0.4333,	Adjusted R-squared: 0.4303 
-F-statistic: 145.3 on 1 and 190 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.4333,	Adjusted R-squared:  0.4303 
+F-statistic: 145.3 on 1 and 190 DF,  p-value: < 2.2e-16
 
 > summary(lm(sqrt(igf1)~age, data=juul.prepub, subset= sex==2))
 
@@ -1458,12 +1457,12 @@ Coefficients:
 (Intercept)  10.7055     0.9047  11.833  < 2e-16 ***
 age           0.4761     0.1020   4.667 8.18e-06 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 2.18 on 117 degrees of freedom
   (105 observations deleted due to missingness)
-Multiple R-squared: 0.157,	Adjusted R-squared: 0.1498 
-F-statistic: 21.79 on 1 and 117 DF,  p-value: 8.184e-06 
+Multiple R-squared:  0.157,	Adjusted R-squared:  0.1498 
+F-statistic: 21.79 on 1 and 117 DF,  p-value: 8.184e-06
 
 > 
 > summary(lm(sqrt(igf1)~age*factor(sex), data=juul.prepub))
@@ -1482,12 +1481,12 @@ age               0.64564    0.05001  12.911   <2e-16 ***
 factor(sex)2      2.20169    1.12350   1.960   0.0509 .  
 age:factor(sex)2 -0.16952    0.12721  -1.333   0.1836    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 2.5 on 307 degrees of freedom
   (204 observations deleted due to missingness)
-Multiple R-squared: 0.3969,	Adjusted R-squared: 0.391 
-F-statistic: 67.33 on 3 and 307 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.3969,	Adjusted R-squared:  0.391 
+F-statistic: 67.33 on 3 and 307 DF,  p-value: < 2.2e-16
 
 > summary(lm(sqrt(igf1)~age+factor(sex), data=juul.prepub))
 
@@ -1504,12 +1503,12 @@ Coefficients:
 age           0.61945    0.04604   13.45   <2e-16 ***
 factor(sex)2  0.75669    0.29445    2.57   0.0106 *  
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 2.503 on 308 degrees of freedom
   (204 observations deleted due to missingness)
-Multiple R-squared: 0.3934,	Adjusted R-squared: 0.3894 
-F-statistic: 99.86 on 2 and 308 DF,  p-value: < 2.2e-16 
+Multiple R-squared:  0.3934,	Adjusted R-squared:  0.3894 
+F-statistic: 99.86 on 2 and 308 DF,  p-value: < 2.2e-16
 
 > summary(fit.aicopt <- step(lm(dl.milk ~ . - no, data=kfm)))
 Start:  AIC=12.83
@@ -1550,11 +1549,11 @@ weight        1.372524   0.306612   4.476 5.14e-05 ***
 ml.suppl     -0.002313   0.001190  -1.943  0.05824 .  
 mat.height    0.076363   0.025560   2.988  0.00454 ** 
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.064 on 45 degrees of freedom
-Multiple R-squared: 0.5452,	Adjusted R-squared: 0.5047 
-F-statistic: 13.48 on 4 and 45 DF,  p-value: 2.658e-07 
+Multiple R-squared:  0.5452,	Adjusted R-squared:  0.5047 
+F-statistic: 13.48 on 4 and 45 DF,  p-value: 2.658e-07
 
 > opar <- par(mfrow=c(2,2))
 > plot(fit.aicopt, which=1:4)
@@ -1592,11 +1591,11 @@ weight        1.464781   0.306231   4.783 1.81e-05 ***
 ml.suppl     -0.002237   0.001209  -1.850  0.07074 .  
 mat.height    0.077600   0.025979   2.987  0.00451 ** 
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 1.082 on 46 degrees of freedom
-Multiple R-squared: 0.5192,	Adjusted R-squared: 0.4879 
-F-statistic: 16.56 on 3 and 46 DF,  p-value: 1.953e-07 
+Multiple R-squared:  0.5192,	Adjusted R-squared:  0.4879 
+F-statistic: 16.56 on 3 and 46 DF,  p-value: 1.953e-07
 
 > plot(update(fit.aicopt, ~ . - sex - ml.suppl), which=1:4)
 > par(opar)
@@ -1631,7 +1630,7 @@ Coefficients:
 age         -0.06546    0.06772  -0.967 0.333703    
 log(ab)     -0.68235    0.19552  -3.490 0.000483 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1665,7 +1664,7 @@ typeCML      1.61517    1.30743   1.235   0.2167
 preg         1.66236    1.18103   1.408   0.1593  
 log(index)   1.81874    0.88919   2.045   0.0408 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1694,7 +1693,7 @@ typeCML      1.80883    1.34681   1.343   0.1793
 preg         1.92847    1.18157   1.632   0.1027  
 index        0.68422    0.38065   1.797   0.0723 .
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1717,7 +1716,7 @@ type        2   28.959 38.959 2.7064  0.25841
 preg        1   28.447 40.447 2.1947  0.13849  
 log(index)  1   32.343 44.343 6.0904  0.01359 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > drop1(update(m1, ~ . - rcpage), test="Chisq")
 Single term deletions
 
@@ -1730,7 +1729,7 @@ type        2   29.403 37.403 3.1126  0.21092
 preg        1   28.812 38.812 2.5218  0.11228  
 log(index)  1   32.630 42.630 6.3397  0.01181 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > drop1(update(m1, ~ . - rcpage - type), test="Chisq")
 Single term deletions
 
@@ -1742,7 +1741,7 @@ donage      1   33.654 39.654  4.2506 0.0392375 *
 preg        1   31.068 37.068  1.6653 0.1968922    
 log(index)  1   41.723 47.723 12.3198 0.0004482 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > drop1(update(m1, ~ . - rcpage - type - preg), test="Chisq")
 Single term deletions
 
@@ -1753,7 +1752,7 @@ gvhd ~ donage + log(index)
 donage      1   37.740 41.740  6.671 0.0097993 ** 
 log(index)  1   45.476 49.476 14.407 0.0001473 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > summary(m2 <- glm(gvhd~donage + log(index), binomial))
 
 Call:
@@ -1769,7 +1768,7 @@ Coefficients:
 donage       0.14594    0.06465   2.257  0.02399 * 
 log(index)   2.17773    0.78986   2.757  0.00583 **
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1818,7 +1817,7 @@ NULL                     5    136.910
 age   2  134.857         3      2.054   <2e-16 ***
 type  1    1.273         2      0.780   0.2591    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > juul.girl <- transform(subset(juul,age>8 & age<20 &
 +                                complete.cases(menarche)),
 +                        menarche=factor(menarche))
@@ -1847,7 +1846,7 @@ age          175.2400    87.1896   2.010   0.0444 *
 I(age^2)     -13.4140     6.6902  -2.005   0.0450 *
 I(age^3)       0.3435     0.1707   2.013   0.0442 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1874,7 +1873,7 @@ age           74.94081   42.66126   1.757   0.0790 .
 I(age^2)      -5.73565    3.27880  -1.749   0.0802 .
 I(age^3)       0.14722    0.08373   1.758   0.0787 .
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for binomial family taken to be 1)
 
@@ -1896,7 +1895,7 @@ Loading required package: splines
 
 Attaching package: 'survival'
 
-The following object(s) are masked from 'package:ISwR':
+The following object is masked from 'package:ISwR':
 
     lung
 
@@ -1920,7 +1919,7 @@ coxph(formula = Surv(time, dead) ~ gvhd)
        coef exp(coef) se(coef)     z Pr(>|z|)  
 gvhd 1.2419    3.4620   0.5144 2.414   0.0158 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
      exp(coef) exp(-coef) lower .95 upper .95
 gvhd     3.462     0.2888     1.263     9.489
@@ -1946,7 +1945,7 @@ donage      0.03440   1.03500  0.04000  0.860   0.3899
 rcpage     -0.01230   0.98778  0.04085 -0.301   0.7634  
 preg        1.13641   3.11555  0.57058  1.992   0.0464 *
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
            exp(coef) exp(-coef) lower .95 upper .95
 gvhd          3.6355     0.2751    0.9378    14.093
@@ -1977,7 +1976,7 @@ coxph(formula = Surv(obsmonths, dead) ~ age + sex, data = stroke)
 age     0.049289  1.050524 0.004374 11.268   <2e-16 ***
 sexMale 0.022332  1.022584 0.100717  0.222    0.825    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
         exp(coef) exp(-coef) lower .95 upper .95
 age         1.051     0.9519    1.0416     1.060
@@ -1998,7 +1997,7 @@ coxph(formula = Surv(obsmonths, dead) ~ sex, data = stroke)
             coef exp(coef) se(coef)      z Pr(>|z|)    
 sexMale -0.36571   0.69371  0.09615 -3.803 0.000143 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
         exp(coef) exp(-coef) lower .95 upper .95
 sexMale    0.6937      1.442    0.5746    0.8376
@@ -2029,7 +2028,7 @@ coxph(formula = Surv(entry, exit, dead) ~ age + sex, data = stroke2)
 age     0.049289  1.050524 0.004374 11.268   <2e-16 ***
 sexMale 0.022332  1.022584 0.100717  0.222    0.825    
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
         exp(coef) exp(-coef) lower .95 upper .95
 age         1.051     0.9519    1.0416     1.060
@@ -2086,7 +2085,7 @@ age70-74:areaNat          0.38044    0.21047   1.808 0.070675 .
 age75-79:areaNat          0.33547    0.22865   1.467 0.142325    
 period1981-1991:areaNat  -0.29262    0.08796  -3.327 0.000879 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -2107,7 +2106,7 @@ age:period   5   34.792 221.74 29.334 1.994e-05 ***
 age:area     5   17.279 204.23 11.822 0.0373179 *  
 period:area  1   16.775 211.72 11.317 0.0007678 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > confint(bcfit, parm="period1981-1991:areaNat")
 Waiting for profiling to be done...
      2.5 %     97.5 % 
@@ -2139,7 +2138,7 @@ factor(entry)0.5 -1.588098   0.127052 -12.500   <2e-16 ***
 factor(entry)2   -3.220317   0.126616 -25.434   <2e-16 ***
 factor(entry)12  -3.878493   0.123296 -31.457   <2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 (Dispersion parameter for poisson family taken to be 1)
 
@@ -2178,19 +2177,19 @@ Formula: height ~ (alpha + da * (sex == 1)) * exp(-(beta + db * (sex ==
 
 Parameters:
        Estimate Std. Error t value Pr(>|t|)    
-alpha 180.77122    1.93392  93.474  < 2e-16 ***
+alpha 180.77131    1.93393  93.474  < 2e-16 ***
 beta    1.18704    0.06218  19.091  < 2e-16 ***
 gamma   0.16391    0.01015  16.144  < 2e-16 ***
-da     62.03692   11.26004   5.509 4.46e-08 ***
+da     62.03691   11.26006   5.509 4.46e-08 ***
 db     -0.01106    0.06477  -0.171    0.864    
 dg     -0.08488    0.01306  -6.500 1.20e-10 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 6.528 on 1124 degrees of freedom
 
 Number of iterations to convergence: 6 
-Achieved convergence tolerance: 2.166e-06 
+Achieved convergence tolerance: 2.021e-06
   (11 observations deleted due to missingness)
 
 > anova(fit.young, fit.young2)
@@ -2202,7 +2201,7 @@ Model 2: height ~ (alpha + da * (sex == 1)) * exp(-(beta + db * (sex == 1)) * ex
 1   1127      59475                                
 2   1124      47896  3  11580  90.581 < 2.2e-16 ***
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > e1 <- subset(philion, experiment==1)
 > fit <- nls(sqrt(response) ~ sqrt(ymax / (1 + (dose/ec50)^exp(la))),
 +         start=list(ymax=28, ec50=.3, la=0), data=e1,
@@ -2217,11 +2216,11 @@ ymax  25.4331     4.7681   5.334  0.00177 **
 ec50   0.2087     0.1439   1.450  0.19730   
 la    -0.1732     0.2399  -0.722  0.49747   
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.5311 on 6 degrees of freedom
 
-Algorithm "port", convergence message: relative convergence (4) 
+Algorithm "port", convergence message: relative convergence (4)
 
 > confint(fit)
 Waiting for profiling to be done...
@@ -2253,11 +2252,11 @@ ymax 23.38316    4.00491   5.839  0.00111 **
 b     0.29938    0.32259   0.928  0.38919   
 la   -0.02689    0.42805  -0.063  0.95196   
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.5474 on 6 degrees of freedom
 
-Algorithm "port", convergence message: relative convergence (4) 
+Algorithm "port", convergence message: relative convergence (4)
 
 > fit2 <- nls(sqrt(response) ~ sqrt(ymax / (1 +
 +         dose/(d50/(2^(1/exp(la))-1)))^exp(la)),
@@ -2273,11 +2272,11 @@ ymax 23.38316    4.00491   5.839  0.00111 **
 d50   0.31080    0.18567   1.674  0.14517   
 la   -0.02689    0.42805  -0.063  0.95196   
 ---
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
 Residual standard error: 0.5474 on 6 degrees of freedom
 
-Algorithm "port", convergence message: relative convergence (4) 
+Algorithm "port", convergence message: relative convergence (4)
 
 > dd <- seq(0,1,,200)
 > yy <- predict(fit, newdata=data.frame(dose=dd))
@@ -2286,3 +2285,6 @@ Algorithm "port", convergence message: relative convergence (4)
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > 
+> proc.time()
+   user  system elapsed 
+  4.790   0.203   5.228 

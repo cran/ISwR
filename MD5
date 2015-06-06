@@ -1,4 +1,4 @@
-a1bf087048f701d5add18a2de01cd821 *DESCRIPTION
+e9c49494b40a073e480023158c7a0545 *DESCRIPTION
 9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
 9513cf884775cba290d104bbb0c6d9c2 *R/zzz.R
 21fdef5a0b321564addfc3e4949d43e9 *data/IgM.R
@@ -117,6 +117,6 @@ a8e78ea19f1a23adbc786ea750f6e450 *man/vitcap2.Rd
 e3d8f3e2090c579cc10fcd4942eda2e5 *man/wright.Rd
 d2431267bd8bd061f1839e4c3ed1f9d7 *man/zelazo.Rd
 03641bfab757713cd9f0115cde78e38e *tests/allexercises.R
-285b5e9c51fff0dc4446fd9035dc3ffc *tests/allexercises.Rout.save
+6d1bd927b4d916f3cf8e4c8d76b9773c *tests/allexercises.Rout.save
 147c123b8082d8232a068349d1481179 *tests/allscripts.R
-7dd46841809dfaf3c60827b567df5ecc *tests/allscripts.Rout.save
+8f6dd2945bc808e9d196b0e344c1eaa6 *tests/allscripts.Rout.save
