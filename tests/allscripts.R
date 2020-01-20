@@ -211,7 +211,10 @@ thuesen2 <- read.table(
    system.file("rawdata","thuesen.txt",package="ISwR"), header=T)
 thuesen2
 levels(secretin$time)
+## IGNORE_RDIFF_BEGIN
+# keep CRAN happy - this output is obviously system-dependent
 system.file("rawdata", "thuesen.txt", package="ISwR")
+## IGNORE_RDIFF_END
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 sample(1:40,5)
@@ -1005,6 +1008,7 @@ drop1(fit, test="Chisq")
 summary(fit)
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
+## IGNORE_RDIFF_BEGIN
 t <- 0:10
 y <- rnorm(11, mean=5*exp(-t/5), sd=.2)
 plot(y ~ t)
@@ -1043,5 +1047,6 @@ plot(profile(fit))
 if (.make.epsf) dev.copy2eps(file="gomp-prof.ps")
 confint(fit)
 confint.default(fit)
+## IGNORE_RDIFF_END
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()

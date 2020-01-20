@@ -405,6 +405,7 @@ summary(glm(dead~sex+age+factor(entry), poisson,
        offset=log(exit-entry), data=stroke2))
 rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
+## IGNORE_RDIFF_BEGIN
 girls <- subset(juul2, age<20 & age>5 & sex==2)
 boys <- subset(juul2, age<20 & age>5 & sex==1)
 young <- subset(juul2, age<20 & age>5)
@@ -448,6 +449,7 @@ fit2 <- nls(sqrt(response) ~ sqrt(ymax / (1 +
         start=list(ymax=28, d50=.3, la=0), data=e1,
         lower=c(.1,.0001,-Inf), algorithm="port")
 summary(fit2)
+## IGNORE_RDIFF_END
 dd <- seq(0,1,,200)
 yy <- predict(fit, newdata=data.frame(dose=dd))
 y1 <- predict(fit2, newdata=data.frame(dose=dd))
