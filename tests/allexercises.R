@@ -173,7 +173,10 @@ bcmort2 <- within(bcmort,{
   levels(period) <- rep(c("1991-2001","1981-1991"), each=2)
   levels(area) <- rep(c("Cph+Frb","Nat"),2)
 })
+## Bug on Windows platform gives difference in median for bcmort2$pyr
+## IGNORE_RDIFF_BEGIN
 summary(bcmort2)
+## IGNORE_RDIFF_END
 ashina.long <- reshape(ashina, direction="long",
                     varying=1:2, timevar="treat")
 ashina.long <- within(ashina.long, {
@@ -234,8 +237,11 @@ ashina.long <- within(ashina.long, {
      rm(m)
 })
 fit.ashina <- lm(vas ~ id + period + treat, data=ashina.long)
-drop1(fit.ashina, test="F")
-anova(fit.ashina)
+## The following gets into trouble with CRAN testing due to a Sum Sq
+## which is theoretically 51137.5 so should round-to-even 51138 in the display,
+## but on some platforms it is slightly smaller and rounds down.
+zapsmall(drop1(fit.ashina, test="F"), digits=10)
+zapsmall(anova(fit.ashina), digits=10)
 
 attach(ashina)
 dd <- vas.active - vas.plac

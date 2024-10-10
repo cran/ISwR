@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2019-12-05 r77524) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin18.7.0/x86_64 (64-bit)
+R Under development (unstable) (2024-09-14 r87148) -- "Unsuffered Consequences"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin21.6.0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -498,10 +498,10 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
-<bytecode: 0x7f92fec25590>
+<bytecode: 0x7fecfb6af7f8>
 <environment: namespace:base>
-> length(methods("print")) # quoted in text
-[1] 185
+> ## length(methods("print")) # quoted in text 
+> ## (this test zapped 2024-10-01 due to platform dependency)
 > thuesen2 <- read.table(
 +    system.file("rawdata","thuesen.txt",package="ISwR"), header=T)
 > thuesen2
@@ -1000,7 +1000,7 @@ In wilcox.test.default(daily.intake, mu = 7725) :
 
 data:  expend by stature
 t = -3.8555, df = 15.919, p-value = 0.001411
-alternative hypothesis: true difference in means is not equal to 0
+alternative hypothesis: true difference in means between group lean and group obese is not equal to 0
 95 percent confidence interval:
  -3.459167 -1.004081
 sample estimates:
@@ -1013,7 +1013,7 @@ sample estimates:
 
 data:  expend by stature
 t = -3.9456, df = 20, p-value = 0.000799
-alternative hypothesis: true difference in means is not equal to 0
+alternative hypothesis: true difference in means between group lean and group obese is not equal to 0
 95 percent confidence interval:
  -3.411451 -1.051796
 sample estimates:
@@ -1042,7 +1042,7 @@ W = 12, p-value = 0.002122
 alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
-In wilcox.test.default(x = c(7.53, 7.48, 8.08, 8.09, 10.15, 8.4,  :
+In wilcox.test.default(x = DATA[[1L]], y = DATA[[2L]], ...) :
   cannot compute exact p-value with ties
 > attach(intake)
 > intake
@@ -1067,12 +1067,12 @@ In wilcox.test.default(x = c(7.53, 7.48, 8.08, 8.09, 10.15, 8.4,  :
 
 data:  pre and post
 t = 11.941, df = 10, p-value = 3.059e-07
-alternative hypothesis: true difference in means is not equal to 0
+alternative hypothesis: true mean difference is not equal to 0
 95 percent confidence interval:
  1074.072 1566.838
 sample estimates:
-mean of the differences 
-               1320.455 
+mean difference 
+       1320.455 
 
 > t.test(pre, post) #WRONG!
 
@@ -2768,9 +2768,9 @@ Analysis of Variance Table
 
 Response: tryp.mean
            Df Sum Sq Mean Sq F value Pr(>F)
-gr          1 206698  206698               
-factor(gr)  4  17405    4351               
-Residuals   0      0                       
+gr          1 206698  206698     NaN    NaN
+factor(gr)  4  17405    4351     NaN    NaN
+Residuals   0      0     NaN               
 Warning message:
 In anova.lm(lm(tryp.mean ~ gr + factor(gr), weights = n)) :
   ANOVA F-tests on an essentially perfect fit are unreliable
@@ -3023,7 +3023,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 
 data:  log10(diameter) by glucose
 t = 2.7037, df = 36.31, p-value = 0.01037
-alternative hypothesis: true difference in means is not equal to 0
+alternative hypothesis: true difference in means between group Yes and group No is not equal to 0
 95 percent confidence interval:
  0.006492194 0.045424241
 sample estimates:
@@ -3161,12 +3161,6 @@ Residual Deviance: 1.618 	AIC: 34.54
 Call:
 glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial)
 
-Deviance Residuals: 
-       1         2         3         4         5         6  
--0.04344   0.54145  -0.25476  -0.80051   0.19759  -0.46602  
-       7         8  
--0.21262   0.56231  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept) -2.37766    0.38018  -6.254    4e-10 ***
@@ -3190,12 +3184,6 @@ Number of Fisher Scoring iterations: 4
 Call:
 glm(formula = hyp.tbl ~ smoking + obesity + snoring, family = binomial)
 
-Deviance Residuals: 
-       1         2         3         4         5         6  
--0.04344   0.54145  -0.25476  -0.80051   0.19759  -0.46602  
-       7         8  
--0.21262   0.56231  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept) -2.37766    0.38018  -6.254    4e-10 ***
@@ -3218,12 +3206,6 @@ Number of Fisher Scoring iterations: 4
 
 Call:
 glm(formula = hyp.tbl ~ obesity + snoring, family = binomial)
-
-Deviance Residuals: 
-       1         2         3         4         5         6  
--0.01247   0.47756  -0.24050  -0.82050   0.30794  -0.62742  
-       7         8  
--0.14449   0.45770  
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
@@ -3317,10 +3299,6 @@ No  17 28  36 41  46 140
 Call:
 glm(formula = t(caesar.shoe) ~ shoe.score, family = binomial)
 
-Deviance Residuals: 
-      <4         4       4.5         5       5.5        6+  
--0.18531   0.00877  -0.32760   0.34087   1.04313  -0.66215  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)   
 (Intercept) -0.87058    0.40506  -2.149  0.03161 * 
@@ -3346,9 +3324,11 @@ Response: t(caesar.shoe)
 Terms added sequentially (first to last)
 
 
-           Df Deviance Resid. Df Resid. Dev
-NULL                           5     9.3442
-shoe.score  1   7.5597         4     1.7845
+           Df Deviance Resid. Df Resid. Dev Pr(>Chi)   
+NULL                           5     9.3442            
+shoe.score  1   7.5597         4     1.7845 0.005969 **
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > caesar.shoe.yes <- caesar.shoe["Yes",]
 > caesar.shoe.no <- caesar.shoe["No",]
 > caesar.shoe.total <- caesar.shoe.yes+caesar.shoe.no
@@ -3409,10 +3389,6 @@ The following object is masked from package:MASS:
 Call:
 glm(formula = menarche ~ age, family = binomial)
 
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.32759  -0.18998   0.01253   0.12132   2.45922  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept) -20.0132     2.0284  -9.867   <2e-16 ***
@@ -3432,10 +3408,6 @@ Number of Fisher Scoring iterations: 7
 
 Call:
 glm(formula = menarche ~ age + tanner, family = binomial)
-
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.56180  -0.12461   0.02475   0.08055   2.86120  
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
@@ -3535,10 +3507,6 @@ age.group  No Yes
 Call:
 glm(formula = menarche ~ age + age.gr, family = binomial)
 
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.45697  -0.15434   0.00835   0.09505   2.59033  
-
 Coefficients:
               Estimate Std. Error z value Pr(>|z|)    
 (Intercept)   -21.5683     5.0645  -4.259 2.06e-05 ***
@@ -3567,10 +3535,12 @@ Response: menarche
 Terms added sequentially (first to last)
 
 
-       Df Deviance Resid. Df Resid. Dev
-NULL                     518     719.39
-age     1   518.73       517     200.66
-age.gr  3     8.06       514     192.61
+       Df Deviance Resid. Df Resid. Dev Pr(>Chi)    
+NULL                     518     719.39             
+age     1   518.73       517     200.66  < 2e-16 ***
+age.gr  3     8.06       514     192.61  0.04483 *  
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > 1-pchisq(8.058,3)
 [1] 0.04482811
 > anova(glm(menarche~age+I(age^2)+I(age^3)+age.gr,binomial))
@@ -3583,12 +3553,14 @@ Response: menarche
 Terms added sequentially (first to last)
 
 
-         Df Deviance Resid. Df Resid. Dev
-NULL                       518     719.39
-age       1   518.73       517     200.66
-I(age^2)  1     0.05       516     200.61
-I(age^3)  1     8.82       515     191.80
-age.gr    3     3.34       512     188.46
+         Df Deviance Resid. Df Resid. Dev  Pr(>Chi)    
+NULL                       518     719.39              
+age       1   518.73       517     200.66 < 2.2e-16 ***
+I(age^2)  1     0.05       516     200.61  0.819906    
+I(age^3)  1     8.82       515     191.80  0.002984 ** 
+age.gr    3     3.34       512     188.46  0.342745    
+---
+Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Warning messages:
 1: glm.fit: fitted probabilities numerically 0 or 1 occurred 
 2: glm.fit: fitted probabilities numerically 0 or 1 occurred 
@@ -3638,8 +3610,8 @@ The following object is masked from `package:ISwR':
 > survfit(Surv(days,status==1)~1)
 Call: survfit(formula = Surv(days, status == 1) ~ 1)
 
-      n  events  median 0.95LCL 0.95UCL 
-    205      57      NA      NA      NA 
+       n events median 0.95LCL 0.95UCL
+[1,] 205     57     NA      NA      NA
 > surv.all <- survfit(Surv(days,status==1)~1)
 > summary(surv.all)
 Call: survfit(formula = Surv(days, status == 1) ~ 1)
@@ -3781,10 +3753,6 @@ Score (logrank) test = 12.98  on 2 df,   p=0.002
 Call:
 glm(formula = cases ~ city + age + offset(log(pop)), family = poisson)
 
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.63573  -0.67296  -0.03436   0.37258   1.85267  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept)  -5.6321     0.2003 -28.125  < 2e-16 ***
@@ -3850,10 +3818,6 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Call:
 glm(formula = cases ~ (city == "Fredericia") + age + offset(log(pop)), 
     family = poisson)
-
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.64704  -0.62400   0.02301   0.36721   1.84308  
 
 Coefficients:
                          Estimate Std. Error z value Pr(>|z|)    
@@ -4003,10 +3967,6 @@ Call:
 glm(formula = lung.cancer ~ 1, family = poisson, offset = log((ageout - 
     agein) * lung/1e+06))
 
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--0.6758  -0.3159  -0.1821  -0.0918   4.1972  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept)  1.73367    0.08544   20.29   <2e-16 ***
@@ -4068,10 +4028,6 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Call:
 glm(formula = lung.cancer ~ Y - 1, family = poisson, offset = log((ageout - 
     agein) * lung/1e+06))
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--0.4215  -0.3452  -0.2490  -0.1429   3.9398  
 
 Coefficients:
         Estimate Std. Error z value Pr(>|z|)    
@@ -4141,10 +4097,6 @@ Call:
 glm(formula = lung.cancer ~ TFE + AFE + YFE + EXP, family = poisson, 
     offset = log((ageout - agein) * lung/1e+06))
 
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--0.8113  -0.3172  -0.2168  -0.1196   4.1466  
-
 Coefficients:
                Estimate Std. Error z value Pr(>|z|)    
 (Intercept)     2.36836    0.55716   4.251 2.13e-05 ***
@@ -4195,7 +4147,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.2283 on 9 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 1.582e-08
+Achieved convergence tolerance: 8.259e-09
 
 > attach(subset(juul2, age<20 & age>5 & sex==1))
 > plot(height ~ age)
@@ -4232,7 +4184,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 6.811 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 5.243e-06
+Achieved convergence tolerance: 5.232e-06
   (3 observations deleted due to missingness)
 
 > plot(age, height)
@@ -4257,7 +4209,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 8 
-Achieved convergence tolerance: 2.681e-06
+Achieved convergence tolerance: 2.671e-06
   (3 observations deleted due to missingness)
 
 > plot(age, log(height))
@@ -4302,7 +4254,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 Residual standard error: 0.04307 on 499 degrees of freedom
 
 Number of iterations to convergence: 5 
-Achieved convergence tolerance: 5.449e-06
+Achieved convergence tolerance: 5.469e-06
   (3 observations deleted due to missingness)
 
 > par(mfrow=c(3,1))
@@ -4311,18 +4263,18 @@ Achieved convergence tolerance: 5.449e-06
 > confint(fit)
 Waiting for profiling to be done...
              2.5%        97.5%
-alpha 233.5007560 294.76267652
+alpha 233.5007560 294.76267654
 beta    1.1442683   1.27411439
 gamma   0.0550577   0.08574974
 > confint.default(fit)
              2.5 %      97.5 %
-alpha 226.50065351 285.4532669
+alpha 226.50065281 285.4532700
 beta    1.13125577   1.2477285
-gamma   0.05443818   0.0862269
+gamma   0.05443817   0.0862269
 > ## IGNORE_RDIFF_END
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > 
 > proc.time()
    user  system elapsed 
-  2.083   0.212   2.289 
+  2.119   0.217   2.363 

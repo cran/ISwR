@@ -27,6 +27,6 @@
   Original data from Vincent Philion, IRDA, Qu\'ebec.
 }
 \references{
-  \url{http://tolstoy.newcastle.edu.au/R/help/03b/1121.html}
+  \url{https://stat.ethz.ch/pipermail/r-help/2003-July/036828.html} (Thread on R-help mailing list: "inverse prediction and Poisson regression", started by Vincent Philion on July 25, 2003.)
 }
 \keyword{datasets}

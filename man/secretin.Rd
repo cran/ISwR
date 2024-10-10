@@ -14,15 +14,15 @@ data from a glucose response experiment.
     \item{\code{time}}{a factor with levels \code{20}, \code{30}, \code{60}, \code{90} 
       (minutes since injection), and \code{pre} (before injection).}
     \item{\code{repl}}{a factor with levels
-      {\code{a}: 1st sample};
-      {\code{b}: 2nd sample}.}
+      \code{a}: 1st sample;
+      \code{b}: 2nd sample.}
     \item{\code{time20plus}}{a factor with levels
-      {\code{20+}: 20 minutes or longer since injection};
-      {\code{pre}: before injection.}}
+      \code{20+}: 20 minutes or longer since injection;
+      \code{pre}: before injection.}
     \item{\code{time.comb}}{a factor with levels
-      {\code{20}:  20 minutes since injection};
-      {\code{30+}: 30 minutes or longer since injection};
-      {\code{pre}: before injection.  }}
+      \code{20}:  20 minutes since injection;
+      \code{30+}: 30 minutes or longer since injection;
+      \code{pre}: before injection.  }
   }
 }
 \details{

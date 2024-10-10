@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2019-12-05 r77524) -- "Unsuffered Consequences"
-Copyright (C) 2019 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin18.7.0/x86_64 (64-bit)
+R Under development (unstable) (2024-09-14 r87148) -- "Unsuffered Consequences"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin21.6.0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -204,7 +204,7 @@ W = 30.5, p-value = 0.01783
 alternative hypothesis: true location shift is not equal to 0
 
 Warning message:
-In wilcox.test.default(x = c(4.62, 5.29, 5.52, 3.71, 4.02, 5.09,  :
+In wilcox.test.default(x = DATA[[1L]], y = DATA[[2L]], ...) :
   cannot compute exact p-value with ties
 > attach(intake) ; opar <- par(mfrow=c(2,2))
 > plot(post ~ pre) ; abline(0,1)
@@ -236,12 +236,12 @@ W = 0.96869, p-value = 1.377e-06
 
 data:  vas.active and vas.plac
 t = -3.2269, df = 15, p-value = 0.005644
-alternative hypothesis: true difference in means is not equal to 0
+alternative hypothesis: true mean difference is not equal to 0
 95 percent confidence interval:
  -71.1946 -14.5554
 sample estimates:
-mean of the differences 
-                -42.875 
+mean difference 
+        -42.875 
 
 > t.test((vas.active-vas.plac)[grp==1],
 +        (vas.plac-vas.active)[grp==2])
@@ -732,6 +732,8 @@ NOTE: n is number in *each* group
 +   levels(period) <- rep(c("1991-2001","1981-1991"), each=2)
 +   levels(area) <- rep(c("Cph+Frb","Nat"),2)
 + })
+> ## Bug on Windows platform gives difference in median for bcmort2$pyr
+> ## IGNORE_RDIFF_BEGIN
 > summary(bcmort2)
     age              cohort    bc.deaths          p.yr               period  
  50-54:4   Study gr.    :6   Min.   :  9.0   Min.   :  25600   1991-2001:12  
@@ -747,6 +749,7 @@ NOTE: n is number in *each* group
              
              
              
+> ## IGNORE_RDIFF_END
 > ashina.long <- reshape(ashina, direction="long",
 +                     varying=1:2, timevar="treat")
 > ashina.long <- within(ashina.long, {
@@ -1040,24 +1043,27 @@ F-statistic:    22 on 2 and 47 DF,  p-value: 1.811e-07
 +      rm(m)
 + })
 > fit.ashina <- lm(vas ~ id + period + treat, data=ashina.long)
-> drop1(fit.ashina, test="F")
+> ## The following gets into trouble with CRAN testing due to a Sum Sq
+> ## which is theoretically 51137.5 so should round-to-even 51138 in the display,
+> ## but on some platforms it is slightly smaller and rounds down.
+> zapsmall(drop1(fit.ashina, test="F"), digits=10)
 Single term deletions
 
 Model:
 vas ~ id + period + treat
        Df Sum of Sq   RSS    AIC F value  Pr(>F)  
 <none>              19679 241.49                  
-id     15     51137 70816 252.47  2.4254 0.05287 .
+id     15     51138 70816 252.47  2.4254 0.05287 .
 period  1      1505 21184 241.85  1.0709 0.31830  
 treat   1     11603 31282 254.32  8.2550 0.01228 *
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-> anova(fit.ashina)
+> zapsmall(anova(fit.ashina), digits=10)
 Analysis of Variance Table
 
 Response: vas
           Df Sum Sq Mean Sq F value  Pr(>F)  
-id        15  51137  3409.2  2.4254 0.05287 .
+id        15  51138  3409.2  2.4254 0.05287 .
 period     1   4608  4608.0  3.2783 0.09171 .
 treat      1  11603 11603.3  8.2550 0.01228 *
 Residuals 14  19679  1405.6                  
@@ -1620,10 +1626,6 @@ F-statistic: 16.56 on 3 and 46 DF,  p-value: 1.953e-07
 Call:
 glm(formula = mal ~ age + log(ab), family = binomial, data = malaria)
 
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.8492  -0.7536  -0.4838   0.8809   2.5796  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)    
 (Intercept)  2.57234    0.95184   2.702 0.006883 ** 
@@ -1650,10 +1652,6 @@ Call:
 glm(formula = gvhd ~ rcpage + donage + type + preg + log(index), 
     family = binomial)
 
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.00075  -0.36457  -0.09559   0.57964   1.68281  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)  
 (Intercept) -5.47420    2.59647  -2.108   0.0350 *
@@ -1678,10 +1676,6 @@ Number of Fisher Scoring iterations: 6
 
 Call:
 glm(formula = gvhd ~ rcpage + donage + type + preg + index, family = binomial)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.9886  -0.4001  -0.2386   0.5503   1.8189  
 
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)  
@@ -1758,10 +1752,6 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Call:
 glm(formula = gvhd ~ donage + log(index), family = binomial)
 
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.8298  -0.6412  -0.1189   0.6440   1.7503  
-
 Coefficients:
             Estimate Std. Error z value Pr(>|z|)   
 (Intercept) -5.45399    2.08147  -2.620  0.00879 **
@@ -1835,10 +1825,6 @@ Call:
 glm(formula = menarche ~ age + I(age^2) + I(age^3), family = binomial, 
     data = juul.girl)
 
-Deviance Residuals: 
-     Min        1Q    Median        3Q       Max  
--2.59247  -0.04329   0.00000   0.00063   2.60152  
-
 Coefficients:
              Estimate Std. Error z value Pr(>|z|)  
 (Intercept) -766.0804   377.7631  -2.028   0.0426 *
@@ -1861,10 +1847,6 @@ Number of Fisher Scoring iterations: 12
 Call:
 glm(formula = menarche ~ age + I(age^2) + I(age^3), family = binomial(probit), 
     data = juul.girl)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--2.5641  -0.0247   0.0000   0.0000   2.5668  
 
 Coefficients:
               Estimate Std. Error z value Pr(>|z|)  
@@ -2049,14 +2031,6 @@ Call:
 glm(formula = bc.deaths ~ (age + period + area)^2, family = poisson, 
     data = bcmort2, offset = log(p.yr))
 
-Deviance Residuals: 
-       1         2         3         4         5         6         7         8  
--0.49634   1.16817   0.32723   0.40686  -1.09690  -0.22273   0.16765  -0.30402  
-       9        10        11        12        13        14        15        16  
--0.09277  -0.12546   0.37096   0.08185   0.34354  -0.90739  -0.23107  -0.28244  
-      17        18        19        20        21        22        23        24  
- 0.77919   0.15943  -0.15340   0.30384   0.09596   0.13145  -0.41848  -0.08840  
-
 Coefficients:
                          Estimate Std. Error z value Pr(>|z|)    
 (Intercept)              -8.71065    0.20674 -42.133  < 2e-16 ***
@@ -2119,10 +2093,6 @@ Call:
 glm(formula = dead ~ sex + age + factor(entry), family = poisson, 
     data = stroke2, offset = log(exit - entry))
 
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.4288  -0.7090  -0.5282  -0.3361   3.4559  
-
 Coefficients:
                   Estimate Std. Error z value Pr(>|z|)    
 (Intercept)      -4.252978   0.353585 -12.028   <2e-16 ***
@@ -2172,10 +2142,10 @@ Formula: height ~ (alpha + da * (sex == 1)) * exp(-(beta + db * (sex ==
 
 Parameters:
        Estimate Std. Error t value Pr(>|t|)    
-alpha 180.77131    1.93393  93.474  < 2e-16 ***
+alpha 180.77124    1.93392  93.474  < 2e-16 ***
 beta    1.18704    0.06218  19.091  < 2e-16 ***
 gamma   0.16391    0.01015  16.144  < 2e-16 ***
-da     62.03691   11.26006   5.509 4.46e-08 ***
+da     62.03692   11.26004   5.509 4.46e-08 ***
 db     -0.01106    0.06477  -0.171    0.864    
 dg     -0.08488    0.01306  -6.500 1.20e-10 ***
 ---
@@ -2184,7 +2154,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 Residual standard error: 6.528 on 1124 degrees of freedom
 
 Number of iterations to convergence: 6 
-Achieved convergence tolerance: 2.021e-06
+Achieved convergence tolerance: 1.628e-06
   (11 observations deleted due to missingness)
 
 > anova(fit.young, fit.young2)
@@ -2221,7 +2191,7 @@ Algorithm "port", convergence message: relative convergence (4)
 Waiting for profiling to be done...
             2.5%      97.5%
 ymax 15.16409523 41.0317406
-ec50  0.03655498  1.3770101
+ec50  0.03655499  1.3770101
 la   -0.72605274  0.6841776
 > # p <- profile(fit, alphamax=.2)
 > # alphamax semantics got changed in R 2.8
@@ -2231,7 +2201,7 @@ la   -0.72605274  0.6841776
 > confint(p)
             2.5%     97.5%
 ymax 15.16043812 41.031201
-ec50  0.05332676  1.377884
+ec50  0.05332678  1.377884
 la   -0.72610588  0.684268
 > e1 <- subset(philion, experiment==1)
 > fit1 <- nls(sqrt(response) ~ sqrt(ymax / (1 + dose/b)^exp(la)),
@@ -2283,4 +2253,4 @@ Algorithm "port", convergence message: relative convergence (4)
 > 
 > proc.time()
    user  system elapsed 
-  2.090   0.168   2.376 
+  2.300   0.178   2.512 

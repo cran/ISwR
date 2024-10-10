@@ -206,7 +206,8 @@ plot(x, x, ylab="y", type="l")
 for ( j in 2:8 ) lines(x, x^j)
 t.test(bmi, mu=22.5)$p.value
 print
-length(methods("print")) # quoted in text
+## length(methods("print")) # quoted in text 
+## (this test zapped 2024-10-01 due to platform dependency)
 thuesen2 <- read.table(
    system.file("rawdata","thuesen.txt",package="ISwR"), header=T)
 thuesen2
