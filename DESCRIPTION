@@ -1,6 +1,6 @@
 Package: ISwR
-Version: 2.0-9
-Date: 2024-10-08
+Version: 2.0-10
+Date: 2025-03-23
 Title: Introductory Statistics with R
 Authors@R: person(given = "Peter",
                      family = "Dalgaard",
@@ -14,8 +14,8 @@ License: GPL (>= 2)
 ZipData: no
 LazyData: yes
 NeedsCompilation: no
-Packaged: 2024-10-08 05:49:40 UTC; pd
+Packaged: 2025-03-23 10:50:04 UTC; pd
 Author: Peter Dalgaard [aut, cre]
 Maintainer: Peter Dalgaard <pd.mes@cbs.dk>
 Repository: CRAN
-Date/Publication: 2024-10-10 15:00:22 UTC
+Date/Publication: 2025-03-23 11:30:02 UTC

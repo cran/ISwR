@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2024-09-14 r87148) -- "Unsuffered Consequences"
-Copyright (C) 2024 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin21.6.0
+R Under development (unstable) (2025-03-17 r87991) -- "Unsuffered Consequences"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin24.3.0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -498,7 +498,7 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
-<bytecode: 0x7fecfb6af7f8>
+<bytecode: 0x7fd88ad8dda0>
 <environment: namespace:base>
 > ## length(methods("print")) # quoted in text 
 > ## (this test zapped 2024-10-01 due to platform dependency)
@@ -1839,8 +1839,9 @@ Levels: none intermediate severe
         Max. 
 "1993-12-31" 
 > summary(stroke$died - stroke$dstr)
-  Length    Class     Mode 
-     829 difftime  numeric 
+Time differences in days
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+    0.0     8.0    28.0   225.7   268.5  1836.0     338 
 > head(stroke$died - stroke$dstr)
 Time differences in days
 [1]    5   NA  145    2 1836    0
@@ -2863,7 +2864,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
  Min.   :1.000   Min.   : 11000   Min.   :19.20  
  1st Qu.:1.000   1st Qu.: 27500   1st Qu.:21.40  
  Median :1.000   Median : 69000   Median :23.30  
- Mean   :1.373   Mean   :164326   Mean   :23.00  
+ Mean   :1.373   Mean   :164325   Mean   :23.00  
  3rd Qu.:2.000   3rd Qu.:243000   3rd Qu.:24.35  
  Max.   :2.000   Max.   :631000   Max.   :26.30  
 > hellung$glucose <- factor(hellung$glucose, labels=c("Yes","No"))
@@ -2872,7 +2873,7 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
  Yes:32   Min.   : 11000   Min.   :19.20  
  No :19   1st Qu.: 27500   1st Qu.:21.40  
           Median : 69000   Median :23.30  
-          Mean   :164326   Mean   :23.00  
+          Mean   :164325   Mean   :23.00  
           3rd Qu.:243000   3rd Qu.:24.35  
           Max.   :631000   Max.   :26.30  
 > attach(hellung)
@@ -4277,4 +4278,4 @@ gamma   0.05443817   0.0862269
 > 
 > proc.time()
    user  system elapsed 
-  2.119   0.217   2.363 
+  2.439   0.352   2.615 
