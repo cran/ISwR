@@ -69,8 +69,8 @@ rm(list=ls())
 while(search()[2] != "package:ISwR") detach()
 qqnorm(react)
 t.test(react)
-wilcox.test(react)
-wilcox.test(vital.capacity~group, data=vitcap)
+wilcox.test(react, exact=FALSE)
+wilcox.test(vital.capacity~group, data=vitcap, exact=FALSE)
 attach(intake) ; opar <- par(mfrow=c(2,2))
 plot(post ~ pre) ; abline(0,1)
 plot((post+pre)/2, post - pre,
@@ -120,11 +120,11 @@ fit <- lm(volume~method+subject, data=lung)
 anova(fit)
 summary(fit)
 kruskal.test(walk ~ group)
-wilcox.test(zelazo$active,zelazo$ctr.8w) # first vs. last
-wilcox.test(zelazo$active,unlist(zelazo[-1])) # first vs. rest
+wilcox.test(zelazo$active,zelazo$ctr.8w, exact=FALSE) # first vs. last
+wilcox.test(zelazo$active,unlist(zelazo[-1]), exact=FALSE) # first vs. rest
 friedman.test(volume ~ method | subject, data=lung)
 wilcox.test(lung$volume[lung$method=="A"],
-            lung$volume[lung$method=="C"], paired=TRUE) # etc.
+            lung$volume[lung$method=="C"], paired=TRUE, exact=FALSE) # etc.
 attach(juul)
 tapply(sqrt(igf1),tanner, sd, na.rm=TRUE)
 plot(sqrt(igf1)~jitter(tanner))

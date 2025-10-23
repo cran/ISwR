@@ -1,4 +1,4 @@
-b9639bff88616d9bfe34ea8e23edc5ea *DESCRIPTION
+1422055c182177216851aef5cef605f5 *DESCRIPTION
 44065290548e60f01c5acf560e42c649 *NAMESPACE
 9513cf884775cba290d104bbb0c6d9c2 *R/zzz.R
 8aa77ec045422f1b877d17bda6afbd2a *data/IgM.rda
@@ -116,7 +116,7 @@ f3ee599e4aa99bfc05126c397a8154ba *man/tb.dilute.Rd
 a8e78ea19f1a23adbc786ea750f6e450 *man/vitcap2.Rd
 e3d8f3e2090c579cc10fcd4942eda2e5 *man/wright.Rd
 d2431267bd8bd061f1839e4c3ed1f9d7 *man/zelazo.Rd
-dcb82ca08a13472cbb8f08f3f72f13a8 *tests/allexercises.R
-76bcf17d17f8403342e71b28e03c1ccb *tests/allexercises.Rout.save
-36d11353f2d58fbc89f499b334ee1d98 *tests/allscripts.R
-563b51a0a194cac02c4735ca4c00be74 *tests/allscripts.Rout.save
+f45f834f11645f3d503a514c9cea2ef8 *tests/allexercises.R
+1d8744be26519094f4d621fc4b042ef6 *tests/allexercises.Rout.save
+220111e3c90bdb7b664f291b83e1dc28 *tests/allscripts.R
+1614a2ba177e47c83f6ab16615d958cb *tests/allscripts.Rout.save

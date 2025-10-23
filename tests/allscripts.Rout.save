@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2025-03-17 r87991) -- "Unsuffered Consequences"
+R Under development (unstable) (2025-10-22 r88966) -- "Unsuffered Consequences"
 Copyright (C) 2025 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin24.3.0
+Platform: x86_64-apple-darwin24.6.0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -85,13 +85,7 @@ mean of x
 > hh <- c(1.65, 1.70, 1.75, 1.80, 1.85, 1.90)
 > lines(hh, 22.5 * hh^2)
 > if (.make.epsf) dev.copy2eps(file="h-w-line.ps")
-> args(plot.default)
-function (x, y = NULL, type = "p", xlim = NULL, ylim = NULL, 
-    log = "", main = NULL, sub = NULL, xlab = NULL, ylab = NULL, 
-    ann = par("ann"), axes = TRUE, frame.plot = axes, panel.first = NULL, 
-    panel.last = NULL, asp = NA, xgap.axis = NA, ygap.axis = NA, 
-    ...) 
-NULL
+> # args(plot.default) # disabled because unimportant and changed btw 4.5 & 4.6
 > c("Huey","Dewey","Louie")
 [1] "Huey"  "Dewey" "Louie"
 > c('Huey','Dewey','Louie')
@@ -498,7 +492,7 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
-<bytecode: 0x7fd88ad8dda0>
+<bytecode: 0x7f9d012504e8>
 <environment: namespace:base>
 > ## length(methods("print")) # quoted in text 
 > ## (this test zapped 2024-10-01 due to platform dependency)
@@ -958,7 +952,7 @@ sample estimates:
 mean of x 
  6753.636 
 
-> wilcox.test(daily.intake, mu=7725)
+> wilcox.test(daily.intake, mu=7725, exact=FALSE)
 
 	Wilcoxon signed rank test with continuity correction
 
@@ -966,9 +960,6 @@ data:  daily.intake
 V = 8, p-value = 0.0293
 alternative hypothesis: true location is not equal to 7725
 
-Warning message:
-In wilcox.test.default(daily.intake, mu = 7725) :
-  cannot compute exact p-value with ties
 > attach(energy)
 > energy
    expend stature
@@ -1033,7 +1024,7 @@ sample estimates:
 ratio of variances 
           0.784446 
 
-> wilcox.test(expend~stature)
+> wilcox.test(expend~stature, exact=FALSE)
 
 	Wilcoxon rank sum test with continuity correction
 
@@ -1041,9 +1032,6 @@ data:  expend by stature
 W = 12, p-value = 0.002122
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(x = DATA[[1L]], y = DATA[[2L]], ...) :
-  cannot compute exact p-value with ties
 > attach(intake)
 > intake
     pre post
@@ -1087,7 +1075,7 @@ sample estimates:
 mean of x mean of y 
  6753.636  5433.182 
 
-> wilcox.test(pre, post, paired=T)
+> wilcox.test(pre, post, paired=T, exact=FALSE)
 
 	Wilcoxon signed rank test with continuity correction
 
@@ -1095,9 +1083,6 @@ data:  pre and post
 V = 66, p-value = 0.00384
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(pre, post, paired = T) :
-  cannot compute exact p-value with ties
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > attach(thuesen)
@@ -4278,4 +4263,4 @@ gamma   0.05443817   0.0862269
 > 
 > proc.time()
    user  system elapsed 
-  2.439   0.352   2.615 
+  2.642   0.416   2.885 

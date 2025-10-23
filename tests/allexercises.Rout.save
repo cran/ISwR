@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2024-09-14 r87148) -- "Unsuffered Consequences"
-Copyright (C) 2024 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin21.6.0
+R Under development (unstable) (2025-10-22 r88966) -- "Unsuffered Consequences"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin24.6.0
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -187,7 +187,7 @@ sample estimates:
  mean of x 
 -0.7964072 
 
-> wilcox.test(react)
+> wilcox.test(react, exact=FALSE)
 
 	Wilcoxon signed rank test with continuity correction
 
@@ -195,7 +195,7 @@ data:  react
 V = 9283.5, p-value = 2.075e-13
 alternative hypothesis: true location is not equal to 0
 
-> wilcox.test(vital.capacity~group, data=vitcap)
+> wilcox.test(vital.capacity~group, data=vitcap, exact=FALSE)
 
 	Wilcoxon rank sum test with continuity correction
 
@@ -203,9 +203,6 @@ data:  vital.capacity by group
 W = 30.5, p-value = 0.01783
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(x = DATA[[1L]], y = DATA[[2L]], ...) :
-  cannot compute exact p-value with ties
 > attach(intake) ; opar <- par(mfrow=c(2,2))
 > plot(post ~ pre) ; abline(0,1)
 > plot((post+pre)/2, post - pre,
@@ -457,7 +454,7 @@ F-statistic: 5.603 on 7 and 10 DF,  p-value: 0.00768
 data:  walk by group
 Kruskal-Wallis chi-squared = 6.8805, df = 3, p-value = 0.0758
 
-> wilcox.test(zelazo$active,zelazo$ctr.8w) # first vs. last
+> wilcox.test(zelazo$active,zelazo$ctr.8w, exact=FALSE) # first vs. last
 
 	Wilcoxon rank sum test with continuity correction
 
@@ -465,10 +462,7 @@ data:  zelazo$active and zelazo$ctr.8w
 W = 3, p-value = 0.03493
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(zelazo$active, zelazo$ctr.8w) :
-  cannot compute exact p-value with ties
-> wilcox.test(zelazo$active,unlist(zelazo[-1])) # first vs. rest
+> wilcox.test(zelazo$active,unlist(zelazo[-1]), exact=FALSE) # first vs. rest
 
 	Wilcoxon rank sum test with continuity correction
 
@@ -476,9 +470,6 @@ data:  zelazo$active and unlist(zelazo[-1])
 W = 18, p-value = 0.02224
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(zelazo$active, unlist(zelazo[-1])) :
-  cannot compute exact p-value with ties
 > friedman.test(volume ~ method | subject, data=lung)
 
 	Friedman rank sum test
@@ -487,7 +478,7 @@ data:  volume and method and subject
 Friedman chi-squared = 5.8261, df = 2, p-value = 0.05431
 
 > wilcox.test(lung$volume[lung$method=="A"],
-+             lung$volume[lung$method=="C"], paired=TRUE) # etc.
++             lung$volume[lung$method=="C"], paired=TRUE, exact=FALSE) # etc.
 
 	Wilcoxon signed rank test with continuity correction
 
@@ -495,9 +486,6 @@ data:  lung$volume[lung$method == "A"] and lung$volume[lung$method == "C"]
 V = 0, p-value = 0.05906
 alternative hypothesis: true location shift is not equal to 0
 
-Warning message:
-In wilcox.test.default(lung$volume[lung$method == "A"], lung$volume[lung$method ==  :
-  cannot compute exact p-value with zeroes
 > attach(juul)
 > tapply(sqrt(igf1),tanner, sd, na.rm=TRUE)
        1        2        3        4        5 
@@ -2253,4 +2241,4 @@ Algorithm "port", convergence message: relative convergence (4)
 > 
 > proc.time()
    user  system elapsed 
-  2.300   0.178   2.512 
+  2.790   0.355   2.953 
