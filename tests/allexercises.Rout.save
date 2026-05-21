@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2025-10-22 r88966) -- "Unsuffered Consequences"
-Copyright (C) 2025 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin24.6.0
+R version 4.6.0 Patched (2026-04-24 r89961) -- "Because it was There"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin20
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -38,7 +38,7 @@ Levels: Dewey Huey Louie
  Mean   :10.557   Mean   :1.132   Mean   :2   Mean   :351.8   Mean   :1.951  
  3rd Qu.:12.207   3rd Qu.:1.000   3rd Qu.:2   3rd Qu.:473.2   3rd Qu.:3.000  
  Max.   :13.940   Max.   :2.000   Max.   :2   Max.   :914.0   Max.   :5.000  
- NA's   :5        NA's   :11      NA's   :5   NA's   :119     NA's   :66     
+ NAs    :5        NAs    :11      NAs    :5   NAs    :119     NAs    :66     
     testvol   
  Min.   : NA  
  1st Qu.: NA  
@@ -46,7 +46,7 @@ Levels: Dewey Huey Louie
  Mean   :NaN  
  3rd Qu.: NA  
  Max.   : NA  
- NA's   :351  
+ NAs    :351  
 > sapply(1:10, function(i) mean(rexp(20)))
  [1] 0.7969888 0.8648102 0.7280609 1.3195396 1.1868598 1.2246834 0.8794734
  [8] 0.9722758 1.0604842 0.8782972
@@ -2241,4 +2241,4 @@ Algorithm "port", convergence message: relative convergence (4)
 > 
 > proc.time()
    user  system elapsed 
-  2.790   0.355   2.953 
+  2.770   0.360   2.983 

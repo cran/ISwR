@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2025-10-22 r88966) -- "Unsuffered Consequences"
-Copyright (C) 2025 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin24.6.0
+R version 4.6.0 Patched (2026-04-24 r89961) -- "Because it was There"
+Copyright (C) 2026 The R Foundation for Statistical Computing
+Platform: x86_64-apple-darwin20
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -492,7 +492,7 @@ $short.velocity
 > print
 function (x, ...) 
 UseMethod("print")
-<bytecode: 0x7f9d012504e8>
+<bytecode: 0x7fe07560fc58>
 <environment: namespace:base>
 > ## length(methods("print")) # quoted in text 
 > ## (this test zapped 2024-10-01 due to platform dependency)
@@ -615,7 +615,7 @@ UseMethod("print")
 > sum(!is.na(igf1))
 [1] 1018
 > summary(igf1)
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
    25.0   202.2   313.5   340.2   462.8   915.0     321 
 > summary(juul)
       age            menarche          sex             igf1      
@@ -625,7 +625,7 @@ UseMethod("print")
  Mean   :15.095   Mean   :1.476   Mean   :1.534   Mean   :340.2  
  3rd Qu.:16.855   3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:462.8  
  Max.   :83.000   Max.   :2.000   Max.   :2.000   Max.   :915.0  
- NA's   :5        NA's   :635     NA's   :5       NA's   :321    
+ NAs    :5        NAs    :635     NAs    :5       NAs    :321    
      tanner        testvol      
  Min.   :1.00   Min.   : 1.000  
  1st Qu.:1.00   1st Qu.: 1.000  
@@ -633,7 +633,7 @@ UseMethod("print")
  Mean   :2.64   Mean   : 7.896  
  3rd Qu.:5.00   3rd Qu.:15.000  
  Max.   :5.00   Max.   :30.000  
- NA's   :240    NA's   :859     
+ NAs    :240    NAs    :859     
 > detach(juul)
 > juul$sex <- factor(juul$sex,labels=c("M","F"))
 > juul$menarche <- factor(juul$menarche,labels=c("No","Yes"))
@@ -641,22 +641,22 @@ UseMethod("print")
 +                       labels=c("I","II","III","IV","V"))
 > attach(juul)
 > summary(juul)
-      age         menarche     sex           igf1      
- Min.   : 0.170   No  :369   M   :621   Min.   : 25.0  
- 1st Qu.: 9.053   Yes :335   F   :713   1st Qu.:202.2  
- Median :12.560   NA's:635   NA's:  5   Median :313.5  
- Mean   :15.095                         Mean   :340.2  
- 3rd Qu.:16.855                         3rd Qu.:462.8  
- Max.   :83.000                         Max.   :915.0  
- NA's   :5                              NA's   :321    
-  tanner       testvol      
- I   :515   Min.   : 1.000  
- II  :103   1st Qu.: 1.000  
- III : 72   Median : 3.000  
- IV  : 81   Mean   : 7.896  
- V   :328   3rd Qu.:15.000  
- NA's:240   Max.   :30.000  
-            NA's   :859     
+      age         menarche   sex           igf1       tanner   
+ Min.   : 0.170   No :369   M  :621   Min.   : 25.0   I  :515  
+ 1st Qu.: 9.053   Yes:335   F  :713   1st Qu.:202.2   II :103  
+ Median :12.560   NAs:635   NAs:  5   Median :313.5   III: 72  
+ Mean   :15.095                       Mean   :340.2   IV : 81  
+ 3rd Qu.:16.855                       3rd Qu.:462.8   V  :328  
+ Max.   :83.000                       Max.   :915.0   NAs:240  
+ NAs    :5                            NAs    :321              
+    testvol      
+ Min.   : 1.000  
+ 1st Qu.: 1.000  
+ Median : 3.000  
+ Mean   : 7.896  
+ 3rd Qu.:15.000  
+ Max.   :30.000  
+ NAs    :859     
 > hist(x)
 > if (.make.epsf) dev.copy2eps(file="hist.ps")
 > mid.age <- c(2.5,7.5,13,16.5,17.5,19,22.5,44.5,70.5)
@@ -710,14 +710,14 @@ O2,24h     278.0000 33.75648 5
 2   F 14.84363 368.1006
 > by(juul, juul["sex"], summary)
 sex: M
-      age        menarche   sex          igf1        tanner   
- Min.   : 0.17   No  :  0   M:621   Min.   : 29.0   I   :291  
- 1st Qu.: 8.85   Yes :  0   F:  0   1st Qu.:176.0   II  : 55  
- Median :12.38   NA's:621           Median :280.0   III : 34  
- Mean   :15.38                      Mean   :310.9   IV  : 41  
- 3rd Qu.:16.77                      3rd Qu.:430.2   V   :124  
- Max.   :83.00                      Max.   :915.0   NA's: 76  
-                                    NA's   :145               
+      age        menarche  sex          igf1       tanner   
+ Min.   : 0.17   No :  0   M:621   Min.   : 29.0   I  :291  
+ 1st Qu.: 8.85   Yes:  0   F:  0   1st Qu.:176.0   II : 55  
+ Median :12.38   NAs:621           Median :280.0   III: 34  
+ Mean   :15.38                     Mean   :310.9   IV : 41  
+ 3rd Qu.:16.77                     3rd Qu.:430.2   V  :124  
+ Max.   :83.00                     Max.   :915.0   NAs: 76  
+                                   NAs    :145              
     testvol      
  Min.   : 1.000  
  1st Qu.: 1.000  
@@ -725,17 +725,17 @@ sex: M
  Mean   : 7.896  
  3rd Qu.:15.000  
  Max.   :30.000  
- NA's   :141     
+ NAs    :141     
 ------------------------------------------------- 
 sex: F
-      age        menarche   sex          igf1        tanner   
- Min.   : 0.25   No  :369   M:  0   Min.   : 25.0   I   :224  
- 1st Qu.: 9.30   Yes :335   F:713   1st Qu.:233.0   II  : 48  
- Median :12.80   NA's:  9           Median :352.0   III : 38  
- Mean   :14.84                      Mean   :368.1   IV  : 40  
- 3rd Qu.:16.93                      3rd Qu.:483.0   V   :204  
- Max.   :75.12                      Max.   :914.0   NA's:159  
-                                    NA's   :176               
+      age        menarche  sex          igf1       tanner   
+ Min.   : 0.25   No :369   M:  0   Min.   : 25.0   I  :224  
+ 1st Qu.: 9.30   Yes:335   F:713   1st Qu.:233.0   II : 48  
+ Median :12.80   NAs:  9           Median :352.0   III: 38  
+ Mean   :14.84                     Mean   :368.1   IV : 40  
+ 3rd Qu.:16.93                     3rd Qu.:483.0   V  :204  
+ Max.   :75.12                     Max.   :914.0   NAs:159  
+                                   NAs    :176              
     testvol   
  Min.   : NA  
  1st Qu.: NA  
@@ -743,7 +743,7 @@ sex: F
  Mean   :NaN  
  3rd Qu.: NA  
  Max.   : NA  
- NA's   :713  
+ NAs    :713  
 > attach(energy)
 > expend.lean <- expend[stature=="lean"]
 > expend.obese <- expend[stature=="obese"]
@@ -1297,7 +1297,7 @@ sample estimates:
 
 Warning message:
 In cor.test.default(blood.glucose, short.velocity, method = "spearman") :
-  Cannot compute exact p-value with ties
+  cannot compute exact p-value with ties
 > cor.test(blood.glucose,short.velocity,method="kendall")
 
 	Kendall's rank correlation tau
@@ -1311,7 +1311,7 @@ sample estimates:
 
 Warning message:
 In cor.test.default(blood.glucose, short.velocity, method = "kendall") :
-  Cannot compute exact p-value with ties
+  cannot compute exact p-value with ties
 > rm(list=ls())
 > while(search()[2] != "package:ISwR") detach()
 > attach(red.cell.folate)
@@ -1347,8 +1347,8 @@ Signif. codes:  0 `***' 0.001 `**' 0.01 `*' 0.05 `.' 0.1 ` ' 1
 > detach(juul)
 > attach(juul)
 > summary(tanner)
-   I   II  III   IV    V NA's 
- 515  103   72   81  328  240 
+  I  II III  IV   V NAs 
+515 103  72  81 328 240 
 > anova(lm(igf1~tanner))
 Analysis of Variance Table
 
@@ -1816,7 +1816,7 @@ Levels: none intermediate severe
 > summary(stroke$died)
         Min.      1st Qu.       Median         Mean      3rd Qu. 
 "1991-01-07" "1992-03-14" "1993-01-23" "1993-02-15" "1993-11-04" 
-        Max.         NA's 
+        Max.          NAs 
 "1996-02-22"        "338" 
 > summary(stroke$dstr)
         Min.      1st Qu.       Median         Mean      3rd Qu. 
@@ -1825,7 +1825,7 @@ Levels: none intermediate severe
 "1993-12-31" 
 > summary(stroke$died - stroke$dstr)
 Time differences in days
-   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.    NA's 
+   Min. 1st Qu.  Median    Mean 3rd Qu.    Max.     NAs 
     0.0     8.0    28.0   225.7   268.5  1836.0     338 
 > head(stroke$died - stroke$dstr)
 Time differences in days
@@ -4263,4 +4263,4 @@ gamma   0.05443817   0.0862269
 > 
 > proc.time()
    user  system elapsed 
-  2.642   0.416   2.885 
+  2.507   0.411   2.768 
